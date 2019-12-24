@@ -1,0 +1,4 @@
+/kaldi/*
+!/kaldi/egs/
+/kaldi/egs/*
+!/kaldi/egs/usc/
