@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import subprocess
 import re
+import os
 
 def make_phonems(sentence,phonems):
     sentence = sentence.strip().lower()
@@ -68,3 +69,12 @@ for name in ['test','train','validation']:
     wavs.close()
     ids.close()
     utt.close()
+    os.system(f'./data/utils/utt2spk_to_spk2utt.pl ./data/{name}/utt2spk > ./data/{name}/spk2utt')
+
+# Soft links
+os.system('ln -s  ../../../egs/wsj/s5/steps/ steps')
+os.system('ln -s  ../../../egs/wsj/s5/utils/ utils')
+os.system('ln -s ../../../egs/wsj/s5/steps/score_kaldi.sh  ./data/local/score_kaldi.sh')
+subprocess.call(['mkdir',f'data/local'])
+for name in ['lang','dict','lm_tmp','nist_lm']:
+    subprocess.call(['mkdir',f'data/local/{name}'])
