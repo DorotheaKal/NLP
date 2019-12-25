@@ -29,7 +29,6 @@ p
 r
 s
 sh
-sil
 t
 th
 uh

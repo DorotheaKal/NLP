@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 f = open('silence_phones.txt',"w+")
-f.write("sil")
+f.write("sil" + '\n' + 'oov' + '\n')
 f.close()
 
 f = open('optional_silence.txt',"w+")
-f.write("sil")
+f.write("sil"+'\n')
 f.close()
 
 # rip data directory
@@ -25,8 +25,9 @@ for line in lex_data:
 
 phones = sorted(phones)
 for phonem in phones:
-    lex.write(phonem + ' ' + phonem + '\n')
-    nons.write(phonem + '\n')
+    if phonem != 'sil':
+        lex.write(phonem + ' ' + phonem + '\n')
+        nons.write(phonem + '\n')
 
 
 for name in ['test','dev','train']:

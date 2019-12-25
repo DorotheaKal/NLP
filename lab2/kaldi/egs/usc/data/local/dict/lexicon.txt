@@ -29,7 +29,6 @@ p p
 r r
 s s
 sh sh
-sil sil
 t t
 th th
 uh uh
