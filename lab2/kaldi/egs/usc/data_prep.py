@@ -1,0 +1,70 @@
+#!/usr/bin/python3
+import subprocess
+import re
+
+def make_phonems(sentence,phonems):
+    sentence = sentence.strip().lower()
+    sentence = re.sub("[^a-z^\'\s\-]",'',sentence)
+    words = re.split('\s|-',sentence)
+    
+    res = '' 
+    for word in words:
+        res = res + ' ' + phonems[word]
+        
+    res = 'sil ' + res + ' sil'
+    return res 
+
+data_dir = '../../../slp_lab2_data'
+text_dir = f'{data_dir}/transcription.txt'
+phonems_dir = f'{data_dir}/lexicon.txt'
+
+text = open(text_dir,"r")
+utterances = []
+for line in text:
+    utterances.append(line)
+text.close()
+
+phons = open(phonems_dir,"r")
+phonems = {}
+for line in phons:
+    line = line.split()
+    phonems[line[0].strip().lower()] = ' '.join(word for word in line[1:])
+
+for name in ['test','train','validation']:
+    subprocess.call(['mkdir','-p',f'./data/{name}'])
+i = 0 
+
+for name in ['test','train','validation']:
+    input_dir = f'{data_dir}/filesets/{name}_utterances.txt'
+    inp = open(input_dir,"r")
+    
+    dest_ids=f'./data/{name}/uttids'
+    dest_speaker=f'./data/{name}/utt2spk'
+    dest_path=f'./data/{name}/wav.scp'
+    text_path=f'./data/{name}/text'
+
+    ids = open(dest_ids,"w+")
+    speakers = open(dest_speaker,"w+")
+    wavs = open(dest_path,"w+")
+    utt = open(text_path,'w+')
+
+    for line in inp:
+        id = re.sub('[0-9]*$',str(i),line).split('\n')[0]
+        ids.write(id+'\n')
+        
+        speaker = re.findall('[m|f][0-9]',line)[0]
+        speakers.write(f'{id} {speaker}\n')
+        
+        wavs.write(f'{id} /{data_dir}/wav/{line}.wav')
+        
+        line_num = re.findall('[0-9]*$',line.strip())[0]
+        line_num = int(line_num)-1
+        sentence = utterances[line_num]
+        sentence = make_phonems(sentence,phonems)
+        utt.write(f'{id} {sentence}\n')
+        i+=1
+    speakers.close()
+    inp.close()
+    wavs.close()
+    ids.close()
+    utt.close()
