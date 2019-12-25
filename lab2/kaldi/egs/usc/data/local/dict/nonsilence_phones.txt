@@ -1,3 +1,4 @@
+<oov>
 aa
 ae
 ah
@@ -28,6 +29,7 @@ p
 r
 s
 sh
+sil
 t
 th
 uh

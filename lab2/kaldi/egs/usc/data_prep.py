@@ -3,6 +3,13 @@ import subprocess
 import re
 import os
 
+
+# Soft links
+os.system('ln -s  ../wsj/s5/steps/ steps')
+os.system('ln -s  ../wsj/s5/utils/ utils')
+os.system('ln -s ../wsj/s5/steps/score_kaldi.sh  ./data/local/score_kaldi.sh')
+
+
 def make_phonems(sentence,phonems):
     sentence = sentence.strip().lower()
     sentence = re.sub("[^a-z^\'\s\-]",'',sentence)
@@ -34,6 +41,7 @@ for line in phons:
 for name in ['test','train','validation']:
     subprocess.call(['mkdir','-p',f'./data/{name}'])
 i = 0 
+
 
 for name in ['test','train','validation']:
     input_dir = f'{data_dir}/filesets/{name}_utterances.txt'
@@ -69,12 +77,12 @@ for name in ['test','train','validation']:
     wavs.close()
     ids.close()
     utt.close()
-    os.system(f'./data/utils/utt2spk_to_spk2utt.pl ./data/{name}/utt2spk > ./data/{name}/spk2utt')
+    os.system(f'./utils/utt2spk_to_spk2utt.pl ./data/{name}/utt2spk > ./data/{name}/spk2utt')
 
-# Soft links
-os.system('ln -s  ../../../egs/wsj/s5/steps/ steps')
-os.system('ln -s  ../../../egs/wsj/s5/utils/ utils')
-os.system('ln -s ../../../egs/wsj/s5/steps/score_kaldi.sh  ./data/local/score_kaldi.sh')
-subprocess.call(['mkdir',f'data/local'])
-for name in ['lang','dict','lm_tmp','nist_lm']:
+
+subprocess.call(['mkdir','data/local'])
+subprocess.call(['mkdir','data/lang'])
+for name in ['dict','lm_tmp','nist_lm']:
     subprocess.call(['mkdir',f'data/local/{name}'])
+os.system('rm -rf   ./data/dev')
+os.system('mv ./data/validation ./data/dev')

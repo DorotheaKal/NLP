@@ -1,4 +1,4 @@
-./../utils/prepare_lang.sh 
+./utils/prepare_lang.sh 
 Usage: utils/prepare_lang.sh <dict-src-dir> <oov-dict-entry> <tmp-dir> <lang-dir>
 e.g.: utils/prepare_lang.sh data/local/dict <SPOKEN_NOISE> data/local/lang data/lang
 <dict-src-dir> should contain the following files:
