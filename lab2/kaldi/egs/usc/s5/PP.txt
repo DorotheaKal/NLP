@@ -1,0 +1,8 @@
+Perplexity of dev_unigram lm
+%% Nw=6540 PP=40.13 PPwp=0.00 Nbo=0 Noov=0 OOV=0.00%
+Perplexity of dev_bigram lm
+%% Nw=6540 PP=18.24 PPwp=0.00 Nbo=182 Noov=0 OOV=0.00%
+Perplexity of test_unigram lm
+%% Nw=6363 PP=39.75 PPwp=0.00 Nbo=0 Noov=0 OOV=0.00%
+Perplexity of test_bigram lm
+%% Nw=6363 PP=17.61 PPwp=0.00 Nbo=183 Noov=0 OOV=0.00%
