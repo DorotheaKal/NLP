@@ -23,7 +23,7 @@ $KALDI_ROOT/tools/irstlm/src/compile-lm data/local/lm_tmp/lm_test_unigram.ilm.gz
 $KALDI_ROOT/tools/irstlm/src/compile-lm data/local/lm_tmp/lm_test_bigram.ilm.gz -t=yes /dev/stdout | grep -v unk | gzip -c > data/local/nist_lm/lm_test_bigram.arpa.gz
 
 # Step 4.4 in folder data/lang we create the FST of the dictionary 
-./../../timit/s5/utils/prepare_lang.sh data/local/dict "<oov>" data/local/lang data/lang
+./utils/prepare_lang.sh data/local/dict "<oov>" data/local/lang data/lang
 
 # Step 4.5 in folder data_test we create the FST of the Grammar for test,train,dev data and unigram and bigram model
 ./timit_format_data.sh

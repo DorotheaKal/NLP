@@ -22,7 +22,7 @@ def make_phonems(sentence,phonems):
     res = 'sil ' + res + ' sil'
     return res 
 
-data_dir = '../../../slp_lab2_data'
+data_dir = './slp_lab2_data'
 text_dir = f'{data_dir}/transcription.txt'
 phonems_dir = f'{data_dir}/lexicon.txt'
 
@@ -58,13 +58,19 @@ for name in ['test','train','validation']:
     utt = open(text_path,'w+')
 
     for line in inp:
-        id = re.sub('[0-9]*$',str(i),line).split('\n')[0]
-        ids.write(id+'\n')
+        line = line.strip('\n')
+        id = re.sub('[0-9]*$',str(i),line)
+        id = re.sub('[m|f][0-9]','',id)
         
         speaker = re.findall('[m|f][0-9]',line)[0]
+        id = speaker + '-' + id 
+        id = re.sub('_','-',id)
+        ids.write(id+'\n')
+        
+        
         speakers.write(f'{id} {speaker}\n')
         
-        wavs.write(f'{id} /{data_dir}/wav/{line}.wav')
+        wavs.write(f'{id} {data_dir}/wav/{line}.wav\n')
         
         line_num = re.findall('[0-9]*$',line.strip())[0]
         line_num = int(line_num)-1
