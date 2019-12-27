@@ -1,0 +1,4 @@
+f1 /home/nikitas/NLP/lab2/kaldi/egs/usc/s5/mfcc_stats/cmvn_test.ark:3
+f5 /home/nikitas/NLP/lab2/kaldi/egs/usc/s5/mfcc_stats/cmvn_test.ark:245
+m1 /home/nikitas/NLP/lab2/kaldi/egs/usc/s5/mfcc_stats/cmvn_test.ark:487
+m3 /home/nikitas/NLP/lab2/kaldi/egs/usc/s5/mfcc_stats/cmvn_test.ark:729

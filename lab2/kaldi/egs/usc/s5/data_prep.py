@@ -70,7 +70,7 @@ for name in ['test','train','validation']:
         
         speakers.write(f'{id} {speaker}\n')
         
-        wavs.write(f'{id} {data_dir}/wav/{line}.wav\n')
+        wavs.write(f'{id} {data_dir}/wav/{speaker}/{line}.wav\n')
         
         line_num = re.findall('[0-9]*$',line.strip())[0]
         line_num = int(line_num)-1
