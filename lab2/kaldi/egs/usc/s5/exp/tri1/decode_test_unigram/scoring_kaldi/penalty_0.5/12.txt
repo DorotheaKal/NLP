@@ -1,0 +1,184 @@
+f1-usctimit-ema--0 r ay t s ah n ch ay n ch er ah z aa n iy ow sh ah n 
+f1-usctimit-ema--1 er ah z ah d ih f ao r s d ae n s w ih l 
+f1-usctimit-ema--10 uw w ow l iy w ah m ah n n ao r m ah s g r eh p k ow 
+f1-usctimit-ema--11 s ih k l ah p ah l p r ow k r eh n r k ah m p ay l 
+f1-usctimit-ema--12 ih r m ey l ay t f ow n f er n s ih n k ah n p ay m n 
+f1-usctimit-ema--13 k y er iy aa s ah t iy n n iy t iy aa p er t iy s eh l t k ow ah k s ah s t 
+f1-usctimit-ema--14 r ih sh l ah p er s b aa t ah d hh ay ey n ah z ah n jh ay p ao r d aa m s ah f aa er iy 
+f1-usctimit-ema--15 ih z t r ay ae f ay ow r l iy uw t s m ay ao t ah d s 
+f1-usctimit-ema--16 m ah l t ae ah k er s n eh l er s p eh k t ah t ow v ey k ah f m ah n ao r d er d s d 
+f1-usctimit-ema--17 w ih n p iy l ih ng ah n aa aa r ah n jh uw z hh aa r t n aa n t ih s p er ey t ch iy z 
+f1-usctimit-ema--18 hh ah b ah d ih z y er n d er ah n s 
+f1-usctimit-ema--19 k iy p ah k ah n aa m er t er ah n d ih r s ah n 
+f1-usctimit-ema--2 iy iy z dh ih k ow s ih z ah p l ey z r k er p l eh sh er n ih k s ay t n ng 
+f1-usctimit-ema--20 ih s n aa dh iy z iy t ih k r iy t ah l n iy t iy z ae m l z s 
+f1-usctimit-ema--21 ah p ao r t ah z b ay t er f ao ey k iy t ih l aa n ae d er 
+f1-usctimit-ema--22 jh aa n s b r eh d er r iy t ey n s ah d ih g er aa ch dh ao r 
+f1-usctimit-ema--23 ih n ae v er iy m ey ch er k l ow p er l iy k t r aa p ah k s ah m t ay n s k eh t s b ae p t ae 
+f1-usctimit-ema--24 dh ow z ae n t er z ah l iy s t r iy f aw er ih d ih f iy d ih ng dh ih n t er g eh v ah l iy p er s t 
+f1-usctimit-ema--25 ih k r eh m b er ih b ae f er p er t iy aa n ah m 
+f1-usctimit-ema--26 ih r ae hh ah k l er l iy s ao t ih sh ae d ow b ih th s t ey t aa t ow l iy ah m ow m ih ng 
+f1-usctimit-ema--27 l ah ah hh ae n d ey eh ah b iy z uw b ah l ah v iy ae t 
+f1-usctimit-ema--28 aw ah s iy p uw jh ay n ah p oy n ih n ah b ay l ah k iy ae n iy n ih r iy n s 
+f1-usctimit-ema--29 b ae l th ah n z er n t eh l ah jh ah n r ey n aw m ah l s 
+f1-usctimit-ema--3 ih s ih ng ah s ih ng er hh eh ih s p l ih n d er 
+f1-usctimit-ema--30 dh iy s ih s ah m ey b r ey t d aw n s iy ah n s ih s ey p r f ay l s r iy p ah t l iy 
+f1-usctimit-ema--31 ih r ih sh ih m b eh s ih m b aa k s er k aa n s ah s eh d s ay l ih sh iy uw s d 
+f1-usctimit-ema--32 ah l ow n z er sh aa n aa r l iy t n ih ng s k ay 
+f1-usctimit-ema--33 w ih z ah s l er sh dh ih ng b ay d aw er n ih ng b ao r t 
+f1-usctimit-ema--34 ih z ih s iy s ao s iy 
+f1-usctimit-ema--35 uw ah m k ow l er iy t n ao f n d iy f ah m z iy 
+f1-usctimit-ema--36 k eh t ah k eh l ah p ah l k eh p t uw k iy p ah r eh n d s r er 
+f1-usctimit-ema--37 t r ih sh s ao aw ah z ah n aw ah z ih ah w iy z ah t s ae d iy 
+f1-usctimit-ema--38 sh iy g ay iy ah 
+f1-usctimit-ema--4 r ah t iy l eh t eh n d ih n s ih s eh l d ih m er k w ay er d 
+f1-usctimit-ema--5 f l ay ah s t ae m b ay k n iy p r aa p d ih k ah l ih th uw ae s ey p m ah n iy 
+f1-usctimit-ema--6 ah iy ch t ae p ah s t r iy hh er m ao l l eh 
+f1-usctimit-ema--7 eh ah ng l ah ng d ih p eh k s t ey p r aa p ah l ih s ao l k l ah l 
+f1-usctimit-ema--8 ih s eh b r ah n t eh n iy w er iy er t er d ay s m aa n p s ih z t eh n m ay ae m iy 
+f1-usctimit-ema--9 ih k aa m s iy k aa s t ah m er s p ih l t s ah m ah k s p eh n s ih p er f iy m 
+f5-usctimit-ema--39 b ae s z p ao r 
+f5-usctimit-ema--40 eh s uw b l iy d 
+f5-usctimit-ema--41 b 
+f5-usctimit-ema--42 k l z k r iy n 
+f5-usctimit-ema--43 t iy er ae k r s iy 
+f5-usctimit-ema--44 k w aa p er ch d ae n iy n l iy v iy iy t ih s p y t 
+f5-usctimit-ema--45 t dh k l ey m er 
+f5-usctimit-ema--46 t z 
+f5-usctimit-ema--47 sh iy s l k 
+f5-usctimit-ema--48 s ae s t ae n d 
+f5-usctimit-ema--49 ah s k z 
+f5-usctimit-ema--50 ih ao r eh k ae t s er f er iy er d n s ay ah n iy z 
+f5-usctimit-ema--51 ah w l ih l iy w l m ah n w ao r m ah s k r ae p k ow t 
+f5-usctimit-ema--52 w er sh iy k r z g r ao s ah s k w eh r m eh n iy t ay m z 
+f5-usctimit-ema--53 dh 
+f5-usctimit-ema--54 ao r n sh t ey s eh n iy ae t er t uw p ey s t 
+f5-usctimit-ema--55 l ae l ah r ey t iy uw iy m ay k er ao r g n z 
+f5-usctimit-ema--56 dh ih z k r iy l k ah k ih ng y z k er iy 
+f5-usctimit-ema--57 w ah m p l ey ow d ow er z 
+f5-usctimit-ema--58 ey n jh ow ey w ah n ay ah d ih sh ah n 
+f5-usctimit-ema--59 iy v ah m ah n d ey b l uw z 
+f5-usctimit-ema--60 t dh g r ey t er n ah l ah s t 
+f5-usctimit-ema--61 t hh aw p r m ih s 
+f5-usctimit-ema--62 t aw m 
+f5-usctimit-ema--63 ih s ao iy z iy d iy k r iy ah l uw m ih n iy d ae m p ah l z 
+f5-usctimit-ema--64 w iy t iy ah m p ao r l ay g ih z uw ay s t r ey n 
+f5-usctimit-ema--65 ah g er 
+f5-usctimit-ema--66 t ih n l ao b ay k ao l ah t iy k l ow dh ih ng 
+f5-usctimit-ema--67 d dh ah t uw aa r d ih r ae f s 
+f5-usctimit-ema--68 k aa jh ch iy z b s 
+f5-usctimit-ema--69 dh ch ey s ih s k ae p s m er s l s l iy 
+f5-usctimit-ema--70 t ah g r ae s t ey t aw l iy ah m ow m ah n 
+f5-usctimit-ema--71 p aa b ae n ih t er 
+f5-usctimit-ema--72 dh m ay n t er b er t ey sh n ah b ah p r aa b l ah m t uw l ay n s n ah s p iy p r p ah n ih k y er 
+f5-usctimit-ema--73 t d ay ae n m ey s l er jh ah m b ay ah t er k w ey z b eh k l eh s 
+f5-usctimit-ema--74 dh k ae m iy z 
+f5-usctimit-ema--75 w ay t aa r jh m ah n iy t r s eh ch k aa r b ah jh 
+f5-usctimit-ema--76 dh ow n z ih n t iy t s t r ao ng 
+f5-usctimit-ema--77 t l iy k dh 
+f5-usctimit-ema--78 t ch 
+f5-usctimit-ema--79 eh v er iy k ae b n iy z r iy p ey n t ih ng ao f ih n 
+f5-usctimit-ema--80 ah k r ae b t aw t ih m 
+f5-usctimit-ema--81 dh ah m 
+f5-usctimit-ema--82 t f aa n 
+f5-usctimit-ema--83 dh iy t ao dh 
+f5-usctimit-ema--84 f er s ch iy z 
+f5-usctimit-ema--85 er d iy t uw l z dh n aa f ah b iy f l ih m z iy 
+f5-usctimit-ema--86 k iy n k r ah k ah l ah k l ey m 
+f5-usctimit-ema--87 dh dh er s aw n uw r ih t 
+f5-usctimit-ema--88 dh iy eh l ah jh iy aa n er k aw z 
+f5-usctimit-ema--89 ah m ao ah p ae g aa r d n dh 
+m1-usctimit-ema--100 ih n p l oy iy l iy aa s k ow ah n s ay ah d ah d w ih dh iy k ah p ah n iy z r y ao r ih n z ey sh ah n 
+m1-usctimit-ema--101 t dh iy d ay g n ow s ah s w ao z d ih s k er ih jh ih ng t ow er f er ih hh iy w ih s n aa t ow v er l iy w er iy d 
+m1-usctimit-ema--102 k w eh v er k w aa p r ey t z n f ay n ih ng d ae n s k ae m iy ow l b iy uw ah w ao r d ah t 
+m1-usctimit-ema--103 r ih ch l ah f ah dh iy s b aa t ah d hh ah n iy n ah z ah jh ae t w aa r s aa n dh iy s ah f aa r iy 
+m1-usctimit-ema--104 w ih ah t aa m b oy ao f ah n p l ay iy aa t d ow er z 
+m1-usctimit-ema--105 w jh ih l aw ae k s ah v ay l ah n s 
+m1-usctimit-ema--106 t ah w ey s t er z m ey p er ah l z 
+m1-usctimit-ema--107 t ih t eh l f ih r t ah k ow k w ih ah p sh ah b er 
+m1-usctimit-ema--108 hh ay w ey ih n f r iy w ey m iy n s ih ng f ih ng 
+m1-usctimit-ema--109 ih s m ah b iy z iy s k r iy ey t ih l ah m ih n ey t ih ng ih k s ae n l z 
+m1-usctimit-ema--110 dh iy s ih g er ah t s ah n dh iy k l ey ae t r ey ow v er f l ow ah l n s ah dh iy ow k t ey b ah l 
+m1-usctimit-ema--111 hh aw w ey l iy d iy l ay k ih s ae l ah jh er s ih ng 
+m1-usctimit-ema--112 iy w ey s ah s w ao z ah m er aa zh 
+m1-usctimit-ema--113 k ao r iy ah n t r sh p l ey t t ae g w ih b iy ch b aa l z f er aw w er z 
+m1-usctimit-ema--114 b r ah f ay r z er k aa m ih n dh jh er ay ah m d er b r sh ah v ae d ow 
+m1-usctimit-ema--115 sh ey t ih ng k r iy m ah z ah p aa k ih l er t ay t ah m ah w iy 
+m1-usctimit-ema--116 ih n ih r ah s ih n ay g ao m ey n aa t b iy uw w ih th ih n w aa k ih ng d ih s s ah n s 
+m1-usctimit-ema--117 dh iy f aa r p er v eh er ah v ih ng ao n t ay m 
+m1-usctimit-ema--118 ah b ih g d ao b l ah ch uw ao n l iy ow l d r ae g ao l 
+m1-usctimit-ema--119 dh d aa r k m er k iy l ih g uw n w aw n d er aw n f r ah m ay l z 
+m1-usctimit-ema--120 d uw ch sh aa n k eh t s ae t b ih g k uw s w ih dh aw t p ih l 
+m1-usctimit-ema--121 d aa k s eh v w eh b f iy t w ih th k ah l er f ah l f eh dh er z 
+m1-usctimit-ema--122 dh iy f r ay t n ch ay l d l t jh ae n l iy s ah t uw d b ay hh z b ey b r ah dh er 
+m1-usctimit-ema--123 dh iy g ow m ih m k eh p ih z t ih k ah m k ao r t ah k eh m p oy d f er f r iy aw er z 
+m1-usctimit-ema--124 dh iy s er p l aa s sh uw s w er s t ow l d ah d ih z t ow p r ay z 
+m1-usctimit-ema--125 t dh iy jh ay uw r ah d w ah jh sh ih m er t ah n dh iy k l s n ih ng s ah n p 
+m1-usctimit-ema--126 k r w er d r ah b k n s ah s ah v ao l m l iy s k er t s ah n b l aa s ah z 
+m1-usctimit-ema--127 dh er w z ah jh ah jh ae n f ih k w ao s p n eh k s er er v ih ng z b ih t aa p ae 
+m1-usctimit-ema--128 d ae f n iy s w iy t ih sh n iy t uw p oy d s g aa r f m ae ch t er s k er t 
+m1-usctimit-ema--129 w ch uw f ah n ih sh k r iy s ih ng er ch ey n b iy sh er t uw w aa sh dh er l iy 
+m1-usctimit-ema--130 ah t uw p ey z t uw sh ah b iy s k w iy z t f r ah m ah b aa m 
+m1-usctimit-ema--131 iy ae v er t ay z ih ng v er s ah v p l ih m ih f er ay ah t iy s t ao r n ah v er ch ey n jh ah z 
+m1-usctimit-ema--132 s er b er b ah n hh aw s w ay v z ao f ah n s aa f er f r ah m dh iy g ae v hh ae dh ah t 
+m1-usctimit-ema--133 t v er s t ae n ih l k t ah dh t r ah d ah d ch iy z 
+m1-usctimit-ema--134 r ow iy t n ao r dh iy s p ih r iy ah s d ey d ah p w d r ao n l g r ae f 
+m1-usctimit-ema--135 dh ow z m y z ih sh ah n z hh aa r m ah l ay z m aa r v l ah s l iy 
+m1-usctimit-ema--136 m ow z k y ah ng r ae b eh t s r aa ay s er ih l iy eh v r iy m ao r n ih ng 
+m1-usctimit-ema--137 t iy n ah ch er ah z ah p aa t s ih ng er 
+m1-usctimit-ema--138 er k aa s ih k ah l r er p er k ao r k ey n t k r t ah k ah l ah k l ey n 
+m1-usctimit-ema--139 dh iy aa l t r uw ih s d ih k d aw w jh er hh ah l p m ey n iy n n aw n dh er ih jh v ey g r n z 
+m1-usctimit-ema--140 dh ey ao l ah jh oy ay s k r ih ng s ah n d ey z 
+m1-usctimit-ema--141 jh eh s t oy g ow k aa r t n eh v er w er k 
+m1-usctimit-ema--142 ay ao er m ay m ow m 
+m1-usctimit-ema--143 w iy uw p l ay ao t ih ch ao r iy m ao ah l ih ng t uw k ah n p y t er s p iy t r ih k iy k n ih sh ah n 
+m1-usctimit-ema--90 jh ih m ey er m ao r m ah n iy b ay w er s n hh aa ah 
+m1-usctimit-ema--91 ah y er g r ey t ay r l ow ao r dh ae n ae n s iy z 
+m1-usctimit-ema--92 ae l f eh l f l ae z hh eh l th iy f r y uw 
+m1-usctimit-ema--93 iy v ah s ah v ah l k ae v ih l eh r ch ah n t ey n s ih m b ah l z 
+m1-usctimit-ema--94 ch eh l ih jh iy ch jh eh n er ah l s ah n t eh l ah jh ah n s 
+m1-usctimit-ema--95 w iy d ae t r eh n jh f r ah m iy oy n ih n s er aa t t ih r ey m 
+m1-usctimit-ema--96 p ay p ay d s ah n b ao ng d ow z er m y z ih k ah l ah n s t er m ah n s 
+m1-usctimit-ema--97 t aa k er z p r s k r ay b d r ah g s t uw f r iy l iy 
+m1-usctimit-ema--98 ao l jh eh k s m ey t ih f p y uw t er er b iy uw f ah l 
+m1-usctimit-ema--99 t k er ao l b er n hh eh r r er m ay dh aa t ah m l iy s 
+m3-usctimit-ema--144 n ae f ih ng ih z ah z ih f eh n s ah m ah z ih n ah s ah n s 
+m3-usctimit-ema--145 w ay y eh l er w er y ow v r s ah l iy ay t ah m z 
+m3-usctimit-ema--146 k aa r ah l ey ih v z ah l ay v l iy hh ow m 
+m3-usctimit-ema--147 ah l iy l oy er z l ah b n l iy ih n ey er s 
+m3-usctimit-ema--148 ah p g r eh d ih p ih k uw p eh t t ey n ah z 
+m3-usctimit-ema--149 d ah l iy p iy p ah l er aa f ah n ah k s k uw d ih d 
+m3-usctimit-ema--150 ah l eh jh s ay ch er m eh t uw jh eh t dh iy s t ey t ah p aa b ah k ah d ih k ey sh ah n 
+m3-usctimit-ema--151 s p r ey s t r iy ah z t r iy ah hh eh t n 
+m3-usctimit-ema--152 iy s t ow l ah g ay n f r l ah b ae g er 
+m3-usctimit-ema--153 w ih ch l ao n aa r t ah k ah l ow z ah p ey k ih n ey k l er f ih k ey sh ah n 
+m3-usctimit-ema--154 dh d ay g n ow s ih s ah z d ih s g er jh ih ng aw v er hh iy w z n aa ow er l iy w er jh 
+m3-usctimit-ema--155 dh iy k ae p m iy ae l iy s hh er ch m ay y er z 
+m3-usctimit-ema--156 t r ay t ah k aa l iy v ae ih k ah l aa r d er 
+m3-usctimit-ema--157 t iy p ih f ah m aa t er ah n d iy er t ao 
+m3-usctimit-ema--158 dh iy k er iy er w w er f f 
+m3-usctimit-ema--159 iy dh ey l aw ey k iy ah s t ih n ch er ch 
+m3-usctimit-ema--160 er k ow p ah d eh v er iy m ah n m ey m ao r n ih ng 
+m3-usctimit-ema--161 d uw ey k d ih p ow l f aa r m er z r ow k z 
+m3-usctimit-ema--162 dh iy t uw th er iy f er ah t ih k aa n aw w ah n r aa t er z t uw th eh l eh p 
+m3-usctimit-ema--163 r ih ch p er b ah ey s eh v ah l s ay n t l ah ah g r ae s 
+m3-usctimit-ema--164 ih n eh v er iy m ey t ah k l ah v er l iy s ch ae f ih k s ah m t ay m z k ih z b l ae k t ah p 
+m3-usctimit-ema--165 dh iy m iy d ih ng ih z n aw ah jh er n 
+m3-usctimit-ema--166 eh d aa ch ey z ih z k ae t s m er s ah l t s l iy 
+m3-usctimit-ema--167 dh iy f aa b ah er r ay v ey aa n t ao n 
+m3-usctimit-ema--168 d ao f ah n z aw eh n t ah l ah jh ih w er iy n ah m ah l z 
+m3-usctimit-ema--169 dh iy k ae l ao f aa r m ay ae n n iy k ey v l ao s t 
+m3-usctimit-ema--170 jh aa n k l iy n sh eh l th ih sh f er l ih v ih ng 
+m3-usctimit-ema--171 sh y aa oy jh ow k s b ay t uw m ah ch g aa r l ih k ah n ah s f uw d 
+m3-usctimit-ema--172 dh iy k aa r b r iy k l iy n er z ch ih m p uw d aw er iy ah n t ow r ah v 
+m3-usctimit-ema--173 dh iy jh ay ah d r eh w ah sh ih m er t l ih s n ih ng s ah n 
+m3-usctimit-ema--174 d jh ah s t aa d ow s ih z ih n iy s iy jh eh s ch ah b aa k s 
+m3-usctimit-ema--175 b aa r b er t ey p er l iy uw z ah b ih g b aa n f ao er 
+m3-usctimit-ema--176 d ae th iy s r iy t ih z t iy ow p oy n s g aa r f m ae sh t er s k er t 
+m3-usctimit-ema--177 t aa t z ih n iy ah z r ih l iy hh ah p ah k ah n s t eh m z 
+m3-usctimit-ema--178 w l ay ih ng t ow z l aa r d s ih ng b eh iy er n ih ng b ah 
+m3-usctimit-ema--179 g ae t ih k aw l k ah k ae t ih k iy p ah r ah n t ow iy 
+m3-usctimit-ema--180 dh iy aa l ah n jh oy ay s k ey n s ah n ey z 
+m3-usctimit-ema--181 ah l ae l iy w ey t y er 
+m3-usctimit-ema--182 dh iy s p iy ch s ih ow z iy m ey t iy g eh n ah n d ey 
+m3-usctimit-ema--183 d ow n l ah p er ch iy v ae ay iy l l z ah b ae ng p ah l 

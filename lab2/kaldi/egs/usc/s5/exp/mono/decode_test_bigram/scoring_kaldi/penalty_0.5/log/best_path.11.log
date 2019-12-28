@@ -1,0 +1,380 @@
+# lattice-scale --inv-acoustic-scale=11 "ark:gunzip -c ./exp/mono/decode_test_bigram/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- | lattice-best-path --word-symbol-table=exp/mono/graph_bigram/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/mono/graph_bigram/words.txt | cat > ./exp/mono/decode_test_bigram/scoring_kaldi/penalty_0.5/11.txt 
+# Started at Sat Dec 28 22:50:57 EET 2019
+#
+lattice-best-path --word-symbol-table=exp/mono/graph_bigram/words.txt ark:- ark,t:- 
+lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- 
+lattice-scale --inv-acoustic-scale=11 'ark:gunzip -c ./exp/mono/decode_test_bigram/lat.*.gz|' ark:- 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--0, best cost 97.8059 + 2743.69 = 2841.5 over 371 frames.
+f1-usctimit-ema--0 r ey s ah sh ay n sh er z ah n iy ow sh n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--1, best cost 100.013 + 2700 = 2800.02 over 336 frames.
+f1-usctimit-ema--1 aw m ao iy hh ay z ih d ao s iy n s w l 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--10, best cost 110.02 + 3325.99 = 3436.01 over 442 frames.
+f1-usctimit-ema--10 dh l iy b ao m ey n w r m ah s k r ae k ow 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--11, best cost 115.807 + 3082.85 = 3198.66 over 405 frames.
+f1-usctimit-ema--11 s ih p ow k l p r k eh n ah n ae r k m p ay l 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--12, best cost 119.358 + 3323.76 = 3443.12 over 446 frames.
+f1-usctimit-ema--12 dh ih r m ey l ay f l ng r n t ih k n p ay n z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--13, best cost 122.564 + 3634.44 = 3757.01 over 465 frames.
+f1-usctimit-ema--13 y r ae s ah iy n iy ae k iy s eh l d k ow t s eh s 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--14, best cost 156.607 + 3832.37 = 3988.98 over 509 frames.
+f1-usctimit-ema--14 r sh l p er s ay hh ay ng eh z ah jh eh k ao r v aa m s ah aa r iy 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--15, best cost 114.83 + 2998.98 = 3113.81 over 379 frames.
+f1-usctimit-ema--15 ih t r ae v iy f ay l r b ey t m ay ao n eh s 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--16, best cost 163.891 + 4089.04 = 4252.93 over 539 frames.
+f1-usctimit-ema--16 dh l t ay g r s ah l er s eh t ih t ow b ey g eh v m n ao r d er z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--17, best cost 144.586 + 3728.44 = 3873.02 over 503 frames.
+f1-usctimit-ema--17 w n p y oy ng n aa r n jh uw z aa r n aa t s r iy ch iy z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--18, best cost 63.8506 + 2403.05 = 2466.9 over 338 frames.
+f1-usctimit-ema--18 eh b ah z y r n er n s 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--19, best cost 106.338 + 2541.54 = 2647.87 over 347 frames.
+f1-usctimit-ema--19 iy d ih k ah m aa m r d er k ah n y r s aa n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--2, best cost 150.532 + 4004.61 = 4155.15 over 519 frames.
+f1-usctimit-ema--2 dh iy s ih n k ow s ih z ah p ey z er k er p ay sh er n ih s ay n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--20, best cost 104.946 + 3526.67 = 3631.61 over 462 frames.
+f1-usctimit-ema--20 ih s ah iy z iy ih k iy l l n ey iy z ae l z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--21, best cost 110.657 + 2835.65 = 2946.31 over 376 frames.
+f1-usctimit-ema--21 ih p ao r ih z ay er f oy iy iy l ae n eh dh ah 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--22, best cost 103.742 + 3048.95 = 3152.69 over 394 frames.
+f1-usctimit-ema--22 jh aa n z r eh ih m iy p ng t aa jh ao er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--23, best cost 148.348 + 4122.05 = 4270.4 over 532 frames.
+f1-usctimit-ema--23 n eh r n ey ch er k l r l iy ch aa v ih s ah t ae z ih t eh eh 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--24, best cost 128.671 + 5031.72 = 5160.4 over 668 frames.
+f1-usctimit-ema--24 ah z ae t er z l t ey f aw r d eh f l iy p er s 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--25, best cost 105.932 + 3080.81 = 3186.75 over 421 frames.
+f1-usctimit-ema--25 dh ih k eh n r b aa b ih t r k r d iy aa n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--26, best cost 150.563 + 4336.85 = 4487.41 over 579 frames.
+f1-usctimit-ema--26 dh ah r ae hh ah f uw s aa hh ih sh ae ow ah t s ey ae l iy m l ng 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--27, best cost 98.5717 + 2702.17 = 2800.75 over 343 frames.
+f1-usctimit-ema--27 l ih ae b ih k r b iy s uw b ow b eh t 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--28, best cost 160.639 + 4388.18 = 4548.82 over 571 frames.
+f1-usctimit-ema--28 aw ah s iy ih jh ay k ay n ih n b ay aa th iy n iy ng r n ih p r n z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--29, best cost 111.303 + 3146.66 = 3257.96 over 420 frames.
+f1-usctimit-ema--29 dh aa p n z er n t aa jh ah m r iy n aw m l z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--3, best cost 100.849 + 2875.85 = 2976.7 over 400 frames.
+f1-usctimit-ema--3 dh ih s ih ng eh s ih ng er hh ah s w ah t er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--30, best cost 161.522 + 3875.47 = 4036.99 over 494 frames.
+f1-usctimit-ema--30 ih s ih s ah n ey r ey d ae s ey n s ih z ey r v ay l z r ey p ah l iy 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--31, best cost 149.779 + 4161.96 = 4311.73 over 550 frames.
+f1-usctimit-ema--31 dh ah r sh ah n eh s ah b aa s er k aa n s ah s eh s ay l sh uw z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--32, best cost 94.3888 + 3299.08 = 3393.47 over 445 frames.
+f1-usctimit-ema--32 l ow z eh sh ah n eh r l iy n ng s ay 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--33, best cost 98.5971 + 2692.11 = 2790.71 over 361 frames.
+f1-usctimit-ema--33 w ih z z l er sh ih n eh r n ng b ao er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--34, best cost 61.4004 + 2206.31 = 2267.71 over 309 frames.
+f1-usctimit-ema--34 ih z ih s iy s ow s ey f 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--35, best cost 99.5953 + 3003.68 = 3103.28 over 390 frames.
+f1-usctimit-ema--35 l l n ng l er iy n l f n iy f ah n z iy 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--36, best cost 93.3835 + 3171.07 = 3264.45 over 417 frames.
+f1-usctimit-ema--36 ae p aa k ow k ae t ih k iy er n s eh 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--37, best cost 106.337 + 3839.78 = 3946.11 over 508 frames.
+f1-usctimit-ema--37 ch ih sh aa r s ah aw r z ih m ow iy z s ah 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--38, best cost 53.8787 + 1989.61 = 2043.49 over 274 frames.
+f1-usctimit-ema--38 sh iy g ah l g iy ae 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--4, best cost 104.086 + 3035.38 = 3139.46 over 397 frames.
+f1-usctimit-ema--4 r g uw eh s ah n ih n s ih s ah l er k ay er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--5, best cost 120.27 + 4062.4 = 4182.67 over 531 frames.
+f1-usctimit-ema--5 f ay s ae b ay aa k d l t uw ay s ey p m ah iy 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--6, best cost 102.617 + 2551.1 = 2653.72 over 327 frames.
+f1-usctimit-ema--6 ay g iy ch t ae p ih s t iy hh m r m l ay 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--7, best cost 112.417 + 3498.98 = 3611.4 over 461 frames.
+f1-usctimit-ema--7 ae ah m ah ng d ah p ay s iy k aa p l s l k ow 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--8, best cost 136.488 + 4010.5 = 4146.99 over 527 frames.
+f1-usctimit-ema--8 ih s ah r ng ae uw r iy ay n ay s ah t ih z eh n ay ae m iy 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--9, best cost 130.845 + 3933.58 = 4064.42 over 515 frames.
+f1-usctimit-ema--9 dh ih k ah s ih k aa s er s l s ah s eh s ih p r f iy m 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--39, best cost 39.1197 + 2858.39 = 2897.51 over 348 frames.
+f5-usctimit-ema--39 ae s ao r 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--40, best cost 62.3796 + 3947.72 = 4010.1 over 494 frames.
+f5-usctimit-ema--40 eh k sh ah g iy hh 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--41, best cost 35.2334 + 4273.91 = 4309.14 over 516 frames.
+f5-usctimit-ema--41 dh p 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--42, best cost 31.9139 + 3063.68 = 3095.59 over 377 frames.
+f5-usctimit-ema--42 k iy n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--43, best cost 29.9117 + 3230.86 = 3260.77 over 393 frames.
+f5-usctimit-ema--43 ih iy 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--44, best cost 97.7123 + 3638.11 = 3735.82 over 448 frames.
+f5-usctimit-ema--44 k w aa p r sh t ey n ng l iy iy iy 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--45, best cost 39.3087 + 3366.57 = 3405.88 over 432 frames.
+f5-usctimit-ema--45 ah iy m er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--46, best cost 37.7415 + 3521.18 = 3558.92 over 450 frames.
+f5-usctimit-ema--46 t ah z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--47, best cost 68.0015 + 3798.73 = 3866.74 over 489 frames.
+f5-usctimit-ema--47 sh r ey t r ey l p 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--48, best cost 48.4669 + 2507.5 = 2555.96 over 302 frames.
+f5-usctimit-ema--48 k ae t ey n t 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--49, best cost 60.1675 + 3688.07 = 3748.23 over 467 frames.
+f5-usctimit-ema--49 ah s r t r r z z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--50, best cost 105.651 + 3058.53 = 3164.18 over 397 frames.
+f5-usctimit-ema--50 ih ao r k ae t er f er iy r k n s ay n iy z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--51, best cost 102.792 + 3165.25 = 3268.04 over 417 frames.
+f5-usctimit-ema--51 dh w l l iy b ah m uw ao m ah s k ae k ow 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--52, best cost 172.189 + 4519.83 = 4692.02 over 585 frames.
+f5-usctimit-ema--52 l iy d ah f er ch eh p er sh iy k r s k aa s dh s k w eh m eh iy t ay n z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--53, best cost 24.6455 + 3154.15 = 3178.79 over 407 frames.
+f5-usctimit-ema--53 iy ih 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--54, best cost 59.2045 + 3410.29 = 3469.5 over 435 frames.
+f5-usctimit-ema--54 ao n sh iy p ey s 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--55, best cost 94.5699 + 4451.26 = 4545.83 over 548 frames.
+f5-usctimit-ema--55 ay l r iy eh n iy m ay k ao n z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--56, best cost 80.0088 + 2678.83 = 2758.84 over 345 frames.
+f5-usctimit-ema--56 ih z k r iy l k ah k iy s k er iy 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--57, best cost 97.7438 + 2713.19 = 2810.93 over 350 frames.
+f5-usctimit-ema--57 w t aa b oy aa f ah n ay aw d ao er z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--58, best cost 77.89 + 2163.82 = 2241.71 over 282 frames.
+f5-usctimit-ema--58 ey n jh oy uw w n ay d ih sh n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--59, best cost 62.7073 + 2828.01 = 2890.72 over 352 frames.
+f5-usctimit-ema--59 iy m ah n ey p l n z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--60, best cost 71.0987 + 3428.99 = 3500.09 over 449 frames.
+f5-usctimit-ema--60 t dh n uw g ey t er l s 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--61, best cost 61.0041 + 2801.22 = 2862.23 over 371 frames.
+f5-usctimit-ema--61 t hh ow p r k er s 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--62, best cost 30.2888 + 3054.49 = 3084.78 over 408 frames.
+f5-usctimit-ema--62 z ah n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--63, best cost 84.7471 + 3450.2 = 3534.95 over 446 frames.
+f5-usctimit-ema--63 ih r iy l m ih n iy g ae b l z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--64, best cost 80.362 + 3425.73 = 3506.09 over 453 frames.
+f5-usctimit-ema--64 r iy iy p ao l ay uw ay s ey n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--65, best cost 43.481 + 3003.07 = 3046.55 over 364 frames.
+f5-usctimit-ema--65 iy g ao er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--66, best cost 78.2218 + 3720.91 = 3799.13 over 482 frames.
+f5-usctimit-ema--66 v uw ay k l t iy k ow ih ng 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--67, best cost 47.7872 + 3415.08 = 3462.87 over 440 frames.
+f5-usctimit-ema--67 d ih t uw r s 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--68, best cost 62.5567 + 3215.85 = 3278.41 over 419 frames.
+f5-usctimit-ema--68 k t ay z z l sh ah s 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--69, best cost 34.8624 + 2658.69 = 2693.55 over 319 frames.
+f5-usctimit-ema--69 eh l iy 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--70, best cost 60.2305 + 3938.71 = 3998.95 over 482 frames.
+f5-usctimit-ema--70 t dh b iy m ah m 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--71, best cost 54.1357 + 3666.97 = 3721.1 over 458 frames.
+f5-usctimit-ema--71 t aa b ae n er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--72, best cost 119.238 + 5643.56 = 5762.8 over 700 frames.
+f5-usctimit-ema--72 ah k ah b iy p aa w n t uw ay n s ah iy p er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--73, best cost 131.019 + 3578.37 = 3709.39 over 457 frames.
+f5-usctimit-ema--73 t t ay ae m iy s l er jh m b ay t ah k oy z eh k ah z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--74, best cost 50.995 + 3168.16 = 3219.16 over 403 frames.
+f5-usctimit-ema--74 s k er s iy z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--75, best cost 52.6306 + 2748.91 = 2801.54 over 344 frames.
+f5-usctimit-ema--75 w r ch er ah jh 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--76, best cost 35.2275 + 3104.99 = 3140.21 over 394 frames.
+f5-usctimit-ema--76 t aa n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--77, best cost 44.1627 + 4708.98 = 4753.14 over 586 frames.
+f5-usctimit-ema--77 s l iy k 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--78, best cost 37.5325 + 3645.02 = 3682.55 over 462 frames.
+f5-usctimit-ema--78 t m ch 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--79, best cost 53.6082 + 2813.66 = 2867.27 over 354 frames.
+f5-usctimit-ema--79 eh f ih k ae f n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--80, best cost 96.255 + 3444.44 = 3540.69 over 421 frames.
+f5-usctimit-ema--80 dh k ae ch aw jh ae v ih g sh t ah m 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--81, best cost 29.1707 + 3896.74 = 3925.91 over 495 frames.
+f5-usctimit-ema--81 dh m 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--82, best cost 68.8782 + 2546.4 = 2615.27 over 321 frames.
+f5-usctimit-ema--82 iy t s eh ch r l iy aa n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--83, best cost 44.7638 + 3585.92 = 3630.68 over 452 frames.
+f5-usctimit-ema--83 ah t aa ay 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--84, best cost 56.4422 + 3177.96 = 3234.4 over 411 frames.
+f5-usctimit-ema--84 f er s ah ch iy s 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--85, best cost 65.0277 + 4638.37 = 4703.4 over 606 frames.
+f5-usctimit-ema--85 er d iy jh l z l iy 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--86, best cost 84.093 + 3369.97 = 3454.06 over 425 frames.
+f5-usctimit-ema--86 r k er n ey n k ih k l k ay m 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--87, best cost 92.6911 + 3939.01 = 4031.7 over 503 frames.
+f5-usctimit-ema--87 l er n ae ch er sh ah b er s ae n uw 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--88, best cost 84.1902 + 2886.12 = 2970.31 over 379 frames.
+f5-usctimit-ema--88 t uw ay d iy l t iy aa er k aw z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f5-usctimit-ema--89, best cost 40.6389 + 3531.81 = 3572.44 over 434 frames.
+f5-usctimit-ema--89 ah k r n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--100, best cost 173.783 + 3751.2 = 3924.98 over 472 frames.
+m1-usctimit-ema--100 ah p oy iy l ey aa s k ao s ay d uw w th ih k p n iy z r iy er ah z ey sh n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--101, best cost 186.361 + 5009.85 = 5196.21 over 650 frames.
+m1-usctimit-ema--101 dh d ay g ow s ah s w z s k er jh ih ng hh ao f er z uw s aa w v l ih w er iy 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--102, best cost 160.073 + 4025.44 = 4185.51 over 528 frames.
+m1-usctimit-ema--102 w er f er k ao p r t n f ay n ng ae n s k ae m iy l b iy uw w d 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--103, best cost 167.326 + 4427.97 = 4595.3 over 570 frames.
+m1-usctimit-ema--103 r ch l p f ah s b aa d hh iy ah z ah jh eh b ao er z aa m s ah f ao iy 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--104, best cost 109.957 + 2995.43 = 3105.39 over 398 frames.
+m1-usctimit-ema--104 w t aa m w ey k aa f n p l iy aa p ao r z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--105, best cost 82.7913 + 2609.84 = 2692.63 over 361 frames.
+m1-usctimit-ema--105 dh jh ih l aw ae k s v ay l n z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--106, best cost 69.4837 + 2283.15 = 2352.63 over 318 frames.
+m1-usctimit-ema--106 uw w s er s m ey p er l z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--107, best cost 95.9025 + 3024.22 = 3120.12 over 402 frames.
+m1-usctimit-ema--107 ih t l f uw k ah p w ih aa p sh ah b er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--108, best cost 108.599 + 2979.61 = 3088.21 over 398 frames.
+m1-usctimit-ema--108 p ay w ey f r uw w ey n ng s ih ng f ey ng 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--109, best cost 116.336 + 3560.59 = 3676.92 over 475 frames.
+m1-usctimit-ema--109 dh s aa b iy z iy k iy t uw m ey ng g ae p l z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--110, best cost 147.326 + 4650.9 = 4798.23 over 603 frames.
+m1-usctimit-ema--110 s ih g r t n l k l ey ae t er uw w er f ow iy ow t ey b l 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--111, best cost 102.975 + 2700.8 = 2803.77 over 355 frames.
+m1-usctimit-ema--111 k aw oy l iy d iy l k ih s l jh er s ih ng 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--112, best cost 77.5846 + 2526.25 = 2603.83 over 355 frames.
+m1-usctimit-ema--112 iy w ey s ih s w z m l aa zh 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--113, best cost 151.673 + 4060.02 = 4211.69 over 522 frames.
+m1-usctimit-ema--113 k ao iy n ch r sh p l ey p ae g w ih iy ch l s aa aw w er z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--114, best cost 147.336 + 3312.34 = 3459.67 over 423 frames.
+m1-usctimit-ema--114 r f ay r z er k aa m n jh r ay n d er b r sh ah jh ah v ae ah 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--115, best cost 134.48 + 3554.32 = 3688.8 over 468 frames.
+m1-usctimit-ema--115 ch ey ng k r iy m s ah p aa p uw er ay d m ah hh l w iy 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--116, best cost 147.642 + 4194.59 = 4342.23 over 561 frames.
+m1-usctimit-ema--116 ih n er s ah l g aa m ey n ow iy w th ah m w p ng d s ah n z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--117, best cost 128.606 + 3388.33 = 3516.93 over 454 frames.
+m1-usctimit-ema--117 dh f aa p er v ae d ah p m l aa v ih ng aa n t aw n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--118, best cost 108.982 + 3393.46 = 3502.45 over 443 frames.
+m1-usctimit-ema--118 ah b ih g aa w ow ch uw l m iy l r ay g l 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--119, best cost 139.89 + 3121.47 = 3261.36 over 416 frames.
+m1-usctimit-ema--119 dh iy jh aa k m er s uw l g uw b w ow r ow f r m ay l z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--120, best cost 101.903 + 3181.93 = 3283.83 over 414 frames.
+m1-usctimit-ema--120 d ih ch aa k ah s eh ih g uw s w aw k ow 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--121, best cost 133.557 + 3519.04 = 3652.6 over 466 frames.
+m1-usctimit-ema--121 t aa k s eh v w eh b f iy w f p l f l f eh dh er z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--122, best cost 131.659 + 4040.08 = 4171.74 over 539 frames.
+m1-usctimit-ema--122 dh f r m ch ow w jh ih n s ah jh uw b ay ih b r dh er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--123, best cost 184.315 + 4320.19 = 4504.5 over 556 frames.
+m1-usctimit-ema--123 l g eh m ah ng k ah p z ih t ng k ao r d eh t ih m p w n f er f r iy aw er z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--124, best cost 128.335 + 4257.96 = 4386.29 over 571 frames.
+m1-usctimit-ema--124 dh s er p aa s sh uw z w s l eh d ih s t ow p ay z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--125, best cost 131.339 + 3760.08 = 3891.42 over 495 frames.
+m1-usctimit-ema--125 s dh jh ay m r d l jh m er d n ih k l s l ng s ay n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--126, best cost 141.123 + 3437.6 = 3578.72 over 444 frames.
+m1-usctimit-ema--126 k er w ao d r b n s ih s ah v l iy s k er t ah b aa s ah z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--127, best cost 173.557 + 4547.88 = 4721.44 over 598 frames.
+m1-usctimit-ema--127 t dh ah w z jh eh jh ae f ey k w aa s n eh k s er ih ng z p ih t aa p ae 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--128, best cost 143.284 + 4275.59 = 4418.87 over 556 frames.
+m1-usctimit-ema--128 p ae f iy s w iy sh n iy p w n s k aa f m ay jh r s k er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--129, best cost 158.108 + 3907.35 = 4065.46 over 508 frames.
+m1-usctimit-ema--129 w ch uw f n sh r iy s ih ng er ch ey n b iy sh er sh w ao s er l iy 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--130, best cost 130.552 + 3973.6 = 4104.15 over 534 frames.
+m1-usctimit-ema--130 iy t ih p ey s t uw sh ih b iy s k w iy z r m b aa m 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--131, best cost 195.167 + 4151.48 = 4346.65 over 528 frames.
+m1-usctimit-ema--131 k iy ae v r t ay z ng er s ah p ah m ih f er ay ey d iy s ao n ah f r ch ey ng d ah z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--132, best cost 173.533 + 4250 = 4423.54 over 561 frames.
+m1-usctimit-ema--132 ch er b er r n hh aw s w ay s ao f n z aa f er f r n iy t ae hh ae v ey 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--133, best cost 92.4603 + 3314.24 = 3406.7 over 429 frames.
+m1-usctimit-ema--133 v r s eh n l k t ah sh r ah ch iy z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--134, best cost 161.644 + 3882.42 = 4044.07 over 504 frames.
+m1-usctimit-ema--134 r oy iy n ao dh s ih r ih s t ey ah p oy n z n r ao ng ah g r ae f 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--135, best cost 134.359 + 3061.37 = 3195.73 over 395 frames.
+m1-usctimit-ema--135 dh ow z n ih z ih sh n z hh aa m l ay z m aa v l s l iy 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--136, best cost 143.541 + 3523.79 = 3667.33 over 465 frames.
+m1-usctimit-ema--136 m ow z y ow ng r ae b eh t r ay z er l iy v r iy m ao n ng 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--137, best cost 91.4807 + 2134.38 = 2225.86 over 282 frames.
+m1-usctimit-ema--137 t iy n ah ch er ih t ah p aa p s ih ng er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--138, best cost 131.152 + 3406.24 = 3537.39 over 442 frames.
+m1-usctimit-ema--138 er k aa s ih k l r p r k ao jh ey d k r ih k l k l ey 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--139, best cost 161.819 + 4500.8 = 4662.62 over 590 frames.
+m1-usctimit-ema--139 iy aa t r s ih p aw w jh er hh l m ih n iy n aw m er s ey g r n s 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--140, best cost 91.965 + 3061.96 = 3153.92 over 413 frames.
+m1-usctimit-ema--140 dh ih l jh oy ay s k n s ah n d ey z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--141, best cost 82.8855 + 2890.69 = 2973.57 over 378 frames.
+m1-usctimit-ema--141 jh eh s t oy g ow k aa ah w er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--142, best cost 54.6474 + 1619.95 = 1674.6 over 228 frames.
+m1-usctimit-ema--142 ay ao r m ay m ow m 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--143, best cost 159.307 + 4169.73 = 4329.03 over 525 frames.
+m1-usctimit-ema--143 w iy p ay ao t ao r m aa l ng jh k ah p uw s iy t r y iy p ah sh n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--90, best cost 110.393 + 2714.76 = 2825.15 over 354 frames.
+m1-usctimit-ema--90 jh ih m ey er m ao m ow iy b ay w s n k aa er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--91, best cost 107.79 + 3370.63 = 3478.42 over 459 frames.
+m1-usctimit-ema--91 l er k r ey t hh ay er l ow r dh n ae t iy z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--92, best cost 86.7744 + 2170.9 = 2257.67 over 283 frames.
+m1-usctimit-ema--92 aa f aa f ah z hh l th iy f r iy uw 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--93, best cost 120.014 + 3429.98 = 3549.99 over 453 frames.
+m1-usctimit-ema--93 iy ah s ah p l ah p ae uw er k ah t ih ng s ah m l z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--94, best cost 107.856 + 3057 = 3164.86 over 416 frames.
+m1-usctimit-ema--94 ch eh l jh iy ch jh ae er l z ah t l z ah n z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--95, best cost 113.631 + 2930.12 = 3043.75 over 372 frames.
+m1-usctimit-ema--95 k w iy d ae ch r ch ah m iy ah s er t uw r ey n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--96, best cost 122.694 + 2865.05 = 2987.74 over 367 frames.
+m1-usctimit-ema--96 ae p ay ch ah b aa n ow z er m iy z ih k l n s er s 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--97, best cost 113.899 + 2863.93 = 2977.83 over 365 frames.
+m1-usctimit-ema--97 ah p er s p r s k r ae b r b s t uw f r iy iy 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--98, best cost 95.5762 + 3143.03 = 3238.6 over 429 frames.
+m1-usctimit-ema--98 aa jh eh k s m ey t y uw er b iy f l 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m1-usctimit-ema--99, best cost 118.541 + 3612.91 = 3731.45 over 474 frames.
+m1-usctimit-ema--99 k er ao b er hh er m ay d z ih m v ao m l iy z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--144, best cost 99.6208 + 3103.82 = 3203.44 over 404 frames.
+m3-usctimit-ema--144 ae f iy z ih z ih f eh n s ah z ih s ah s 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--145, best cost 99.208 + 2771.46 = 2870.67 over 352 frames.
+m3-usctimit-ema--145 w ay y l ow r iy ow r s ow iy eh d m z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--146, best cost 77.3501 + 2733.41 = 2810.76 over 364 frames.
+m3-usctimit-ema--146 k aa l uw z uw l ay v ih hh l 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--147, best cost 69.7332 + 2358.78 = 2428.51 over 291 frames.
+m3-usctimit-ema--147 l ih l oy er z l iy n eh s 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--148, best cost 109.399 + 2895.35 = 3004.75 over 373 frames.
+m3-usctimit-ema--148 ah p g r ay d ih p ih k ah p eh k p t ey ow z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--149, best cost 102.934 + 3025.45 = 3128.38 over 390 frames.
+m3-usctimit-ema--149 t ah l ah iy p iy p l aa f ih k s uw d ih d 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--150, best cost 153.158 + 4196.58 = 4349.73 over 520 frames.
+m3-usctimit-ema--150 l s ey ch ih m eh t d eh t ih s ey d ah p ah b ah k ih d k ey sh n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--151, best cost 66.711 + 2569.08 = 2635.79 over 342 frames.
+m3-usctimit-ema--151 r iy s r iy s er iy hh eh n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--152, best cost 75.2685 + 2637.95 = 2713.22 over 348 frames.
+m3-usctimit-ema--152 y z l d ay n f m ah b ey er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--153, best cost 130.584 + 3334.59 = 3465.18 over 422 frames.
+m3-usctimit-ema--153 w t s aa t ih k l ah p ey k ih n ih k er f ih k ey sh n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--154, best cost 181.817 + 4940.62 = 5122.44 over 640 frames.
+m3-usctimit-ema--154 dh d ay n ow s ih s ah t ih s k er jh ey n aa v er uw w z aa ow er l uw w r d 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--155, best cost 89.3749 + 2841.97 = 2931.34 over 359 frames.
+m3-usctimit-ema--155 dh ih k ae k iy aw iy t r z m iy r z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--156, best cost 110.885 + 3477.77 = 3588.65 over 446 frames.
+m3-usctimit-ema--156 t r t ey k aa l iy b eh n t ah g aa ao k l r 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--157, best cost 85.8158 + 2728.92 = 2814.74 over 351 frames.
+m3-usctimit-ema--157 t iy p ih th ah m aa er ah n iy r t l 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--158, best cost 60.1533 + 2692.38 = 2752.53 over 352 frames.
+m3-usctimit-ema--158 dh ih k er w r f p 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--159, best cost 76.8208 + 2970.16 = 3046.98 over 379 frames.
+m3-usctimit-ema--159 iy l aw ey t iy s t ah ch er jh 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--160, best cost 80.134 + 2305.79 = 2385.92 over 286 frames.
+m3-usctimit-ema--160 w er ow p ih r m ah n ih m ao ng 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--161, best cost 83.5073 + 2705.41 = 2788.92 over 350 frames.
+m3-usctimit-ema--161 d uw ey t ih l f aa r jh r ow ch 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--162, best cost 121.991 + 3720.36 = 3842.35 over 471 frames.
+m3-usctimit-ema--162 dh ah ch ih f er iy f r t k aw w n aa t iy f l ao 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--163, best cost 107.215 + 3616.19 = 3723.41 over 470 frames.
+m3-usctimit-ema--163 r ch p r ey s eh v l s ay n ah f ah r eh s 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--164, best cost 168.826 + 4139.67 = 4308.49 over 506 frames.
+m3-usctimit-ema--164 ah n eh r n ey t ih k ow r v iy s t ae t ih k s ah n ah k ih z l ae p eh t 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--165, best cost 61.1747 + 2109.67 = 2170.85 over 274 frames.
+m3-usctimit-ema--165 ih m iy z n aw d er n t 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--166, best cost 91.2426 + 2638.29 = 2729.53 over 327 frames.
+m3-usctimit-ema--166 eh d aa ch ih z k ae t m er sh l s l 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--167, best cost 118.3 + 3232.84 = 3351.14 over 423 frames.
+m3-usctimit-ema--167 dh ah f aa b ah v eh n ah m r m er aa iy ah n t aa n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--168, best cost 83.4763 + 3188.59 = 3272.07 over 417 frames.
+m3-usctimit-ema--168 t aa f ah d aa t l ih r iy n l z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--169, best cost 125.521 + 4135.76 = 4261.28 over 546 frames.
+m3-usctimit-ema--169 dh ih k aw w ao ah f aa m l ae n ih k ey m ao s t 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--170, best cost 94.0628 + 3447.42 = 3541.49 over 471 frames.
+m3-usctimit-ema--170 jh ae k iy n sh ao th ih sh r l v ih n 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--171, best cost 117.833 + 3558.02 = 3675.86 over 462 frames.
+m3-usctimit-ema--171 t eh oy jh ow p s eh t m ah ch g aa l k ah s uw 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--172, best cost 133.957 + 3576.79 = 3710.75 over 468 frames.
+m3-usctimit-ema--172 dh ih k aa b r k iy n er sh eh m uw d aa er ae t ao r ah b 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--173, best cost 116.343 + 3625.06 = 3741.4 over 463 frames.
+m3-usctimit-ema--173 dh ah jh ay n r w d sh ih m er n w ih s ih n s ah 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--174, best cost 117.881 + 3284.97 = 3402.85 over 421 frames.
+m3-usctimit-ema--174 dh ih z t aa t ow s ih z ey s iy d ih s jh n ao s 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--175, best cost 114.074 + 2872.2 = 2986.27 over 346 frames.
+m3-usctimit-ema--175 b aa b er t ey p er m iy z ah b ih g aa f ah er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--176, best cost 132.461 + 3980.1 = 4112.56 over 517 frames.
+m3-usctimit-ema--176 ae f iy s iy ih z iy ow p oy n s aa er f m ae sh er s er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--177, best cost 115.951 + 3592.03 = 3707.99 over 472 frames.
+m3-usctimit-ema--177 t aa z ey n iy z er ah ey aw k ah b ih n s eh m z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--178, best cost 127.683 + 3971.97 = 4099.66 over 502 frames.
+m3-usctimit-ema--178 w ih th ih z l ay ng ah s aa r s ey ng eh iy ay iy n ah 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--179, best cost 103.844 + 3239.68 = 3343.52 over 419 frames.
+m3-usctimit-ema--179 eh ih k aw v aa k ae t k y t er ah n t oy 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--180, best cost 86.5642 + 3136.35 = 3222.91 over 429 frames.
+m3-usctimit-ema--180 dh iy l n jh oy s ey n s ah n eh z 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--181, best cost 45.051 + 2007.27 = 2052.32 over 260 frames.
+m3-usctimit-ema--181 ah l l iy w iy er 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--182, best cost 103.195 + 2744.75 = 2847.94 over 355 frames.
+m3-usctimit-ema--182 ih s iy s ah ow z iy m ay t iy g ah m ah n ih 
+LOG (lattice-scale[5.5.586~1-83c98]:main():lattice-scale.cc:107) Done 184 lattices.
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--183, best cost 103.2 + 3753.36 = 3856.56 over 514 frames.
+LOG (lattice-add-penalty[5.5.586~1-83c98]:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 184 lattices.
+m3-usctimit-ema--183 d ow m ah p r ch iy d ay ah l ah b ay v l 
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:124) Overall cost per frame is 7.94336 = 0.234635 [graph] + 7.70873 [acoustic] over 80410 frames.
+LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:128) Done 184 lattices, failed for 0
+# Accounting: time=24 threads=1
+# Ended (code 0) at Sat Dec 28 22:51:21 EET 2019, elapsed time 24 seconds

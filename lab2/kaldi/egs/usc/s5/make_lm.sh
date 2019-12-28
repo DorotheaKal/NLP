@@ -1,6 +1,7 @@
 source ./path.sh
 source ./cmd.sh
 
+
 # Step 4.2 in folder data/local/lm_tmp we create a temporary form of LM
 $KALDI_ROOT/tools/irstlm/scripts/build-lm.sh -i data/local/dict/lm_dev.text -n 1 -o data/local/lm_tmp/lm_dev_unigram.ilm.gz
 $KALDI_ROOT/tools/irstlm/scripts/build-lm.sh -i data/local/dict/lm_dev.text -n 2 -o data/local/lm_tmp/lm_dev_bigram.ilm.gz

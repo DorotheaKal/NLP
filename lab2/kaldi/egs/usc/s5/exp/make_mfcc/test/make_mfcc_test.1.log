@@ -1,0 +1,59 @@
+# compute-mfcc-feats --write-utt2dur=ark,t:exp/make_mfcc/test/utt2dur.1 --verbose=2 --config=./conf/mfcc.conf scp,p:exp/make_mfcc/test/wav_test.1.scp ark:- | copy-feats --write-num-frames=ark,t:exp/make_mfcc/test/utt2num_frames.1 --compress=true ark:- ark,scp:/home/dorotheakal/kaldi/egs/usc/s5/mfcc_test/raw_mfcc_test.1.ark,/home/dorotheakal/kaldi/egs/usc/s5/mfcc_test/raw_mfcc_test.1.scp 
+# Started at Sat Dec 28 20:47:20 EET 2019
+#
+copy-feats --write-num-frames=ark,t:exp/make_mfcc/test/utt2num_frames.1 --compress=true ark:- ark,scp:/home/dorotheakal/kaldi/egs/usc/s5/mfcc_test/raw_mfcc_test.1.ark,/home/dorotheakal/kaldi/egs/usc/s5/mfcc_test/raw_mfcc_test.1.scp 
+compute-mfcc-feats --write-utt2dur=ark,t:exp/make_mfcc/test/utt2dur.1 --verbose=2 --config=./conf/mfcc.conf scp,p:exp/make_mfcc/test/wav_test.1.scp ark:- 
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--0
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--1
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--10
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--11
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--12
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--13
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--14
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--15
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--16
+LOG (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:181) Processed 10 utterances
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--17
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--18
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--19
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--2
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--20
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--21
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--22
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--23
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--24
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--25
+LOG (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:181) Processed 20 utterances
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--26
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--27
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--28
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--29
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--3
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--30
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--31
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--32
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--33
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--34
+LOG (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:181) Processed 30 utterances
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--35
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--36
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--37
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--38
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--4
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--5
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--6
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--7
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--8
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f1-usctimit-ema--9
+LOG (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:181) Processed 40 utterances
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f5-usctimit-ema--39
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f5-usctimit-ema--40
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f5-usctimit-ema--41
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f5-usctimit-ema--42
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f5-usctimit-ema--43
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f5-usctimit-ema--44
+VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f5-usctimit-ema--45
+LOG (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:185)  Done 46 out of 46 utterances.
+LOG (copy-feats[5.5.586~1-83c98]:main():copy-feats.cc:143) Copied 46 feature matrices.
+# Accounting: time=2 threads=1
+# Ended (code 0) at Sat Dec 28 20:47:22 EET 2019, elapsed time 2 seconds
