@@ -22,22 +22,14 @@ mkdir -p $tmpdir
 
 echo "Preparing language models for test"
 
-for x in train dev test; do
+for x in unigram bigram; do
   test=data/lang_test
   mkdir -p $test
   cp -r data/lang/* $test
 
-  gunzip -c $lmdir/lm_${x}_unigram.arpa.gz | \
+  gunzip -c $lmdir/lm_train_$x.arpa.gz | \
     arpa2fst --disambig-symbol=#0 \
-             --read-symbol-table=$test/words.txt - data/lang_test/G_${x}_unigram.fst
-done
-
-for x in train dev test; do
-   test=data/lang_test
-
-   gunzip -c $lmdir/lm_${x}_bigram.arpa.gz | \
-     arpa2fst --disambig-symbol=#0 \
-              --read-symbol-table=$test/words.txt - data/lang_test/G_${x}_bigram.fst
+             --read-symbol-table=$test/words.txt - data/lang_test/G_train_$x.fst
 done
 
 echo "Succeeded in formatting data."

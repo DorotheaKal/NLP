@@ -1,5 +1,5 @@
 # gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/mono/graph_bigram/words.txt ./exp/mono/final.mdl exp/mono/graph_bigram/HCLG.fst "ark,s,cs:apply-cmvn  --utt2spk=ark:./data/dev/split4/4/utt2spk scp:./data/dev/split4/4/cmvn.scp scp:./data/dev/split4/4/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark:|gzip -c > ./exp/mono/decode_dev_bigram/lat.4.gz" 
-# Started at Sat Dec 28 23:00:59 EET 2019
+# Started at Sun Dec 29 16:11:08 EET 2019
 #
 gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/mono/graph_bigram/words.txt ./exp/mono/final.mdl exp/mono/graph_bigram/HCLG.fst 'ark,s,cs:apply-cmvn  --utt2spk=ark:./data/dev/split4/4/utt2spk scp:./data/dev/split4/4/cmvn.scp scp:./data/dev/split4/4/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark:|gzip -c > ./exp/mono/decode_dev_bigram/lat.4.gz' 
 add-deltas ark:- ark:- 
@@ -88,8 +88,8 @@ m3-usctimit-ema--1833 eh s ih iy ng b ey p r w z k aa dh ay k ay d ey p r z ih s
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m3-usctimit-ema--1833 is -7.43482 over 535 frames.
 m3-usctimit-ema--1834 w ih ch iy er sh ah z l ih d uw z 
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m3-usctimit-ema--1834 is -7.01886 over 497 frames.
-LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:176) Time taken 93.2393s: real-time factor assuming 100 frames/sec is 0.595968
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:176) Time taken 83.7593s: real-time factor assuming 100 frames/sec is 0.535374
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:179) Done 35 utterances, failed for 0
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:181) Overall log-likelihood per frame is -7.44348 over 15645 frames.
-# Accounting: time=93 threads=1
-# Ended (code 0) at Sat Dec 28 23:02:32 EET 2019, elapsed time 93 seconds
+# Accounting: time=84 threads=1
+# Ended (code 0) at Sun Dec 29 16:12:32 EET 2019, elapsed time 84 seconds

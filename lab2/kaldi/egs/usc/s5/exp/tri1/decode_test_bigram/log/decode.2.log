@@ -1,5 +1,5 @@
 # gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri1/graph_bigram/words.txt ./exp/tri1/final.mdl exp/tri1/graph_bigram/HCLG.fst "ark,s,cs:apply-cmvn  --utt2spk=ark:./data/test/split4/2/utt2spk scp:./data/test/split4/2/cmvn.scp scp:./data/test/split4/2/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark:|gzip -c > ./exp/tri1/decode_test_bigram/lat.2.gz" 
-# Started at Sat Dec 28 23:21:27 EET 2019
+# Started at Sun Dec 29 16:19:44 EET 2019
 #
 gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri1/graph_bigram/words.txt ./exp/tri1/final.mdl exp/tri1/graph_bigram/HCLG.fst 'ark,s,cs:apply-cmvn  --utt2spk=ark:./data/test/split4/2/utt2spk scp:./data/test/split4/2/cmvn.scp scp:./data/test/split4/2/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark:|gzip -c > ./exp/tri1/decode_test_bigram/lat.2.gz' 
 add-deltas ark:- ark:- 
@@ -107,8 +107,8 @@ f5-usctimit-ema--88 dh iy eh l ah jh iy aa n er k aw z
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance f5-usctimit-ema--88 is -7.09196 over 379 frames.
 f5-usctimit-ema--89 ah m ao ah p ae th r uw ao g aa r d n dh 
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance f5-usctimit-ema--89 is -7.44706 over 434 frames.
-LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:176) Time taken 76.2922s: real-time factor assuming 100 frames/sec is 0.345651
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:176) Time taken 49.8564s: real-time factor assuming 100 frames/sec is 0.225881
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:179) Done 51 utterances, failed for 0
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:181) Overall log-likelihood per frame is -7.27348 over 22072 frames.
-# Accounting: time=77 threads=1
-# Ended (code 0) at Sat Dec 28 23:22:44 EET 2019, elapsed time 77 seconds
+# Accounting: time=50 threads=1
+# Ended (code 0) at Sun Dec 29 16:20:34 EET 2019, elapsed time 50 seconds

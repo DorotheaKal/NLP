@@ -1,5 +1,5 @@
 # cat ./exp/mono/decode_dev_unigram/scoring_kaldi/penalty_1.0/7.txt | compute-wer --text --mode=present ark:./exp/mono/decode_dev_unigram/scoring_kaldi/test_filt.txt ark,p:- >& ./exp/mono/decode_dev_unigram/wer_7_1.0 
-# Started at Sat Dec 28 23:00:58 EET 2019
+# Started at Sun Dec 29 16:11:08 EET 2019
 #
 # Accounting: time=0 threads=1
-# Ended (code 0) at Sat Dec 28 23:00:58 EET 2019, elapsed time 0 seconds
+# Ended (code 0) at Sun Dec 29 16:11:08 EET 2019, elapsed time 0 seconds

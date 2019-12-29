@@ -1,5 +1,5 @@
 # lattice-scale --inv-acoustic-scale=7 "ark:gunzip -c ./exp/tri1/decode_test_unigram/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- | lattice-best-path --word-symbol-table=exp/tri1/graph_unigram/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/tri1/graph_unigram/words.txt | cat > ./exp/tri1/decode_test_unigram/scoring_kaldi/penalty_1.0/7.txt 
-# Started at Sat Dec 28 23:21:15 EET 2019
+# Started at Sun Dec 29 16:19:36 EET 2019
 #
 lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- 
 lattice-best-path --word-symbol-table=exp/tri1/graph_unigram/words.txt ark:- ark,t:- 
@@ -376,5 +376,5 @@ LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utte
 m3-usctimit-ema--183 dh d ow n l ah p f er ch iy v ae ay ah b ah l z ah b ae ng f ao l p 
 LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:124) Overall cost per frame is 12.1529 = 0.37751 [graph] + 11.7754 [acoustic] over 80410 frames.
 LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:128) Done 184 lattices, failed for 0
-# Accounting: time=4 threads=1
-# Ended (code 0) at Sat Dec 28 23:21:19 EET 2019, elapsed time 4 seconds
+# Accounting: time=3 threads=1
+# Ended (code 0) at Sun Dec 29 16:19:39 EET 2019, elapsed time 3 seconds

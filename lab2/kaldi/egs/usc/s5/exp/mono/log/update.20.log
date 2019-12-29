@@ -1,5 +1,5 @@
 # gmm-est --write-occs=./exp/mono/21.occs --mix-up=676 --power=0.25 ./exp/mono/20.mdl "gmm-sum-accs - ./exp/mono/20.*.acc|" ./exp/mono/21.mdl 
-# Started at Sat Dec 28 20:54:03 EET 2019
+# Started at Sun Dec 29 15:48:02 EET 2019
 #
 gmm-est --write-occs=./exp/mono/21.occs --mix-up=676 --power=0.25 ./exp/mono/20.mdl 'gmm-sum-accs - ./exp/mono/20.*.acc|' ./exp/mono/21.mdl 
 gmm-sum-accs - ./exp/mono/20.1.acc ./exp/mono/20.2.acc ./exp/mono/20.3.acc ./exp/mono/20.4.acc 
@@ -15,5 +15,5 @@ LOG (gmm-est[5.5.586~1-83c98]:main():gmm-est.cc:113) GMM update: Overall 0.05669
 LOG (gmm-est[5.5.586~1-83c98]:main():gmm-est.cc:116) GMM update: Overall avg like per frame = -84.1985 over 647502 frames.
 LOG (gmm-est[5.5.586~1-83c98]:SplitByCount():am-diag-gmm.cc:116) Split 125 states with target = 676, power = 0.25, perturb_factor = 0.01 and min_count = 20, split #Gauss from 647 to 676
 LOG (gmm-est[5.5.586~1-83c98]:main():gmm-est.cc:146) Written model to ./exp/mono/21.mdl
-# Accounting: time=0 threads=1
-# Ended (code 0) at Sat Dec 28 20:54:03 EET 2019, elapsed time 0 seconds
+# Accounting: time=1 threads=1
+# Ended (code 0) at Sun Dec 29 15:48:03 EET 2019, elapsed time 1 seconds

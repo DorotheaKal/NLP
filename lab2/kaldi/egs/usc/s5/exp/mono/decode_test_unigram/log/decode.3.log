@@ -1,9 +1,9 @@
 # gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/mono/graph_unigram/words.txt ./exp/mono/final.mdl exp/mono/graph_unigram/HCLG.fst "ark,s,cs:apply-cmvn  --utt2spk=ark:./data/test/split4/3/utt2spk scp:./data/test/split4/3/cmvn.scp scp:./data/test/split4/3/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark:|gzip -c > ./exp/mono/decode_test_unigram/lat.3.gz" 
-# Started at Sat Dec 28 22:40:50 EET 2019
+# Started at Sun Dec 29 15:50:30 EET 2019
 #
 gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/mono/graph_unigram/words.txt ./exp/mono/final.mdl exp/mono/graph_unigram/HCLG.fst 'ark,s,cs:apply-cmvn  --utt2spk=ark:./data/test/split4/3/utt2spk scp:./data/test/split4/3/cmvn.scp scp:./data/test/split4/3/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark:|gzip -c > ./exp/mono/decode_test_unigram/lat.3.gz' 
-apply-cmvn --utt2spk=ark:./data/test/split4/3/utt2spk scp:./data/test/split4/3/cmvn.scp scp:./data/test/split4/3/feats.scp ark:- 
 add-deltas ark:- ark:- 
+apply-cmvn --utt2spk=ark:./data/test/split4/3/utt2spk scp:./data/test/split4/3/cmvn.scp scp:./data/test/split4/3/feats.scp ark:- 
 m1-usctimit-ema--100 ah p oy iy l ey aa s k ao s ay d uw w th ih k p n iy z r iy er ah z ey sh n 
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--100 is -7.62154 over 472 frames.
 m1-usctimit-ema--101 dh d ay g ow s ah s w z ih s k er jh ih ng hh ao f er z uw s aa w v l ih w er iy 
@@ -113,8 +113,8 @@ m1-usctimit-ema--98 aa jh eh k s m ey t y uw er b iy f l
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--98 is -6.92115 over 429 frames.
 m1-usctimit-ema--99 k er ao b er hh er m ay d z ih m v ao m l iy z 
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--99 is -7.21701 over 474 frames.
-LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:176) Time taken 73.443s: real-time factor assuming 100 frames/sec is 0.298974
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:176) Time taken 101.096s: real-time factor assuming 100 frames/sec is 0.411545
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:179) Done 54 utterances, failed for 0
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:181) Overall log-likelihood per frame is -7.23195 over 24565 frames.
-# Accounting: time=74 threads=1
-# Ended (code 0) at Sat Dec 28 22:42:04 EET 2019, elapsed time 74 seconds
+# Accounting: time=102 threads=1
+# Ended (code 0) at Sun Dec 29 15:52:12 EET 2019, elapsed time 102 seconds

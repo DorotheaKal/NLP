@@ -1,5 +1,5 @@
 # gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri1/graph_unigram/words.txt ./exp/tri1/final.mdl exp/tri1/graph_unigram/HCLG.fst "ark,s,cs:apply-cmvn  --utt2spk=ark:./data/dev/split4/2/utt2spk scp:./data/dev/split4/2/cmvn.scp scp:./data/dev/split4/2/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark:|gzip -c > ./exp/tri1/decode_dev_unigram/lat.2.gz" 
-# Started at Sat Dec 28 23:23:22 EET 2019
+# Started at Sun Dec 29 16:20:56 EET 2019
 #
 gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri1/graph_unigram/words.txt ./exp/tri1/final.mdl exp/tri1/graph_unigram/HCLG.fst 'ark,s,cs:apply-cmvn  --utt2spk=ark:./data/dev/split4/2/utt2spk scp:./data/dev/split4/2/cmvn.scp scp:./data/dev/split4/2/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark:|gzip -c > ./exp/tri1/decode_dev_unigram/lat.2.gz' 
 add-deltas ark:- ark:- 
@@ -95,8 +95,8 @@ f5-usctimit-ema--1751 t r z iy ae n ah dh er ah k s ay t iy n l v iy b ay s t iy
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance f5-usctimit-ema--1751 is -7.39831 over 536 frames.
 f5-usctimit-ema--1752 t s uw m ih n iy t f er b n m ah n s ih t ih ng 
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance f5-usctimit-ema--1752 is -7.73119 over 533 frames.
-LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:176) Time taken 88.6672s: real-time factor assuming 100 frames/sec is 0.433475
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:176) Time taken 53.2278s: real-time factor assuming 100 frames/sec is 0.260219
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:179) Done 45 utterances, failed for 0
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:181) Overall log-likelihood per frame is -7.35135 over 20455 frames.
-# Accounting: time=88 threads=1
-# Ended (code 0) at Sat Dec 28 23:24:50 EET 2019, elapsed time 88 seconds
+# Accounting: time=54 threads=1
+# Ended (code 0) at Sun Dec 29 16:21:50 EET 2019, elapsed time 54 seconds

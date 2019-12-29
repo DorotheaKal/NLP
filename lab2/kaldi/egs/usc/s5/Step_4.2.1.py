@@ -4,22 +4,20 @@
 # In[6]:
 
 
+
 #!/usr/bin/python3
-f = open('silence_phones.txt',"w+")
+f = open('./data/local/dict/silence_phones.txt',"w+")
 f.write("sil" + '\n')
 f.close()
 
-f = open('optional_silence.txt',"w+")
+f = open('./data/local/dict/optional_silence.txt',"w+")
 f.write("sil"+'\n')
 f.close()
 
-# rip data directory
-data_dir = '~/Desktop'
-
-nons = open('nonsilence_phones.txt',"w+")
-lex_data = open('./../../../slp_lab2_data/lexicon.txt',"r+")
-lex = open("lexicon.txt","w+")
-f = open('extra_questions.txt',"w+")
+nons = open('./data/local/dict/nonsilence_phones.txt',"w+")
+lex_data = open('./slp_lab2_data/lexicon.txt',"r+")
+lex = open("./data/local/dict/lexicon.txt","w+")
+f = open('./data/local/dict/extra_questions.txt',"w+")
 f.close()
 phones = set()
 for line in lex_data:
@@ -37,8 +35,8 @@ for phonem in phones:
 
 
 for name in ['test','dev','train']:
-    set_txt = open('../../'+name+'/text',"r")   
-    lm_txt = open('lm_'+name+'.text',"w+")
+    set_txt = open('./data/'+name+'/text',"r")   
+    lm_txt = open('./data/local/dict/lm_'+name+'.text',"w+")
     for line in set_txt:
         line = line.split("sil")
         line.insert(1,'<s> sil')

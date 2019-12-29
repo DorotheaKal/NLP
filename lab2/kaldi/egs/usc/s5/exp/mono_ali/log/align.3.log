@@ -1,8 +1,7 @@
 # compile-train-graphs --read-disambig-syms=./data/lang_test/phones/disambig.int exp/mono_ali/tree exp/mono_ali/final.mdl ./data/lang_test/L.fst "ark:utils/sym2int.pl --map-oov 1 -f 2- ./data/lang_test/words.txt ./data/train/split4/3/text|" ark:- | gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false "gmm-boost-silence --boost=1.25 1 exp/mono_ali/final.mdl - |" ark:- "ark,s,cs:apply-cmvn  --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark,t:|gzip -c >exp/mono_ali/ali.3.gz" 
-# Started at Sat Dec 28 20:58:24 EET 2019
+# Started at Sun Dec 29 15:50:13 EET 2019
 #
 compile-train-graphs --read-disambig-syms=./data/lang_test/phones/disambig.int exp/mono_ali/tree exp/mono_ali/final.mdl ./data/lang_test/L.fst 'ark:utils/sym2int.pl --map-oov 1 -f 2- ./data/lang_test/words.txt ./data/train/split4/3/text|' ark:- 
-gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false 'gmm-boost-silence --boost=1.25 1 exp/mono_ali/final.mdl - |' ark:- 'ark,s,cs:apply-cmvn  --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark,t:|gzip -c >exp/mono_ali/ali.3.gz' 
 sym2int.pl: replacing sil with 1
 sym2int.pl: replacing sil with 1
 sym2int.pl: replacing sil with 1
@@ -24,11 +23,12 @@ sym2int.pl: replacing sil with 1
 sym2int.pl: replacing sil with 1
 sym2int.pl: replacing sil with 1
 sym2int.pl: not warning for OOVs any more times
+gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false 'gmm-boost-silence --boost=1.25 1 exp/mono_ali/final.mdl - |' ark:- 'ark,s,cs:apply-cmvn  --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark,t:|gzip -c >exp/mono_ali/ali.3.gz' 
+** Replaced 708 instances of OOVs with 1
 gmm-boost-silence --boost=1.25 1 exp/mono_ali/final.mdl - 
 WARNING (gmm-boost-silence[5.5.586~1-83c98]:main():gmm-boost-silence.cc:82) The pdfs for the silence phones may be shared by other phones (note: this probably does not matter.)
 LOG (gmm-boost-silence[5.5.586~1-83c98]:main():gmm-boost-silence.cc:93) Boosted weights for 5 pdfs, by factor of 1.25
 LOG (gmm-boost-silence[5.5.586~1-83c98]:main():gmm-boost-silence.cc:103) Wrote model to -
-** Replaced 708 instances of OOVs with 1
 add-deltas ark:- ark:- 
 apply-cmvn --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- 
 LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1000
@@ -388,10 +388,10 @@ LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-us
 LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--996
 LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--997
 LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--998
-LOG (compile-train-graphs[5.5.586~1-83c98]:main():compile-train-graphs.cc:147) compile-train-graphs: succeeded for 354 graphs, failed for 0
 LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--999
+LOG (compile-train-graphs[5.5.586~1-83c98]:main():compile-train-graphs.cc:147) compile-train-graphs: succeeded for 354 graphs, failed for 0
 LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:135) Overall log-likelihood per frame is -81.7407 over 161764 frames.
 LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:137) Retried 3 out of 354 utterances.
 LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:139) Done 354, errors on 0
-# Accounting: time=5 threads=1
-# Ended (code 0) at Sat Dec 28 20:58:29 EET 2019, elapsed time 5 seconds
+# Accounting: time=13 threads=1
+# Ended (code 0) at Sun Dec 29 15:50:26 EET 2019, elapsed time 13 seconds

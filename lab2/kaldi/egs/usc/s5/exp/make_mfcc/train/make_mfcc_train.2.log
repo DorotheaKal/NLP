@@ -1,8 +1,8 @@
-# compute-mfcc-feats --write-utt2dur=ark,t:exp/make_mfcc/train/utt2dur.2 --verbose=2 --config=./conf/mfcc.conf scp,p:exp/make_mfcc/train/wav_train.2.scp ark:- | copy-feats --write-num-frames=ark,t:exp/make_mfcc/train/utt2num_frames.2 --compress=true ark:- ark,scp:/home/dorotheakal/kaldi/egs/usc/s5/mfcc_train/raw_mfcc_train.2.ark,/home/dorotheakal/kaldi/egs/usc/s5/mfcc_train/raw_mfcc_train.2.scp 
-# Started at Sat Dec 28 20:47:06 EET 2019
+# compute-mfcc-feats --write-utt2dur=ark,t:exp/make_mfcc/train/utt2dur.2 --verbose=2 --config=./conf/mfcc.conf scp,p:exp/make_mfcc/train/wav_train.2.scp ark:- | copy-feats --write-num-frames=ark,t:exp/make_mfcc/train/utt2num_frames.2 --compress=true ark:- ark,scp:/home/dorotheakal/kaldi/egs/usc/s6/mfcc_train/raw_mfcc_train.2.ark,/home/dorotheakal/kaldi/egs/usc/s6/mfcc_train/raw_mfcc_train.2.scp 
+# Started at Sun Dec 29 15:13:04 EET 2019
 #
-copy-feats --write-num-frames=ark,t:exp/make_mfcc/train/utt2num_frames.2 --compress=true ark:- ark,scp:/home/dorotheakal/kaldi/egs/usc/s5/mfcc_train/raw_mfcc_train.2.ark,/home/dorotheakal/kaldi/egs/usc/s5/mfcc_train/raw_mfcc_train.2.scp 
 compute-mfcc-feats --write-utt2dur=ark,t:exp/make_mfcc/train/utt2dur.2 --verbose=2 --config=./conf/mfcc.conf scp,p:exp/make_mfcc/train/wav_train.2.scp ark:- 
+copy-feats --write-num-frames=ark,t:exp/make_mfcc/train/utt2num_frames.2 --compress=true ark:- ark,scp:/home/dorotheakal/kaldi/egs/usc/s6/mfcc_train/raw_mfcc_train.2.ark,/home/dorotheakal/kaldi/egs/usc/s6/mfcc_train/raw_mfcc_train.2.scp 
 VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f5-usctimit-ema--551
 VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f5-usctimit-ema--552
 VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key f5-usctimit-ema--553
@@ -408,5 +408,5 @@ VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) P
 VLOG[2] (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:182) Processed features for key m1-usctimit-ema--1004
 LOG (compute-mfcc-feats[5.5.586~1-83c98]:main():compute-mfcc-feats.cc:185)  Done 367 out of 367 utterances.
 LOG (copy-feats[5.5.586~1-83c98]:main():copy-feats.cc:143) Copied 367 feature matrices.
-# Accounting: time=14 threads=1
-# Ended (code 0) at Sat Dec 28 20:47:20 EET 2019, elapsed time 14 seconds
+# Accounting: time=28 threads=1
+# Ended (code 0) at Sun Dec 29 15:13:32 EET 2019, elapsed time 28 seconds

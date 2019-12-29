@@ -1,2 +1,2 @@
-compute-cmvn-stats --spk2utt=ark:data/dev/spk2utt scp:data/dev/feats.scp ark,scp:/home/dorotheakal/kaldi/egs/usc/s5/mfcc_stats/cmvn_dev.ark,/home/dorotheakal/kaldi/egs/usc/s5/mfcc_stats/cmvn_dev.scp 
+compute-cmvn-stats --spk2utt=ark:data/dev/spk2utt scp:data/dev/feats.scp ark,scp:/home/dorotheakal/kaldi/egs/usc/s6/mfcc_stats/cmvn_dev.ark,/home/dorotheakal/kaldi/egs/usc/s6/mfcc_stats/cmvn_dev.scp 
 LOG (compute-cmvn-stats[5.5.586~1-83c98]:main():compute-cmvn-stats.cc:171) Done accumulating CMVN stats for 183 utterances; 0 had errors.

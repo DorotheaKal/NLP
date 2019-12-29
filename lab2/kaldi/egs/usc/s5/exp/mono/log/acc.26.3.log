@@ -1,9 +1,9 @@
 # gmm-acc-stats-ali ./exp/mono/26.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark:gunzip -c ./exp/mono/ali.3.gz|" ./exp/mono/26.3.acc 
-# Started at Sat Dec 28 20:54:22 EET 2019
+# Started at Sun Dec 29 15:48:42 EET 2019
 #
 gmm-acc-stats-ali ./exp/mono/26.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark:gunzip -c ./exp/mono/ali.3.gz|' ./exp/mono/26.3.acc 
-apply-cmvn --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- 
 add-deltas ark:- ark:- 
+apply-cmvn --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- 
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:105) Processed 50 utterances; for utterance m1-usctimit-ema--1049 avg. like is -79.7254 over 395 frames.
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:105) Processed 100 utterances; for utterance m1-usctimit-ema--1099 avg. like is -80.4846 over 418 frames.
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:105) Processed 150 utterances; for utterance m1-usctimit-ema--1149 avg. like is -81.6362 over 614 frames.
@@ -15,5 +15,5 @@ LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:105) Process
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:112) Done 354 files, 0 with errors.
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:115) Overall avg like per frame (Gaussian only) = -81.683 over 161764 frames.
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:123) Written accs.
-# Accounting: time=1 threads=1
-# Ended (code 0) at Sat Dec 28 20:54:23 EET 2019, elapsed time 1 seconds
+# Accounting: time=3 threads=1
+# Ended (code 0) at Sun Dec 29 15:48:45 EET 2019, elapsed time 3 seconds

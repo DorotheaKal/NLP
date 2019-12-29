@@ -1,9 +1,9 @@
 # gmm-acc-stats-ali ./exp/tri1/10.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark,s,cs:gunzip -c ./exp/tri1/ali.3.gz|" ./exp/tri1/10.3.acc 
-# Started at Sat Dec 28 23:17:19 EET 2019
+# Started at Sun Dec 29 16:17:10 EET 2019
 #
 gmm-acc-stats-ali ./exp/tri1/10.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark,s,cs:gunzip -c ./exp/tri1/ali.3.gz|' ./exp/tri1/10.3.acc 
-apply-cmvn --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- 
 add-deltas ark:- ark:- 
+apply-cmvn --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- 
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:105) Processed 50 utterances; for utterance m1-usctimit-ema--1049 avg. like is -77.992 over 395 frames.
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:105) Processed 100 utterances; for utterance m1-usctimit-ema--1099 avg. like is -78.4888 over 418 frames.
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:105) Processed 150 utterances; for utterance m1-usctimit-ema--1149 avg. like is -80.1568 over 614 frames.
@@ -16,4 +16,4 @@ LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:112) Done 35
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:115) Overall avg like per frame (Gaussian only) = -80.0693 over 161764 frames.
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:123) Written accs.
 # Accounting: time=2 threads=1
-# Ended (code 0) at Sat Dec 28 23:17:21 EET 2019, elapsed time 2 seconds
+# Ended (code 0) at Sun Dec 29 16:17:12 EET 2019, elapsed time 2 seconds

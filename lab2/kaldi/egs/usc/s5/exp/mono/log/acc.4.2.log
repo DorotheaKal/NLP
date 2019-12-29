@@ -1,9 +1,9 @@
 # gmm-acc-stats-ali ./exp/mono/4.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:./data/train/split4/2/utt2spk scp:./data/train/split4/2/cmvn.scp scp:./data/train/split4/2/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark:gunzip -c ./exp/mono/ali.2.gz|" ./exp/mono/4.2.acc 
-# Started at Sat Dec 28 20:52:40 EET 2019
+# Started at Sun Dec 29 15:45:13 EET 2019
 #
 gmm-acc-stats-ali ./exp/mono/4.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:./data/train/split4/2/utt2spk scp:./data/train/split4/2/cmvn.scp scp:./data/train/split4/2/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark:gunzip -c ./exp/mono/ali.2.gz|' ./exp/mono/4.2.acc 
-add-deltas ark:- ark:- 
 apply-cmvn --utt2spk=ark:./data/train/split4/2/utt2spk scp:./data/train/split4/2/cmvn.scp scp:./data/train/split4/2/feats.scp ark:- 
+add-deltas ark:- ark:- 
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:105) Processed 50 utterances; for utterance f5-usctimit-ema--598 avg. like is -89.3851 over 438 frames.
 WARNING (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:79) No alignment for utterance f5-usctimit-ema--607
 WARNING (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:79) No alignment for utterance f5-usctimit-ema--616
@@ -18,5 +18,5 @@ LOG (apply-cmvn[5.5.586~1-83c98]:main():apply-cmvn.cc:162) Applied cepstral mean
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:112) Done 361 files, 3 with errors.
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:115) Overall avg like per frame (Gaussian only) = -90.1111 over 160190 frames.
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:123) Written accs.
-# Accounting: time=1 threads=1
-# Ended (code 0) at Sat Dec 28 20:52:41 EET 2019, elapsed time 1 seconds
+# Accounting: time=2 threads=1
+# Ended (code 0) at Sun Dec 29 15:45:15 EET 2019, elapsed time 2 seconds

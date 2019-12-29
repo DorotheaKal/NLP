@@ -1,5 +1,5 @@
 # gmm-est --mix-up=7120 --power=0.25 --write-occs=./exp/tri1/18.occs ./exp/tri1/17.mdl "gmm-sum-accs - ./exp/tri1/17.*.acc |" ./exp/tri1/18.mdl 
-# Started at Sat Dec 28 23:17:44 EET 2019
+# Started at Sun Dec 29 16:17:24 EET 2019
 #
 gmm-est --mix-up=7120 --power=0.25 --write-occs=./exp/tri1/18.occs ./exp/tri1/17.mdl 'gmm-sum-accs - ./exp/tri1/17.*.acc |' ./exp/tri1/18.mdl 
 gmm-sum-accs - ./exp/tri1/17.1.acc ./exp/tri1/17.2.acc ./exp/tri1/17.3.acc ./exp/tri1/17.4.acc 
@@ -17,4 +17,4 @@ LOG (gmm-est[5.5.586~1-83c98]:main():gmm-est.cc:116) GMM update: Overall avg lik
 LOG (gmm-est[5.5.586~1-83c98]:SplitByCount():am-diag-gmm.cc:116) Split 1056 states with target = 7120, power = 0.25, perturb_factor = 0.01 and min_count = 20, split #Gauss from 6799 to 7120
 LOG (gmm-est[5.5.586~1-83c98]:main():gmm-est.cc:146) Written model to ./exp/tri1/18.mdl
 # Accounting: time=1 threads=1
-# Ended (code 0) at Sat Dec 28 23:17:45 EET 2019, elapsed time 1 seconds
+# Ended (code 0) at Sun Dec 29 16:17:25 EET 2019, elapsed time 1 seconds

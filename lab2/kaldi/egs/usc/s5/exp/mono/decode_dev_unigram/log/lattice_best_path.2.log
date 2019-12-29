@@ -1,8 +1,8 @@
 # ali-to-phones --per-frame=true ./exp/mono/decode_dev_unigram/../final.mdl "ark:gunzip -c ./exp/mono/decode_dev_unigram/ali_tmp.2.gz|" ark,t:- | paste /dev/stdin <( gunzip -c ./exp/mono/decode_dev_unigram/depth_tmp.2.gz ) | perl -ane '$half=@F/2;for($i=1;$i<$half;$i++){$j=$i+$half;$count{$F[$i]." ".$F[$j]}++;}
   END{for $k (sort keys %count){print "$k $count{$k}\n"}}' | gzip -c > ./exp/mono/decode_dev_unigram/depth_stats_tmp.2.gz 
-# Started at Sat Dec 28 22:56:22 EET 2019
+# Started at Sun Dec 29 16:08:30 EET 2019
 #
 ali-to-phones --per-frame=true ./exp/mono/decode_dev_unigram/../final.mdl 'ark:gunzip -c ./exp/mono/decode_dev_unigram/ali_tmp.2.gz|' ark,t:- 
 LOG (ali-to-phones[5.5.586~1-83c98]:main():ali-to-phones.cc:134) Done 45 utterances.
 # Accounting: time=0 threads=1
-# Ended (code 0) at Sat Dec 28 22:56:22 EET 2019, elapsed time 0 seconds
+# Ended (code 0) at Sun Dec 29 16:08:30 EET 2019, elapsed time 0 seconds

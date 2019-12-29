@@ -1,5 +1,5 @@
 # gunzip -c ./exp/tri1/decode_dev_bigram/depth_stats_tmp.*.gz | steps/diagnostic/analyze_lattice_depth_stats.py exp/tri1/graph_bigram 
-# Started at Sat Dec 28 23:26:54 EET 2019
+# Started at Sun Dec 29 16:23:12 EET 2019
 #
 The total amount of data analyzed assuming 100 frames per second is 0.2 hours
 Overall, lattice depth (10,50,90-percentile)=(3,14,77) and mean=35.9
@@ -36,4 +36,4 @@ Phone w_S accounts for 0.7% of frames, with lattice depth (10,50,90-percentile)=
 Phone jh_S accounts for 0.7% of frames, with lattice depth (10,50,90-percentile)=(6,20,129) and mean=65.0
 Phone g_S accounts for 0.5% of frames, with lattice depth (10,50,90-percentile)=(4,26,151) and mean=55.4
 # Accounting: time=0 threads=1
-# Ended (code 0) at Sat Dec 28 23:26:54 EET 2019, elapsed time 0 seconds
+# Ended (code 0) at Sun Dec 29 16:23:12 EET 2019, elapsed time 0 seconds

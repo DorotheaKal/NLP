@@ -1,5 +1,5 @@
 # gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri1/graph_bigram/words.txt ./exp/tri1/final.mdl exp/tri1/graph_bigram/HCLG.fst "ark,s,cs:apply-cmvn  --utt2spk=ark:./data/dev/split4/2/utt2spk scp:./data/dev/split4/2/cmvn.scp scp:./data/dev/split4/2/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark:|gzip -c > ./exp/tri1/decode_dev_bigram/lat.2.gz" 
-# Started at Sat Dec 28 23:25:32 EET 2019
+# Started at Sun Dec 29 16:22:16 EET 2019
 #
 gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri1/graph_bigram/words.txt ./exp/tri1/final.mdl exp/tri1/graph_bigram/HCLG.fst 'ark,s,cs:apply-cmvn  --utt2spk=ark:./data/dev/split4/2/utt2spk scp:./data/dev/split4/2/cmvn.scp scp:./data/dev/split4/2/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark:|gzip -c > ./exp/tri1/decode_dev_bigram/lat.2.gz' 
 apply-cmvn --utt2spk=ark:./data/dev/split4/2/utt2spk scp:./data/dev/split4/2/cmvn.scp scp:./data/dev/split4/2/feats.scp ark:- 
@@ -95,8 +95,8 @@ f5-usctimit-ema--1751 t r z iy ae n ah dh er ah k s ay t iy n l v iy b ay s t iy
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance f5-usctimit-ema--1751 is -7.39831 over 536 frames.
 f5-usctimit-ema--1752 t s uw m ih n iy t f er b n m ah n s ih t ih ng 
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance f5-usctimit-ema--1752 is -7.73119 over 533 frames.
-LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:176) Time taken 77.8815s: real-time factor assuming 100 frames/sec is 0.380746
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:176) Time taken 53.7541s: real-time factor assuming 100 frames/sec is 0.262792
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:179) Done 45 utterances, failed for 0
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:181) Overall log-likelihood per frame is -7.35135 over 20455 frames.
-# Accounting: time=78 threads=1
-# Ended (code 0) at Sat Dec 28 23:26:50 EET 2019, elapsed time 78 seconds
+# Accounting: time=54 threads=1
+# Ended (code 0) at Sun Dec 29 16:23:10 EET 2019, elapsed time 54 seconds

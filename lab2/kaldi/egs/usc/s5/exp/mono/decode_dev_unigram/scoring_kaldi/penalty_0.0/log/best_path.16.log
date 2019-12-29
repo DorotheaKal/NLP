@@ -1,9 +1,9 @@
 # lattice-scale --inv-acoustic-scale=16 "ark:gunzip -c ./exp/mono/decode_dev_unigram/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- | lattice-best-path --word-symbol-table=exp/mono/graph_unigram/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/mono/graph_unigram/words.txt | cat > ./exp/mono/decode_dev_unigram/scoring_kaldi/penalty_0.0/16.txt 
-# Started at Sat Dec 28 22:57:33 EET 2019
+# Started at Sun Dec 29 16:09:03 EET 2019
 #
-lattice-scale --inv-acoustic-scale=16 'ark:gunzip -c ./exp/mono/decode_dev_unigram/lat.*.gz|' ark:- 
-lattice-best-path --word-symbol-table=exp/mono/graph_unigram/words.txt ark:- ark,t:- 
 lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- 
+lattice-best-path --word-symbol-table=exp/mono/graph_unigram/words.txt ark:- ark,t:- 
+lattice-scale --inv-acoustic-scale=16 'ark:gunzip -c ./exp/mono/decode_dev_unigram/lat.*.gz|' ark:- 
 LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--1652, best cost 60.1792 + 1512.2 = 1572.38 over 290 frames.
 f1-usctimit-ema--1652 aa m iy oy s l ah n er z 
 LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance f1-usctimit-ema--1653, best cost 86.6152 + 2695.33 = 2781.94 over 499 frames.
@@ -366,13 +366,13 @@ LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utte
 m3-usctimit-ema--1831 r aa v ey ae g er ey n uw aa sh r d er ae n iy s r k ay f r z er 
 LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--1832, best cost 122.474 + 3000.35 = 3122.82 over 560 frames.
 m3-usctimit-ema--1832 k aa f iy z er n ah s iy d ah m l ih k s l r s ah n z 
-LOG (lattice-scale[5.5.586~1-83c98]:main():lattice-scale.cc:107) Done 183 lattices.
 LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--1833, best cost 117.06 + 2898.13 = 3015.19 over 535 frames.
 m3-usctimit-ema--1833 eh s iy b ey r w z k aa dh ay k ay d ey p r z ih sh 
+LOG (lattice-scale[5.5.586~1-83c98]:main():lattice-scale.cc:107) Done 183 lattices.
 LOG (lattice-add-penalty[5.5.586~1-83c98]:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 183 lattices.
 LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:99) For utterance m3-usctimit-ema--1834, best cost 67.2044 + 2566.43 = 2633.64 over 497 frames.
 m3-usctimit-ema--1834 w ch iy er sh ah l ih d uw z 
 LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:124) Overall cost per frame is 5.52586 = 0.18878 [graph] + 5.33708 [acoustic] over 81821 frames.
 LOG (lattice-best-path[5.5.586~1-83c98]:main():lattice-best-path.cc:128) Done 183 lattices, failed for 0
-# Accounting: time=26 threads=1
-# Ended (code 0) at Sat Dec 28 22:57:59 EET 2019, elapsed time 26 seconds
+# Accounting: time=13 threads=1
+# Ended (code 0) at Sun Dec 29 16:09:16 EET 2019, elapsed time 13 seconds

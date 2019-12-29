@@ -1,5 +1,5 @@
 # gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri1/graph_bigram/words.txt ./exp/tri1/final.mdl exp/tri1/graph_bigram/HCLG.fst "ark,s,cs:apply-cmvn  --utt2spk=ark:./data/test/split4/1/utt2spk scp:./data/test/split4/1/cmvn.scp scp:./data/test/split4/1/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark:|gzip -c > ./exp/tri1/decode_test_bigram/lat.1.gz" 
-# Started at Sat Dec 28 23:21:27 EET 2019
+# Started at Sun Dec 29 16:19:44 EET 2019
 #
 gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri1/graph_bigram/words.txt ./exp/tri1/final.mdl exp/tri1/graph_bigram/HCLG.fst 'ark,s,cs:apply-cmvn  --utt2spk=ark:./data/test/split4/1/utt2spk scp:./data/test/split4/1/cmvn.scp scp:./data/test/split4/1/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark:|gzip -c > ./exp/tri1/decode_test_bigram/lat.1.gz' 
 add-deltas ark:- ark:- 
@@ -83,8 +83,8 @@ f1-usctimit-ema--8 d ih s eh m b r ah n t eh n iy w er iy er t aa r d ay s m aa 
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance f1-usctimit-ema--8 is -7.13838 over 527 frames.
 f1-usctimit-ema--9 ih k l ah m s iy k aa s t ah m er s p ih l t s ah m ah k s p eh n s ih p er f iy m 
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance f1-usctimit-ema--9 is -7.12402 over 515 frames.
-LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:176) Time taken 61.3047s: real-time factor assuming 100 frames/sec is 0.354958
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:176) Time taken 41.7775s: real-time factor assuming 100 frames/sec is 0.241894
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:179) Done 39 utterances, failed for 0
 LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:181) Overall log-likelihood per frame is -7.11006 over 17271 frames.
-# Accounting: time=62 threads=1
-# Ended (code 0) at Sat Dec 28 23:22:29 EET 2019, elapsed time 62 seconds
+# Accounting: time=42 threads=1
+# Ended (code 0) at Sun Dec 29 16:20:26 EET 2019, elapsed time 42 seconds

@@ -5,9 +5,19 @@ import os
 
 
 # Soft links
-os.system('ln -s  ../wsj/s5/steps/ steps')
-os.system('ln -s  ../wsj/s5/utils/ utils')
-os.system('ln -s ../wsj/s5/steps/score_kaldi.sh  ./data/local/score_kaldi.sh')
+os.system('ln -s  ../../wsj/s5/steps/ steps')
+os.system('ln -s  ../../wsj/s5/utils/ utils')
+subprocess.call(['mkdir','local'])
+os.system('cd ./local')
+os.system(' ln -s ../../../wsj/s5/steps/score_kaldi.sh score.sh')
+os.system('cd ../')
+#subprocess.call(["mv", "./local/score_kaldi.sh", "./local/score.sh"])
+# Dir conf
+subprocess.call(['mkdir','conf'])
+os.system('cp ./lab2_help_scripts/mfcc.conf ./conf/mfcc.conf')
+# Copy path.sh and cmd.sh
+os.system('cp ./../../wsj/s5/path.sh ./path.sh')
+os.system('cp ./../../wsj/s5/cmd.sh ./cmd.sh')
 
 
 def make_phonems(sentence,phonems):

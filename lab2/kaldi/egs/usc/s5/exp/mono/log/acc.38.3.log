@@ -1,5 +1,5 @@
 # gmm-acc-stats-ali ./exp/mono/38.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark:gunzip -c ./exp/mono/ali.3.gz|" ./exp/mono/38.3.acc 
-# Started at Sat Dec 28 20:55:12 EET 2019
+# Started at Sun Dec 29 15:50:07 EET 2019
 #
 gmm-acc-stats-ali ./exp/mono/38.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark:gunzip -c ./exp/mono/ali.3.gz|' ./exp/mono/38.3.acc 
 apply-cmvn --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- 
@@ -15,5 +15,5 @@ LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:105) Process
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:112) Done 354 files, 0 with errors.
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:115) Overall avg like per frame (Gaussian only) = -80.8334 over 161764 frames.
 LOG (gmm-acc-stats-ali[5.5.586~1-83c98]:main():gmm-acc-stats-ali.cc:123) Written accs.
-# Accounting: time=1 threads=1
-# Ended (code 0) at Sat Dec 28 20:55:13 EET 2019, elapsed time 1 seconds
+# Accounting: time=2 threads=1
+# Ended (code 0) at Sun Dec 29 15:50:09 EET 2019, elapsed time 2 seconds
