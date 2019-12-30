@@ -1,0 +1,715 @@
+# gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=6 --retry-beam=40 --careful=false "gmm-boost-silence --boost=1.25 1 ./exp/mono/1.mdl - |" "ark:gunzip -c ./exp/mono/fsts.3.gz|" "ark,s,cs:apply-cmvn  --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark,t:|gzip -c >./exp/mono/ali.3.gz" 
+# Started at Mon Dec 30 19:33:12 EET 2019
+#
+gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=6 --retry-beam=40 --careful=false 'gmm-boost-silence --boost=1.25 1 ./exp/mono/1.mdl - |' 'ark:gunzip -c ./exp/mono/fsts.3.gz|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark,t:|gzip -c >./exp/mono/ali.3.gz' 
+gmm-boost-silence --boost=1.25 1 ./exp/mono/1.mdl - 
+WARNING (gmm-boost-silence[5.5.586~1-83c98]:main():gmm-boost-silence.cc:82) The pdfs for the silence phones may be shared by other phones (note: this probably does not matter.)
+LOG (gmm-boost-silence[5.5.586~1-83c98]:main():gmm-boost-silence.cc:93) Boosted weights for 5 pdfs, by factor of 1.25
+LOG (gmm-boost-silence[5.5.586~1-83c98]:main():gmm-boost-silence.cc:103) Wrote model to -
+add-deltas ark:- ark:- 
+apply-cmvn --utt2spk=ark:./data/train/split4/3/utt2spk scp:./data/train/split4/3/cmvn.scp scp:./data/train/split4/3/feats.scp ark:- 
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1000
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1000 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1001
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1001 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1002
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1002 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1003
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1003 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1004
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1004 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1005
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1005 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1006
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1006 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1007
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1007 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1008
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1008 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1009
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1009 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1010
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1010 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1011
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1011 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1012
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1012 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1013
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1013 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1014
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1014 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1015
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1015 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1016
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1016 with beam 40
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:627) Did not successfully decode file m1-usctimit-ema--1016, len = 552
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1017
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1017 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1018
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1018 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1019
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1019 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1020
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1020 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1021
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1021 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1022
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1022 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1023
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1023 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1024
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1024 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1025
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1025 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1026
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1026 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1027
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1027 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1028
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1028 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1029
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1029 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1030
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1030 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1031
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1031 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1032
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1032 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1033
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1033 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1034
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1034 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1035
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1035 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1036
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1036 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1037
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1037 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1038
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1038 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1039
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1039 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1040
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1040 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1041
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1041 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1042
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1042 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1043
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1043 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1044
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1044 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1045
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1045 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1046
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1047
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1047 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1048
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1048 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1049
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1049 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1050
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1050 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1051
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1051 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1052
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1052 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1053
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1053 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1054
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1054 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1055
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1055 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1056
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1056 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1057
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1057 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1058
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1058 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1059
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1059 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1060
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1061
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1061 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1062
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1062 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1063
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1063 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1064
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1064 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1065
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1065 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1066
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1066 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1067
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1067 with beam 40
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:627) Did not successfully decode file m1-usctimit-ema--1067, len = 418
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1068
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1068 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1069
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1069 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1070
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1070 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1071
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1071 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1072
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1072 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1073
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1073 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1074
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1074 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1075
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1075 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1076
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1076 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1077
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1077 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1078
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1078 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1079
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1079 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1080
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1080 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1081
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1081 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1082
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1082 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1083
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1083 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1084
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1085
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1085 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1086
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1086 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1087
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1087 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1088
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1088 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1089
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1090
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1090 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1091
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1091 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1092
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1092 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1093
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1093 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1094
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1095
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1096
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1097
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1098
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1098 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1099
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1099 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1100
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1100 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1101
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1101 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1102
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1103
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1103 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1104
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1104 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1105
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1105 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1106
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1106 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1107
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1107 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1108
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1108 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1109
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1109 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1110
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1111
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1111 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1112
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1112 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1113
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1114
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1114 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1115
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1115 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1116
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1116 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1117
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1117 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1118
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1118 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1119
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1119 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1120
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1120 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1121
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1121 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1122
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1122 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1123
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1123 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1124
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1124 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1125
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1125 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1126
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1126 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1127
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1127 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1128
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1128 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1129
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1129 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1130
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1130 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1131
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1131 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1132
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1132 with beam 40
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:627) Did not successfully decode file m1-usctimit-ema--1132, len = 547
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1133
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1133 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1134
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1134 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1135
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1135 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1136
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1136 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1137
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1137 with beam 40
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:627) Did not successfully decode file m1-usctimit-ema--1137, len = 606
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1138
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1138 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1139
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1139 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1140
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1140 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1141
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1141 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1142
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1142 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1143
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1143 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1144
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1144 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1145
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1145 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1146
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1146 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1147
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1147 with beam 40
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:627) Did not successfully decode file m1-usctimit-ema--1147, len = 592
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1148
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1148 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1149
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1149 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1150
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1150 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1151
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1151 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1152
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1152 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1153
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1153 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1154
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1154 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1155
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1155 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1156
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1156 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1157
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1157 with beam 40
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:627) Did not successfully decode file m1-usctimit-ema--1157, len = 536
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1158
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1158 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1159
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1159 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1160
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1160 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1161
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1161 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1162
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1162 with beam 40
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:627) Did not successfully decode file m1-usctimit-ema--1162, len = 715
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1163
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1163 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1164
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1164 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1165
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1165 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1166
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1166 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1167
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1167 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1168
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1168 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1169
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1169 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1170
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1170 with beam 40
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:627) Did not successfully decode file m1-usctimit-ema--1170, len = 577
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1171
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1171 with beam 40
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:627) Did not successfully decode file m1-usctimit-ema--1171, len = 688
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1172
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1172 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1173
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1173 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1174
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1174 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1175
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1175 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1176
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1176 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1177
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1177 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1178
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1178 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1179
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1179 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1180
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1180 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1181
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1181 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1182
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1182 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1183
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1183 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1184
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1184 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1185
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1185 with beam 40
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:627) Did not successfully decode file m1-usctimit-ema--1185, len = 582
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1186
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1186 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1187
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1188
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1188 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1189
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1189 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1190
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1190 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1191
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1191 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1192
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1192 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1193
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1193 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1194
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1194 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1195
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1195 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1196
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1196 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1197
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1197 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1198
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1198 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1199
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1199 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1200
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1200 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1201
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1201 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1202
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1202 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1203
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1203 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1204
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1204 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1205
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1205 with beam 40
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:627) Did not successfully decode file m1-usctimit-ema--1205, len = 586
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1206
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1206 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1207
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1207 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1208
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1208 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1209
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1209 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1210
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1210 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1211
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1211 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1212
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1212 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1213
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1213 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1214
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1214 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1215
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1215 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1216
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1216 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1217
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1217 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1218
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1218 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1219
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1219 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1220
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1220 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1221
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1221 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1222
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1222 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1223
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1223 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1224
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1225
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1226
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1226 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1227
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1227 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1228
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1228 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1229
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1229 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1230
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1230 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1231
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1232
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1233
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1233 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1234
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1234 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1235
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1235 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1236
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1236 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1237
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1237 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1238
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1238 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1239
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1239 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1240
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1240 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1241
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1242
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1242 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1243
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1243 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1244
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1244 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1245
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1245 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1246
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1246 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1247
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1247 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1248
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1248 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1249
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1249 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1250
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1250 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1251
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1251 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1252
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1252 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1253
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1253 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1254
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1254 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1255
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1255 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1256
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1257
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1257 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1258
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1258 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1259
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1259 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1260
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1260 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1261
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1261 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1262
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1262 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1263
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1263 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1264
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1264 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1265
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1265 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--1266
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--1266 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--913
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--914
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--914 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--915
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--915 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--916
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--916 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--917
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--917 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--918
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--919
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--919 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--920
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--920 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--921
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--921 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--922
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--922 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--923
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--923 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--924
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--924 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--925
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--926
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--926 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--927
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--927 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--928
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--928 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--929
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--929 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--930
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--930 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--931
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--931 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--932
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--932 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--933
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--933 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--934
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--934 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--935
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--935 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--936
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--936 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--937
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--937 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--938
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--938 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--939
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--939 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--940
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--940 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--941
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--941 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--942
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--942 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--943
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--943 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--944
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--944 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--945
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--945 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--946
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--946 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--947
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--947 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--948
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--948 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--949
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--949 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--950
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--950 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--951
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--951 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--952
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--952 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--953
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--953 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--954
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--954 with beam 40
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:627) Did not successfully decode file m1-usctimit-ema--954, len = 570
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--955
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--955 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--956
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--956 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--957
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--957 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--958
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--958 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--959
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--959 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--960
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--960 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--961
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--961 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--962
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--962 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--963
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--963 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--964
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--964 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--965
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--965 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--966
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--966 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--967
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--967 with beam 40
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:627) Did not successfully decode file m1-usctimit-ema--967, len = 477
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--968
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--968 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--969
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--969 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--970
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--970 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--971
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--971 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--972
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--972 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--973
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--973 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--974
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--974 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--975
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--975 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--976
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--977
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--977 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--978
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--978 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--979
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--980
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--980 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--981
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--981 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--982
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--982 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--983
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--983 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--984
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--984 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--985
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--985 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--986
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--986 with beam 40
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:627) Did not successfully decode file m1-usctimit-ema--986, len = 555
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--987
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--987 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--988
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--988 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--989
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--989 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--990
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--990 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--991
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--991 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--992
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--992 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--993
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--993 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--994
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--994 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--995
+LOG (apply-cmvn[5.5.586~1-83c98]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 354 utterances, errors on 0
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--995 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--996
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--996 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--997
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--997 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--998
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--998 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:127) m1-usctimit-ema--999
+WARNING (gmm-align-compiled[5.5.586~1-83c98]:AlignUtteranceWrapper():decoder-wrappers.cc:618) Retrying utterance m1-usctimit-ema--999 with beam 40
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:135) Overall log-likelihood per frame is -97.7665 over 153763 frames.
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:137) Retried 331 out of 354 utterances.
+LOG (gmm-align-compiled[5.5.586~1-83c98]:main():gmm-align-compiled.cc:139) Done 340, errors on 14
+# Accounting: time=53 threads=1
+# Ended (code 0) at Mon Dec 30 19:34:05 EET 2019, elapsed time 53 seconds

@@ -1,0 +1,106 @@
+# gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri1/graph_unigram/words.txt ./exp/tri1/final.mdl exp/tri1/graph_unigram/HCLG.fst "ark,s,cs:apply-cmvn  --utt2spk=ark:./data/dev/split4/3/utt2spk scp:./data/dev/split4/3/cmvn.scp scp:./data/dev/split4/3/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark:|gzip -c > ./exp/tri1/decode_dev_unigram/lat.3.gz" 
+# Started at Mon Dec 30 20:07:39 EET 2019
+#
+gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri1/graph_unigram/words.txt ./exp/tri1/final.mdl exp/tri1/graph_unigram/HCLG.fst 'ark,s,cs:apply-cmvn  --utt2spk=ark:./data/dev/split4/3/utt2spk scp:./data/dev/split4/3/cmvn.scp scp:./data/dev/split4/3/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark:|gzip -c > ./exp/tri1/decode_dev_unigram/lat.3.gz' 
+apply-cmvn --utt2spk=ark:./data/dev/split4/3/utt2spk scp:./data/dev/split4/3/cmvn.scp scp:./data/dev/split4/3/feats.scp ark:- 
+add-deltas ark:- ark:- 
+m1-usctimit-ema--1753 sil w ay y eh l er w er iy r f er s ih l iy ay d ah m z 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1753 is -7.08743 over 381 frames.
+m1-usctimit-ema--1754 w l r aa b eh n w eh r y eh l l ih l iy g 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1754 is -6.72894 over 306 frames.
+m1-usctimit-ema--1755 sil er z ih z ih g z ae m r v y uw ah b r iy f ao r m ih l ow 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1755 is -7.13892 over 456 frames.
+m1-usctimit-ema--1756 sil eh n iy k ah k er b iy ih sh ah n t w l b iy k r ey t l iy ih p r iy sh iy ey d n 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1756 is -7.34833 over 421 frames.
+m1-usctimit-ema--1757 sil iy w ah s t ih k s p l s ah t l iy d ih l iy d f ay l z 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1757 is -7.24091 over 356 frames.
+m1-usctimit-ema--1758 dh iy b eh s w ey t uw l er n z ah s ao l ah ch t er p r aa b ow m z 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1758 is -7.19112 over 420 frames.
+m1-usctimit-ema--1759 sil ah m ah s y ah l er ae dh ih m ah n ih s k ah f er iy r b ae k 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1759 is -6.92886 over 421 frames.
+m1-usctimit-ema--1760 dh iy k aa r ch uw n f iy ch er z ah m aa s k r ae t ah n t ae t p l l 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1760 is -6.78388 over 495 frames.
+m1-usctimit-ema--1761 s k ah l ae s t ih k ae p ah t uw d ih s jh ow jh b ay s t ae n d er d ay z t eh s 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1761 is -7.096 over 499 frames.
+m1-usctimit-ema--1762 sil ah w ao t er k ah n t ey n t uw m ah jh k l ao r iy n ah n s t aa ng hh ih z ay z 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1762 is -6.68623 over 571 frames.
+m1-usctimit-ema--1763 f ah z ah p r ih k aa sh eh n dh iy ae l l aa z b ay b k ah n p aw t er f er dh ah s t r aa n k ah l sil 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1763 is -7.23938 over 546 frames.
+m1-usctimit-ema--1764 sil b ay n ah f er b r ih k ao er f er k w aa r z ih n t uw w ih sh ah n ah n eh k s p er t iy iy z 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1764 is -6.96602 over 573 frames.
+m1-usctimit-ema--1765 sil sh iy n k er jh t er ch ih l d ah n t ih m ey k eh r ow n hh ae l ah w iy n k aa s jh uw m s 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1765 is -7.15201 over 512 frames.
+m1-usctimit-ema--1766 ao m ah l s dh ao l k aa l ah jh ah s aa n aw l k ow oy jh k ey sh n l 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1766 is -6.78459 over 506 frames.
+m1-usctimit-ema--1767 sil f ey t k l uw d aw t ah v ih t uw sil 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1767 is -6.86425 over 407 frames.
+m1-usctimit-ema--1768 ah k ae t s m iy ae l l iy s hh er t m ay iy er z 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1768 is -6.57534 over 380 frames.
+m1-usctimit-ema--1769 sil ey ao f ih n g ow aw t ah n iy iy p ih ng 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1769 is -6.50164 over 346 frames.
+m1-usctimit-ema--1770 sil t r aa t iy ch g r ae f ow n ah n uw ae k s ah s 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1770 is -6.67558 over 365 frames.
+m1-usctimit-ema--1771 ah p r r ch er t er t iy w ih s t ae ch uw ah s k ah m p ow jh er 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1771 is -6.67996 over 544 frames.
+m1-usctimit-ema--1772 sil ay k ey v ah n s ah ah ch oy s ih z ah m ah p eh n s eh t p r ay ao r t iy z 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1772 is -6.88144 over 545 frames.
+m1-usctimit-ema--1773 hh aa g ah t ih jh er ah n d er ih n s 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1773 is -6.31658 over 353 frames.
+m1-usctimit-ema--1774 sil ah y ih l ah k ih n f er ah m p oy ih m ah t sil 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1774 is -6.48513 over 352 frames.
+m1-usctimit-ema--1775 ay ey t ah f er ey oy s t er ah n ao er z p l ey t sil 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1775 is -6.81584 over 406 frames.
+m1-usctimit-ema--1776 m ay d iy l m ao r n ih ng b iy g ih n z ow hh aa t k aa f iy 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1776 is -6.8399 over 395 frames.
+m1-usctimit-ema--1777 w iy s aa dh iy t ay n iy ay s ih k ah l z b l ow ao r r uw f s 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1777 is -7.04545 over 450 frames.
+m1-usctimit-ema--1778 p l iy z t ey k dh ih s d er t iy t ih b ah l k l aa s t ih dh k w n er z f ao r n iy 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1778 is -7.03543 over 470 frames.
+m1-usctimit-ema--1779 ay b r ae dh er n aa t b ay dh ow z sh y uw z dh ah b iy r ch aa er ch d 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1779 is -6.63982 over 491 frames.
+m1-usctimit-ema--1780 t dh iy m iy t ih ng ih z n aw ah jh er n d 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1780 is -6.51774 over 337 frames.
+m1-usctimit-ema--1781 ah ow l d ah t ae n ah t ow l m ey l b ah p uw uw n s t iy f ah n aa t s uw b ah l f r iy d ih ng sh eh l f ih jh 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1781 is -7.17299 over 706 frames.
+m1-usctimit-ema--1782 sil ao f ah n d iy g ih p ae k m ao r dh ih n iy p ow t ih n 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1782 is -6.67977 over 415 frames.
+m1-usctimit-ema--1783 sil m ah n iy w eh l f iy t ay k uw n s p l er jh t ah n b aa t b ow th iy iy aa t ae n d ah s k uw er 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1783 is -6.7284 over 731 frames.
+m1-usctimit-ema--1784 sil ah k aa t ah s ao er w ah l ih n jh ow ih dh ih z sh eh l s ey sh d ih sh 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1784 is -6.76278 over 468 frames.
+m1-usctimit-ema--1785 sil sil d ah l f ah n s ow ah n t eh l ah jh ah r iy n b ae m ah l z 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1785 is -6.65353 over 422 frames.
+m1-usctimit-ema--1786 sil eh n oy z p r aa b l m g ow z b dh r ow z m ao r n ow ih ng iy ch s ey iy 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1786 is -7.02791 over 475 frames.
+m1-usctimit-ema--1787 sil ae t z ay g r eh m ey k s eh m z ao l m l iy ae f er m ah s t eh t iy 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1787 is -6.70809 over 511 frames.
+m1-usctimit-ema--1788 sil jh ow m k l iy n sh eh l f ih f ao r l ah v ih ng 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1788 is -6.96539 over 316 frames.
+m1-usctimit-ema--1789 sil sil p ae m k iy ah z t r ay v ih ng l eh s ah n z ah er z d ey z 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1789 is -6.55013 over 454 frames.
+m1-usctimit-ema--1790 sil d ao r jh ih z p eh r n ow eh t ih b aw t ah f uw sh er g ih ae s sh ao r d ih jh 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1790 is -7.09392 over 467 frames.
+m1-usctimit-ema--1791 sil sil ih sh ow l d er f eh l t ih z ih f ah w er b r ow p ah n sil 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1791 is -6.99745 over 337 frames.
+m1-usctimit-ema--1792 dh iy f ih sh b iy d eh n s ah b l iy p f r ae n t ih k l l iy ow n dh iy s er f ih s ah dh iy s m ao l l ey k 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1792 is -7.30727 over 500 frames.
+m1-usctimit-ema--1793 t ih m t ey s sh iy l ih t ih s iy m uw v iy z t w oy s uw w iy s 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1793 is -7.06239 over 383 frames.
+m1-usctimit-ema--1794 t aa r b er b p ey p er eh m l iy iy d s ih n ah b ih g b aa n f ay er 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1794 is -6.67573 over 492 frames.
+LOG (apply-cmvn[5.5.586~1-83c98]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 47 utterances, errors on 0
+m1-usctimit-ema--1795 sil sil k ao er sh iy k ah hh ah v ah n ah er t uw n ah f ih sh t eh d l ih ch 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1795 is -6.85579 over 474 frames.
+m1-usctimit-ema--1796 ay r r ih sh y ah ng s t er z iy iy f er sh t ih p er r s f er b r eh k f ah s t 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1796 is -7.02029 over 464 frames.
+m1-usctimit-ema--1797 sil dh iy uw s ah n ah g r eh s ah v p ah l iy s m ah n t ih f l ay k f ao l ah s m ow t er ih s 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1797 is -6.9647 over 547 frames.
+m1-usctimit-ema--1798 sil w ah z dh ah s l aa r ch f ih ng b ay dh iy ay r n ih ng b ao er t 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1798 is -7.16042 over 382 frames.
+m1-usctimit-ema--1799 ah l aw w iy w ey hh ih er 
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance m1-usctimit-ema--1799 is -6.50636 over 285 frames.
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:176) Time taken 59.1426s: real-time factor assuming 100 frames/sec is 0.279859
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:179) Done 47 utterances, failed for 0
+LOG (gmm-latgen-faster[5.5.586~1-83c98]:main():gmm-latgen-faster.cc:181) Overall log-likelihood per frame is -6.88715 over 21133 frames.
+# Accounting: time=59 threads=1
+# Ended (code 0) at Mon Dec 30 20:08:38 EET 2019, elapsed time 59 seconds

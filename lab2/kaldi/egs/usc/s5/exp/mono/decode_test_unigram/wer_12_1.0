@@ -1,4 +1,0 @@
-compute-wer --text --mode=present ark:./exp/mono/decode_test_unigram/scoring_kaldi/test_filt.txt ark,p:- 
-%WER 68.76 [ 4122 / 5995, 14 ins, 3406 del, 702 sub ]
-%SER 100.00 [ 184 / 184 ]
-Scored 184 sentences, 0 not present in hyp.
