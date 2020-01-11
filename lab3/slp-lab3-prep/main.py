@@ -3,6 +3,8 @@ import warnings
 
 from sklearn.exceptions import UndefinedMetricWarning
 from sklearn.preprocessing import LabelEncoder
+from sklearn.metrics import classification_report
+
 import torch
 from torch.utils.data import DataLoader
 
@@ -33,7 +35,7 @@ EMB_DIM = 50
 EMB_TRAINABLE = False
 BATCH_SIZE = 128
 EPOCHS = 2
-DATASET = "MR"  # options: "MR", "Semeval2017A"
+DATASET =  "Semeval2017A"  # options: "MR", "Semeval2017A"
 
 # if your computer has a CUDA compatible gpu use it, otherwise use the cpu
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -56,21 +58,29 @@ else:
 
 # convert data labels from strings to integers
 
+
 le = LabelEncoder()
 le.fit(list(set(y_train)))
 y_train = le.transform(y_train)
 y_test = le.transform(y_test)
 
 n_classes = len(list(le.classes_))
+# EX 2
+print('\nLabels for 10 first training examples:\n')
+print(f'Original: {le.inverse_transform(y_train[:10])}\n')
+print(f'After LabelEncoder: {y_train[:10]}\n')
 
-#print(le.inverse_transform(y_train[:10]))
-#print(y_train[:10])
-
-#ipdb.set_trace()
-# Define our PyTorch-based Dataset
+# Define our PyTorc-based Dataset
 
 train_set = SentenceDataset(X_train, y_train, word2idx)
 test_set = SentenceDataset(X_test, y_test, word2idx)
+for i in range(5):
+    print('Original sample:')
+    print(X_train[i])
+    print()
+    print('Transformed sample:')
+    print(train_set[i])
+    print()
 
 
 # EX4 - Define our PyTorch-based DataLoader
@@ -96,8 +106,7 @@ print(model)
 # We optimize ONLY those parameters that are trainable (p.requires_grad==True)
 criterion = torch.nn.BCEWithLogitsLoss() if n_classes == 2 else torch.nn.CrossEntropyLoss()  # EX8 
 parameters = filter(lambda p: p.requires_grad, model.parameters())
-print(model.parameters())
-optimizer = torch.optim.Adam(parameters,lr=0.001)  # EX8
+optimizer = torch.optim.Adam(parameters,lr=0.0001)  # EX8
 
 train_losses = []
 test_losses = []
@@ -120,10 +129,5 @@ for epoch in range(1, EPOCHS + 1):
     train_losses.append(train_loss)
     test_losses.append(test_loss)
 
-from sklearn.metrics import f1_score,recall_score, accuracy_score
-
-ipdb.set_trace()
-print(f1_score(y_test_gold,y_test_pred,average = 'macro'))
-print(recall_score(y_test_gold,y_test_pred,average = 'macro'))
-print(accuracy_score(y_test_gold,y_test_pred))
-plot_loss(train_losses,test_losses,EPOCHS)
+print(classification_report(y_test_gold,y_test_pred))
+plot_loss(train_losses,test_losses,EPOCHS,DATASET)

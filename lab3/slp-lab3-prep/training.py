@@ -1,6 +1,5 @@
 import math
 import sys
-
 import torch
 
 
@@ -36,24 +35,32 @@ def train_dataset(_epoch, dataloader, model, loss_function, optimizer):
     for index, batch in enumerate(dataloader, 1):
         # get the inputs (batch)
         inputs, labels, lengths = batch
+
+        # move the batch tensors to the right device        
         inputs = inputs.to(device)
 
-        # move the batch tensors to the right device
-        
-       
         # Remember that PyTorch accumulates gradients.
         # We need to clear them out before each batch!
-        
         optimizer.zero_grad()
+
+
         # Step 2 - forward pass: y' = model(x)
-        
         output = model(inputs,lengths)
         
+        #import ipdb; ipdb.set_trace()
+
         # Step 3 - compute loss: L = loss_function(y, y')
-        #import ipdb;ipdb.set_trace()
+        
+        # fix label type for different loss func
+        if len(list(output.size())) == 1:
+            labels = labels.float()
+        else:
+            labels = labels.long()
 
-        loss = loss_function(output,labels.float())
-
+        loss = loss_function(output,labels)
+        # output :: BS (x 1)       , for bin classification
+        #           BS x N_CLASSES , else 
+        
         # Step 4 - backward pass: compute gradient wrt model parameters
         loss.backward()
 
@@ -69,11 +76,13 @@ def train_dataset(_epoch, dataloader, model, loss_function, optimizer):
                  batch=index,
                  batch_size=dataloader.batch_size,
                  dataset_size=len(dataloader.dataset))
-
+                 
+    print(f' Epoch {_epoch}, Total loss: {running_loss/index:.4f}\n')
     return running_loss / index
 
 
 def eval_dataset(dataloader, model, loss_function):
+
     # IMPORTANT: switch to eval mode
     # disable regularization layers, such as Dropout
     model.eval()
@@ -90,33 +99,53 @@ def eval_dataset(dataloader, model, loss_function):
     # so we do everything under torch.no_grad()
     with torch.no_grad():
         for index, batch in enumerate(dataloader, 1):
+            
             # get the inputs (batch)
             inputs, labels, lengths = batch
+            
             # Step 1 - move the batch tensors to the right device
             inputs = inputs.to(device)
             
-
             # Step 2 - forward pass: y' = model(x)
-        
             output = model(inputs,lengths)
 
 
             # Step 3 - compute loss.
+            
             # We compute the loss only for inspection (compare train/test loss)
             # because we do not actually backpropagate in test time
-            
-            loss = loss_function(output,labels.float())
-            # Step 4 - make predictions (class = argmax of posteriors)
-            
-            if output.size == 2:
-                pred = 1 if output >= 0.5 else 0 
-            else:
-                pred = torch.argmax(output,axis = 0)
 
+            # Step 4 - make predictions (class = argmax of posteriors)
+
+            # output :: BS (x 1)       , for bin classification
+            #           BS x N_CLASSES , else  
+
+            
+            if len(list(output.size())) == 1:
+
+                # fix label type for different loss func
+                labels = labels.float()
+                
+                # round to nearest integer
+
+                pred = output.tolist()
+                pred = [1 if p >= 0 else 0 for p in pred]
+            
+            else:
+                # fix label    
+                labels = labels.long()
+
+                # get max class index
+                pred = torch.argmax(output,axis = 1).tolist()
+
+
+
+            loss = loss_function(output,labels)
+                
 
             # Step 5 - collect the predictions, gold labels and batch loss
-            y_pred.append(pred)
-            y.append(labels)
+            y_pred += pred
+            y += labels.tolist()
             running_loss += loss.data.item()
 
     return running_loss / index, (y_pred, y)

@@ -32,13 +32,20 @@ class SentenceDataset(Dataset):
             word2idx (dict): a dictionary which maps words to indexes
         """
         
-        #nltk.download('punkt')
+        # Download pre-trained tokenizer if necessary 
+        try:
+            nltk.data.find('tokenizers/punkt/english.pickle')
+        except LookupError:
+            nltk.download('punkt/english.pickle')
+        
+        # tokenize samples
         self.data = [ nltk.word_tokenize(x) for x in X]
 
-        #print(self.data[0:10])
         self.labels = y
+        
         self.word2idx = word2idx
-        #self.max_sent_length = np.max([len(x) for x in self.data])
+
+        # We arbirtarily choose max sentence length
         self.max_sent_length = 60
         
 
@@ -80,21 +87,28 @@ class SentenceDataset(Dataset):
         """
 
         # EX3
+
         sentence = self.data[index]
         label = self.labels[index]
-
         length = len(sentence)
+        
         example = []
         for token in sentence:
+            # get indexes
             if token in self.word2idx.keys():
                 example.append(self.word2idx[token])
             else :
                 example.append(self.word2idx['<unk>']) 
 
+        
         if length >= self.max_sent_length:
+            # reduce size if necessary 
             example = example[:self.max_sent_length]
         else :
+            # else pad sequence
             example = example + [0]*(self.max_sent_length-length)
+        
         example = np.array(example)
+
         return example, label, length
 

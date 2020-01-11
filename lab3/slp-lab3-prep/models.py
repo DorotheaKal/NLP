@@ -29,17 +29,21 @@ class BaselineDNN(nn.Module):
 
         # 1 - define the embedding layer
         # We define embeddings from pretrained embeddings
-        num_embeddings = len(embeddings)
+
+        num_embeddings = len(embeddings) 
         dim = len(embeddings[0])
+
         self.dim = dim
         self.embeddings = nn.Embedding(num_embeddings,dim)
-        
+        self.output_size = output_size
+
         # 2 - initialize the weights of our Embedding layer
         # from the pretrained word embeddings
+
         # 3 - define if the embedding layer will be frozen or finetuned
 
         if not trainable_emb:
-            # Load from pretrained and freeze..
+            # Load from pretrained and (freeze = True <=> requires_grad = False).
             self.embeddings = self.embeddings.from_pretrained(torch.Tensor(embeddings), freeze = True)
         
 
@@ -47,20 +51,21 @@ class BaselineDNN(nn.Module):
         # EX5     
         # 4 - define a non-linear transformation of the representations
     
-        
-        self.lin1 = nn.Linear(dim,int(dim/2))
+        LATENT_SIZE = 2*dim
+        self.lin1 = nn.Linear(dim,LATENT_SIZE)
         self.relu = nn.ReLU()
         
         
         # 5 - define the final Linear layer which maps
         # the representations to the classes
         
-        if output_size == 2:
-            self.sig = nn.Sigmoid()
-            self.lin2 = nn.Linear(int(dim/2),1)
-        else:
-            self.lin2 = nn.Linear(int(dim/2),output_size)
-        self.output_size = output_size
+        # For bin classficiation output dim is 1
+        if output_size == 2 :
+            output_size = 1
+    
+        self.lin2 = nn.Linear(LATENT_SIZE,output_size)
+
+    
     def forward(self, x, lengths):
         """
         This is the heart of the model.
@@ -71,30 +76,28 @@ class BaselineDNN(nn.Module):
         """
         # EX6
         # 1 - embed the words, using the embedding layer
-        # x ==  BS x MAX_LEN
+        # x ::  BS x MAX_LEN
         
         embeddings = self.embeddings(x)
-        # BS x MAX_LEN  -> BS x MAX_LEN x EMB_DIM 
+        # BS x MAX_LEN  --> BS x MAX_LEN x EMB_DIM
+     
         # 2 - construct a sentence representation out of the word embeddings
-        batch_size = embeddings.shape[0]
-        representations = torch.zeros((batch_size,self.dim))
-        # BS x EMB_DIM
+               
+        # representations :: BS x EMB_DIM
+        # OOV words are mapped to 0 vector
+        # we sum and devide with correct length for mean
 
-        for i in range(batch_size):
-            representations[i,:] = torch.mean(embeddings[i,:lengths[i],:],axis = 0)
-
-        #import ipdb;ipdb.set_trace()
-
+        representations = torch.sum(embeddings,axis = 1)
+        representations = representations / lengths.view((-1,1))
 
         # 3 - transform the representations to new ones.
         representations = self.relu(self.lin1(representations))
 
         # 4 - project the representations to classes using a linear layer
+        
         logits = self.lin2(representations)
+        
         if self.output_size == 2:
-            logits = self.sig(logits)
-            logits = logits.view((-1))
-            
-            
-
+            logits = logits.view((-1)).float()
+        
         return logits
