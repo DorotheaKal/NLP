@@ -1,6 +1,7 @@
 from torch.utils.data import Dataset
+import nltk
 from tqdm import tqdm
-
+import numpy as np
 
 class SentenceDataset(Dataset):
     """
@@ -30,13 +31,16 @@ class SentenceDataset(Dataset):
             y (list): List of training labels
             word2idx (dict): a dictionary which maps words to indexes
         """
+        
+        #nltk.download('punkt')
+        self.data = [ nltk.word_tokenize(x) for x in X]
 
-        # self.data = X
-        # self.labels = y
-        # self.word2idx = word2idx
-
-        # EX2
-        raise NotImplementedError
+        #print(self.data[0:10])
+        self.labels = y
+        self.word2idx = word2idx
+        #self.max_sent_length = np.max([len(x) for x in self.data])
+        self.max_sent_length = 60
+        
 
     def __len__(self):
         """
@@ -76,7 +80,21 @@ class SentenceDataset(Dataset):
         """
 
         # EX3
+        sentence = self.data[index]
+        label = self.labels[index]
 
-        # return example, label, length
-        raise NotImplementedError
+        length = len(sentence)
+        example = []
+        for token in sentence:
+            if token in self.word2idx.keys():
+                example.append(self.word2idx[token])
+            else :
+                example.append(self.word2idx['<unk>']) 
+
+        if length >= self.max_sent_length:
+            example = example[:self.max_sent_length]
+        else :
+            example = example + [0]*(self.max_sent_length-length)
+        example = np.array(example)
+        return example, label, length
 
