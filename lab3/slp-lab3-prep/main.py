@@ -34,7 +34,7 @@ EMB_DIM = 50
 
 EMB_TRAINABLE = False
 BATCH_SIZE = 128
-EPOCHS = 2
+EPOCHS = 50
 DATASET =  "Semeval2017A"  # options: "MR", "Semeval2017A"
 
 # if your computer has a CUDA compatible gpu use it, otherwise use the cpu
@@ -138,7 +138,7 @@ for epoch in range(1, EPOCHS + 1):
     train_losses.append(train_loss)
     test_losses.append(test_loss)
 
-print('\n\033[1mQuestion 10-Classification Report:\033[0m\n')
+print('\n\033[1mQuestion 10, Classification Report:\033[0m\n')
 print(classification_report(y_test_gold,y_test_pred))
-print('\n\033[1mQuestion 10-Plot:\033[0m\n')
+print('\n\033[1mQuestion 10, Plot:\033[0m\n')
 plot_loss(train_losses,test_losses,EPOCHS,DATASET)

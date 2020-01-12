@@ -148,4 +148,4 @@ def eval_dataset(dataloader, model, loss_function):
             y += labels.tolist()
             running_loss += loss.data.item()
 
-    return running_loss / index, (y_pred, y)
+    return running_loss / index, (y, y_pred)
