@@ -15,7 +15,7 @@ from training import train_dataset, eval_dataset
 from utils.load_datasets import load_MR, load_Semeval2017A
 from utils.load_embeddings import load_word_vectors
 from plots import plot_loss
-import ipdb
+#import ipdb
 warnings.filterwarnings("ignore", category=UndefinedMetricWarning)
 torch.multiprocessing.set_sharing_strategy('file_system')
 ########################################################
@@ -65,7 +65,8 @@ y_train = le.transform(y_train)
 y_test = le.transform(y_test)
 
 n_classes = len(list(le.classes_))
-# EX 2
+# EX 1
+print('\n\033[1mQuestion 1:\033[0m\n')
 print('\nLabels for 10 first training examples:\n')
 print(f'Original: {le.inverse_transform(y_train[:10])}\n')
 print(f'After LabelEncoder: {y_train[:10]}\n')
@@ -74,7 +75,15 @@ print(f'After LabelEncoder: {y_train[:10]}\n')
 
 train_set = SentenceDataset(X_train, y_train, word2idx)
 test_set = SentenceDataset(X_test, y_test, word2idx)
-for i in range(5):
+
+print('\n\033[1mQuestion 2:\033[0m\n')
+for i in range(10):
+    print('Tokenized sample:')
+    print(train_set.data[i])
+    print()
+      
+print('\n\033[1mQuestion 3:\033[0m\n')
+for i in range(15,20):
     print('Original sample:')
     print(X_train[i])
     print()
@@ -129,5 +138,7 @@ for epoch in range(1, EPOCHS + 1):
     train_losses.append(train_loss)
     test_losses.append(test_loss)
 
+print('\n\033[1mQuestion 10-Classification Report:\033[0m\n')
 print(classification_report(y_test_gold,y_test_pred))
+print('\n\033[1mQuestion 10-Plot:\033[0m\n')
 plot_loss(train_losses,test_losses,EPOCHS,DATASET)
