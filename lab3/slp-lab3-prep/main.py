@@ -35,7 +35,7 @@ EMB_DIM = 50
 EMB_TRAINABLE = False
 BATCH_SIZE = 128
 EPOCHS = 50
-DATASET =  "Semeval2017A"  # options: "MR", "Semeval2017A"
+DATASET =  "MR"  # options: "MR", "Semeval2017A"
 
 # if your computer has a CUDA compatible gpu use it, otherwise use the cpu
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -94,9 +94,9 @@ for i in range(15,20):
 
 # EX4 - Define our PyTorch-based DataLoader
 
-train_loader = DataLoader(train_set, batch_size=4,
+train_loader = DataLoader(train_set, batch_size=128,
                         shuffle=True, num_workers=4)
-test_loader = DataLoader(test_set, batch_size=4,
+test_loader = DataLoader(test_set, batch_size=128,
                         shuffle=True, num_workers=4)
 
 

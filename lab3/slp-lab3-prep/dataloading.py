@@ -95,8 +95,8 @@ class SentenceDataset(Dataset):
         example = []
         for token in sentence:
             # get indexes
-            if token in self.word2idx.keys():
-                example.append(self.word2idx[token])
+            if token.lower() in self.word2idx.keys():
+                example.append(self.word2idx[token.lower()])
             else :
                 example.append(self.word2idx['<unk>']) 
 
