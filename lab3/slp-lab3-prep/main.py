@@ -94,9 +94,9 @@ for i in range(15,20):
 
 # EX4 - Define our PyTorch-based DataLoader
 
-train_loader = DataLoader(train_set, batch_size=128,
+train_loader = DataLoader(train_set, batch_size=BATCH_SIZE,
                         shuffle=True, num_workers=4)
-test_loader = DataLoader(test_set, batch_size=128,
+test_loader = DataLoader(test_set, batch_size=BATCH_SIZE,
                         shuffle=True, num_workers=4)
 
 
