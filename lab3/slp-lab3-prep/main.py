@@ -10,7 +10,7 @@ from torch.utils.data import DataLoader
 
 from config import EMB_PATH
 from dataloading import SentenceDataset
-from models import BaselineDNN
+from models import BaselineDNN,BaseLSTM
 from training import train_dataset, eval_dataset
 from utils.load_datasets import load_MR, load_Semeval2017A
 from utils.load_embeddings import load_word_vectors
@@ -104,7 +104,12 @@ test_loader = DataLoader(test_set, batch_size=BATCH_SIZE,
 #############################################################################
 # Model Definition (Model, Loss Function, Optimizer)
 #############################################################################
+'''
 model = BaselineDNN(output_size=n_classes,  # EX8
+                    embeddings=embeddings,
+                    trainable_emb=EMB_TRAINABLE)
+'''
+model = BaseLSTM(output_size=n_classes,  
                     embeddings=embeddings,
                     trainable_emb=EMB_TRAINABLE)
 

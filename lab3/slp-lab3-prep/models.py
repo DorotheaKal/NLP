@@ -29,11 +29,9 @@ class BaselineDNN(nn.Module):
 
         # 1 - define the embedding layer
         # We define embeddings from pretrained embeddings
-
         num_embeddings = len(embeddings) 
         dim = len(embeddings[0])
 
-        self.dim = dim
         self.embeddings = nn.Embedding(num_embeddings,dim)
         self.output_size = output_size
 
@@ -68,18 +66,14 @@ class BaselineDNN(nn.Module):
     
     def forward(self, x, lengths):
         """
-        This is the heart of the model.
-        This function, defines how the data passes through the network.
-
         Returns: the logits for each class
-
         """
         # EX6
         # 1 - embed the words, using the embedding layer
-        # x ::  BS x MAX_LEN
+        # x ::  BS x SEQ_LEN
         
         embeddings = self.embeddings(x)
-        # BS x MAX_LEN  --> BS x MAX_LEN x EMB_DIM
+        # BS x SEQ_LEN  --> BS x SEQ_LEN x EMB_DIM
      
         # 2 - construct a sentence representation out of the word embeddings
                
@@ -101,3 +95,44 @@ class BaselineDNN(nn.Module):
             logits = logits.view((-1)).float()
         
         return logits
+
+
+class BaseLSTM(nn.Module):
+    def __init__(self,output_size, embeddings,hidden = 8, trainable_emb=False):
+
+        super(BaseLSTM, self).__init__()
+        
+        embeddings = np.array(embeddings)
+        num_embeddings, dim = embeddings.shape 
+        
+        self.embeddings = nn.Embedding(num_embeddings,dim)
+        self.output_size = output_size
+        
+        self.lstm = nn.LSTM(dim,hidden_size = hidden)
+        if not trainable_emb:
+            self.embeddings = self.embeddings.from_pretrained(torch.Tensor(embeddings), freeze = True)
+
+        if output_size == 2 :
+            output_size = 1
+    
+        self.linear = nn.Linear(hidden,output_size)
+    
+    def forward(self,x,lengths):
+        embeddings = self.embeddings(x) # :: BS x SEQ_LEN x EMB_DIM 
+        
+        # LSTM requires input SEQ_LEN x BS x EMB_DIM
+        ht,_, = self.lstm(torch.transpose(embeddings, 0, 1))
+        # ht :: SEQ_LEN x BS x HS
+        
+        ## Need to index by lengths, drop unwanted hidden states...
+    
+
+        ht =  torch.transpose(ht,0,1) # transpose back to previous shape
+       
+        import ipdb; ipdb.set_trace()
+        mean = torch.sum(ht,axis = 1) # BS x (1 x) EMB_DIM 
+        
+        mean = mean / lengths.view((-1,1)) 
+        max_vals = torch.max(ht,axis = 1) # BS x (1 x) EMB_DIM
+        rep = torch.cat( mean,max_vals ,axis = 1) # BS x 2*EMB_DIM
+        
