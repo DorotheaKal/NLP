@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt 
-def plot_loss(l_train,l_test,n_epochs,dataset):
+def plot_loss(l_train,l_test,n_epochs,dataset,model_name):
     '''
         plot train and test loss per epoch
 
@@ -10,7 +10,7 @@ def plot_loss(l_train,l_test,n_epochs,dataset):
     plt.plot(epochs,l_test,label = 'Test Set Loss', color = 'm')
     plt.grid()
     plt.legend(fontsize = 15)
-    plt.title(f'Train and Test loss ({dataset} -- {n_epochs} epochs)',fontsize = 20)
+    plt.title(f'Train and Test loss ({dataset} -- {n_epochs} -- {model_name})',fontsize = 20)
     plt.ylabel('Loss',fontsize = 18)
     plt.xlabel('Epoch',fontsize = 18)
     plt.xticks(fontsize = 15)

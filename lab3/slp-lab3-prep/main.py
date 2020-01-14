@@ -35,7 +35,7 @@ EMB_DIM = 50
 EMB_TRAINABLE = False
 BATCH_SIZE = 128
 EPOCHS = 50
-DATASET =  "MR"  # options: "MR", "Semeval2017A"
+DATASET =  "Semeval2017A"  # options: "MR", "Semeval2017A"
 
 # if your computer has a CUDA compatible gpu use it, otherwise use the cpu
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -104,14 +104,25 @@ test_loader = DataLoader(test_set, batch_size=BATCH_SIZE,
 #############################################################################
 # Model Definition (Model, Loss Function, Optimizer)
 #############################################################################
-'''
-model = BaselineDNN(output_size=n_classes,  # EX8
-                    embeddings=embeddings,
-                    trainable_emb=EMB_TRAINABLE)
-'''
-model = BaseLSTM(output_size=n_classes,  
-                    embeddings=embeddings,
-                    trainable_emb=EMB_TRAINABLE)
+
+models  = {
+    # Preparation Basic DNN  
+    'DNN' : BaselineDNN(output_size=n_classes,  # EX8
+                        embeddings=embeddings,
+                        trainable_emb=EMB_TRAINABLE),
+    # max and mean pooling DNN
+    'DNN_pooling' :  BaselineDNN(output_size=n_classes, 
+                        embeddings=embeddings, pooling = True,
+                        trainable_emb=EMB_TRAINABLE),
+
+    # Simple LSTM 
+    'LSTM' : BaseLSTM(output_size=n_classes,  
+                        embeddings=embeddings,
+                        trainable_emb=EMB_TRAINABLE),
+}
+model_name = 'DNN_pooling'
+model = models[model_name]
+
 
 # move the mode weight to cpu or gpu
 model.to(DEVICE)
@@ -146,4 +157,4 @@ for epoch in range(1, EPOCHS + 1):
 print('\n\033[1mQuestion 10, Classification Report:\033[0m\n')
 print(classification_report(y_test_gold,y_test_pred))
 print('\n\033[1mQuestion 10, Plot:\033[0m\n')
-plot_loss(train_losses,test_losses,EPOCHS,DATASET)
+plot_loss(train_losses,test_losses,EPOCHS,DATASET,model_name)
