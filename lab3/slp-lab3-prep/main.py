@@ -15,7 +15,8 @@ from training import train_dataset, eval_dataset
 from utils.load_datasets import load_MR, load_Semeval2017A
 from utils.load_embeddings import load_word_vectors
 from plots import plot_loss
-#import ipdb
+import ipdb
+
 warnings.filterwarnings("ignore", category=UndefinedMetricWarning)
 torch.multiprocessing.set_sharing_strategy('file_system')
 ########################################################
@@ -105,23 +106,27 @@ test_loader = DataLoader(test_set, batch_size=BATCH_SIZE,
 # Model Definition (Model, Loss Function, Optimizer)
 #############################################################################
 
-models  = {
-    # Preparation Basic DNN  
-    'DNN' : BaselineDNN(output_size=n_classes,  # EX8
-                        embeddings=embeddings,
-                        trainable_emb=EMB_TRAINABLE),
-    # max and mean pooling DNN
-    'DNN_pooling' :  BaselineDNN(output_size=n_classes, 
-                        embeddings=embeddings, pooling = True,
-                        trainable_emb=EMB_TRAINABLE),
-
-    # Simple LSTM 
-    'LSTM' : BaseLSTM(output_size=n_classes,  
-                        embeddings=embeddings,
-                        trainable_emb=EMB_TRAINABLE),
-}
 model_name = 'DNN_pooling'
-model = models[model_name]
+
+if model_name == 'DNN':
+
+    # Preparation Basic DNN  
+    model = BaselineDNN(output_size=n_classes,  # EX8
+                        embeddings=embeddings,
+                        trainable_emb=EMB_TRAINABLE)
+    # max and mean pooling DNN
+elif model_name == 'DNN_pooling': 
+    model = BaselineDNN(output_size=n_classes, 
+                        embeddings=embeddings, pooling = True,
+                        trainable_emb=EMB_TRAINABLE)
+elif model_name == 'LSTM':
+    # Simple LSTM 
+    model = BaseLSTM(output_size=n_classes,  
+                        embeddings=embeddings,
+                        trainable_emb=EMB_TRAINABLE)
+else :
+    print('Please define an accurate model\n')
+    exit(1)
 
 
 # move the mode weight to cpu or gpu
