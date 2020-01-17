@@ -53,6 +53,7 @@ def train_dataset(_epoch, dataloader, model, loss_function, optimizer):
         
         # fix label type for different loss func
         if len(list(output.size())) == 1:
+            labels = torch.nn.functional.one_hot(labels, num_classes= 2)
             labels = labels.float()
         else:
             labels = labels.long()

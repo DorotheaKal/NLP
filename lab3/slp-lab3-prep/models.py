@@ -59,11 +59,7 @@ class BaselineDNN(nn.Module):
         if method == 'pooling':
              IN_SIZE = 2*dim 
         elif method == 'attention':
-            self.tanh = nn.Tanh()
-            self.softmax = nn.Softmax()
-            self.lin_attention = nn.Linear(dim,1)
-            # Define attention weights to be trainable
-            self.att_weights = torch.Parameter(torch.FloatTensor(attention_size))
+            self.attention = Attention(attention_size,dim)
             IN_SIZE = dim
         else :
             IN_SIZE = dim
@@ -75,10 +71,7 @@ class BaselineDNN(nn.Module):
         # 5 - define the final Linear layer which maps
         # the representations to the classes
         
-        # For bin classficiation output dim is 1
-        if output_size == 2 :
-            output_size = 1
-    
+
         self.lin2 = nn.Linear(LATENT_SIZE,output_size)
 
     
@@ -100,41 +93,29 @@ class BaselineDNN(nn.Module):
         # Compute mean         
         if self.method != 'attention':
 
-            # representations :: BS x EMB_DIM
+            # reps :: BS x EMB_DIM
             # OOV words are mapped to 0 vector
             # we sum and devide with correct length for mean
-            representations = torch.sum(embeddings,axis = 1)
-            representations = representations / lengths.view((-1,1))
+            rep = torch.sum(embeddings,axis = 1)
+            rep = rep / lengths.view((-1,1))
 
 
         # compute max, concatenate
         if self.method == 'pooling':
 
             max_vals,_ = torch.max(embeddings,dim = 1)
-            representations = torch.cat((representations,max_vals),axis = 1)
+            rep = torch.cat((rep,max_vals),axis = 1)
         
-        # apply attention layet
+        # apply attention layer
         elif self.method == 'attention':
-            # Reshape to apply linear 
-            (BS, SEQ_LEN ,_) = embeddings.shape
-            # BS x SEQ_LEN x DIM --> BS*SEQ_LEN  
-            # applay a linear to each word 
-            representations  = self.lin_attention(embeddings.view((-1,self.dim)))
-            # reshape to  BS x SEQ_LEN
-            representations = representations.view((BS,SEQ_LEN))
-            # non-linearity
-            representations = self.tanh(representations)
-            # SEQ_LEN x 1 
-            atten_weights = self.softmax(representations)
-            # BS x SEQ_LEN x DIM  @  SEQ_LEN x 1 -->  BS x DIM 
-            representations = torch.matmul(embeddings,atten_weights)
-            import ipdb; ipdb.set_trace()
+            rep = self.attention(embeddings)
+        
         # 3 - transform the representations to new ones.
-        representations = self.relu(self.lin1(representations))
+        rep = self.relu(self.lin1(rep))
 
         # 4 - project the representations to classes using a linear layer
         
-        logits = self.lin2(representations)
+        logits = self.lin2(rep)
         
         if self.output_size == 2:
             logits = logits.view((-1)).float()
@@ -142,7 +123,7 @@ class BaselineDNN(nn.Module):
         return logits
 
 class BaseLSTM(nn.Module):
-    def __init__(self,output_size, embeddings,hidden = 8, trainable_emb=False):
+    def __init__(self,output_size, embeddings,hidden = 8, trainable_emb=False,method = 'mean',attention_size = 60,bidirectional = False):
 
         super(BaseLSTM, self).__init__()
         
@@ -153,44 +134,127 @@ class BaseLSTM(nn.Module):
         self.output_size = output_size
         
         self.lstm = nn.LSTM(dim,hidden_size = hidden)
+        self.method = method 
+        self.bidirectional = bidirectional
+      
+
+        if bidirectional == True:
+            self.lstm_rev = nn.LSTM(dim,hidden_size = hidden)
+            hidden = hidden*2
+        self.hidden = hidden 
+            
+        if method == 'pooling':
+             # 3*HS , h_t_last || mean(h_t) || max(h_t)
+             IN_SIZE = 3*hidden 
+        elif method == 'attention':
+            self.attention = Attention(attention_size,hidden)
+            IN_SIZE = hidden
+        else :
+            IN_SIZE = hidden
+
+
+     
         if not trainable_emb:
             self.embeddings = self.embeddings.from_pretrained(torch.Tensor(embeddings), freeze = True)
 
-        if output_size == 2 :
-            output_size = 1
-    
-        # 3*HS , h_t_last || mean(h_t) || max(h_t)
-        self.linear = nn.Linear(3*hidden,output_size)
+        
+        self.linear = nn.Linear(IN_SIZE,output_size)
     
     def forward(self,x,lengths):
-        embeddings = self.embeddings(x) # :: BS x SEQ_LEN x EMB_DIM 
+        embeddings = self.embeddings(x)
+        # :: BS x SEQ_LEN x EMB_DIM 
         
+        BS,SEQ_LEN  = x.shape
+    
         # LSTM requires input SEQ_LEN x BS x EMB_DIM
-        ht,_, = self.lstm(torch.transpose(embeddings, 0, 1))
+        ht,_ = self.lstm(torch.transpose(embeddings, 0, 1))
+        
+        if self.bidirectional:
+        
+            x_rev = torch.Tensor(np.flip(x.numpy(),1).copy())
+            for i in range(BS):
+                
+                x_rev[i] = torch.cat((x_rev[i,SEQ_LEN - lengths[i]:],x_rev[i,:SEQ_LEN - lengths[i]]),dim = 0)
+            
+            x_rev = x_rev.long()
+            embeddings_rev = self.embeddings(x_rev)
+            ht_rev,_ = self.lstm_rev(torch.transpose(embeddings_rev,0 , 1 ))
+        
         # ht :: SEQ_LEN x BS x HS
         
         ## Need to index by lengths, drop unwanted hidden states...
         
         # ht_last :: BS x HS
-        ht_last = torch.zeros((ht.shape[1],ht.shape[2]))
         
-        for i in range(ht.shape[1]):
+        ht_last = torch.zeros((BS,self.hidden))
+        
+        for i in range(BS):
             if (lengths[i] > ht.shape[0]):
                 lengths[i] = ht.shape[0]
+                continue
 
             ht[lengths[i]:,i,:] = 0 # zero unwanted states
-            ht_last[i] = ht[lengths[i]-1,i,:] # save last hidden
+            
+
+            
+            if self.bidirectional:
+                ht_rev[lengths[i]:,i,:] = 0
+                
+                ht_last[i] = torch.cat((ht[lengths[i]-1,i,:],ht_rev[lengths[i]-1,i,:]))
+            else :
+                ht_last[i] = ht[lengths[i]-1,i,:] # save last hidden       
+        
+        if self.bidirectional :
+    
+            ht = torch.cat((ht,ht_rev),dim = 2)
 
         ht =  torch.transpose(ht,0,1) # transpose back to previous shape
-       
-        mean = torch.sum(ht,axis = 1) # BS x HS 
-        mean = mean / lengths.view((-1,1)) 
-        max_vals,_ = torch.max(ht,axis = 1) # BS x HS
-        rep = torch.cat( (mean,max_vals) ,dim = 1) # BS x 2HS
-        rep = torch.cat( (ht_last, rep),dim = 1) # BS x 3HS
-        out = self.linear(rep)
+        if self.method == 'pooling':
+            mean = torch.sum(ht,axis = 1) # BS x HS 
+            mean = mean / lengths.view((-1,1)) 
+            max_vals,_ = torch.max(ht,axis = 1) # BS x HS
+            rep = torch.cat( (mean,max_vals) ,dim = 1) # BS x 2HS
+            rep = torch.cat( (ht_last, rep),dim = 1) # BS x 3HS
+            
+        elif self.method == 'attention':
+            rep = self.attention(ht)
+        else :
+            rep = ht_last
         
+        out = self.linear(rep)
         if self.output_size == 2:
             out = out.view((-1)).float()
         
         return out
+
+class Attention(nn.Module):
+    def __init__(self,attention_size,embedding_dim):
+        super(Attention, self).__init__()
+        self.tanh = nn.Tanh()
+        self.softmax = nn.Softmax(dim=-1)
+        self.lin_attention = nn.Linear(embedding_dim,1)
+        # Define attention weights to be trainable
+        self.att_weights = nn.Parameter(torch.FloatTensor(attention_size))
+    
+    def forward(self,embeddings):
+        # Reshape to apply linear 
+        
+        (BS, SEQ_LEN , DIM) = embeddings.shape
+        # BS x SEQ_LEN x DIM --> BS*SEQ_LEN  
+        # applay a linear to each word 
+        #import ipdb; ipdb.set_trace()
+        u  = self.lin_attention(embeddings.reshape((-1,DIM)))
+        # reshape to  BS x SEQ_LEN
+        u = u.reshape((BS,SEQ_LEN))
+        # non-linearity
+        u = self.tanh(u)
+        # SEQ_LEN x 1 
+        atten_weights = self.softmax(u)
+        
+        # Expand attention_weights to embeddings size and multiply 
+        # BS x SEQ_LEN x DIM
+        u = torch.mul(embeddings,atten_weights.unsqueeze(-1).expand_as(embeddings))
+        # BS x DIM
+        u = torch.sum(u,dim = 1)
+        return u
+        
