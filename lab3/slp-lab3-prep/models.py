@@ -133,14 +133,15 @@ class BaseLSTM(nn.Module):
         self.embeddings = nn.Embedding(num_embeddings,dim)
         self.output_size = output_size
         
-        self.lstm = nn.LSTM(dim,hidden_size = hidden)
+        self.lstm = nn.LSTM(dim,hidden_size = hidden,bidirectional = bidirectional)
         self.method = method 
         self.bidirectional = bidirectional
       
 
         if bidirectional == True:
-            self.lstm_rev = nn.LSTM(dim,hidden_size = hidden)
+            
             hidden = hidden*2
+        
         self.hidden = hidden 
             
         if method == 'pooling':
@@ -162,64 +163,25 @@ class BaseLSTM(nn.Module):
     
     def forward(self,x,lengths):
         embeddings = self.embeddings(x)
-        # :: BS x SEQ_LEN x EMB_DIM 
-        
-        BS,SEQ_LEN  = x.shape
-    
-        # LSTM requires input SEQ_LEN x BS x EMB_DIM
-        ht,_ = self.lstm(torch.transpose(embeddings, 0, 1))
-        
-        if self.bidirectional:
-        
-            x_rev = torch.Tensor(np.flip(x.numpy(),1).copy())
-            for i in range(BS):
-                
-                x_rev[i] = torch.cat((x_rev[i,SEQ_LEN - lengths[i]:],x_rev[i,:SEQ_LEN - lengths[i]]),dim = 0)
-            
-            x_rev = x_rev.long()
-            embeddings_rev = self.embeddings(x_rev)
-            ht_rev,_ = self.lstm_rev(torch.transpose(embeddings_rev,0 , 1 ))
-        
-        # ht :: SEQ_LEN x BS x HS
-        
-        ## Need to index by lengths, drop unwanted hidden states...
-        
-        # ht_last :: BS x HS
-        
-        ht_last = torch.zeros((BS,self.hidden))
-        
-        for i in range(BS):
-            if (lengths[i] > ht.shape[0]):
-                lengths[i] = ht.shape[0]
-                continue
+        # BS x SEQ_LEN -->  BS x SEQ_LEN x EMB_DIM 
+        X = torch.nn.utils.rnn.pack_padded_sequence(embeddings, lengths, batch_first=True,enforce_sorted = False)
 
-            ht[lengths[i]:,i,:] = 0 # zero unwanted states
-            
-
-            
-            if self.bidirectional:
-                ht_rev[lengths[i]:,i,:] = 0
-                
-                ht_last[i] = torch.cat((ht[lengths[i]-1,i,:],ht_rev[lengths[i]-1,i,:]))
-            else :
-                ht_last[i] = ht[lengths[i]-1,i,:] # save last hidden       
+        ht,(hn,_) = self.lstm(X)
+        ht, _ = torch.nn.utils.rnn.pad_packed_sequence(ht, batch_first=True)
+        # ht :: BS x MAX_SEQ_LEN x HS
+        # MAX_SEQ_LEN = max(lengths)
         
-        if self.bidirectional :
-    
-            ht = torch.cat((ht,ht_rev),dim = 2)
-
-        ht =  torch.transpose(ht,0,1) # transpose back to previous shape
         if self.method == 'pooling':
             mean = torch.sum(ht,axis = 1) # BS x HS 
             mean = mean / lengths.view((-1,1)) 
             max_vals,_ = torch.max(ht,axis = 1) # BS x HS
             rep = torch.cat( (mean,max_vals) ,dim = 1) # BS x 2HS
-            rep = torch.cat( (ht_last, rep),dim = 1) # BS x 3HS
+            rep = torch.cat( (hn, rep),dim = 1) # BS x 3HS
             
         elif self.method == 'attention':
             rep = self.attention(ht)
         else :
-            rep = ht_last
+            rep = hn
         
         out = self.linear(rep)
         if self.output_size == 2:

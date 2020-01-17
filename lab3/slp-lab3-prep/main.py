@@ -73,10 +73,17 @@ print(f'Original: {le.inverse_transform(y_train[:10])}\n')
 print(f'After LabelEncoder: {y_train[:10]}\n')
 
 # Define our PyTorc-based Dataset
-
-train_set = SentenceDataset(X_train, y_train, word2idx)
-test_set = SentenceDataset(X_test, y_test, word2idx)
-
+import sys
+try :
+    DEBUG = True if sys.argv[1] == 'debug' else False 
+except: 
+    DEBUG = False
+if DEBUG:
+    train_set = SentenceDataset(X_train[:128], y_train[:128], word2idx)
+    test_set = SentenceDataset(X_test[:128], y_test[:128], word2idx)
+else:
+    train_set = SentenceDataset(X_train, y_train, word2idx)
+    test_set = SentenceDataset(X_test, y_test, word2idx)    
 print('\n\033[1mQuestion 2:\033[0m\n')
 for i in range(10):
     print('Tokenized sample:')

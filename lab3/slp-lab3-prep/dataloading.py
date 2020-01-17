@@ -104,6 +104,7 @@ class SentenceDataset(Dataset):
         if length >= self.max_sent_length:
             # reduce size if necessary 
             example = example[:self.max_sent_length]
+            length = self.max_sent_length
         else :
             # else pad sequence
             example = example + [0]*(self.max_sent_length-length)
