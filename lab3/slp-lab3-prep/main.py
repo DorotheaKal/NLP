@@ -106,7 +106,7 @@ test_loader = DataLoader(test_set, batch_size=BATCH_SIZE,
 # Model Definition (Model, Loss Function, Optimizer)
 #############################################################################
 
-model_name = 'DNN_pooling'
+model_name = 'DNN_attention'
 
 if model_name == 'DNN':
 
@@ -117,8 +117,13 @@ if model_name == 'DNN':
     # max and mean pooling DNN
 elif model_name == 'DNN_pooling': 
     model = BaselineDNN(output_size=n_classes, 
-                        embeddings=embeddings, pooling = True,
+                        embeddings=embeddings, method = 'pooling',
                         trainable_emb=EMB_TRAINABLE)
+elif model_name == 'DNN_attention':
+    model = BaselineDNN(output_size=n_classes, 
+                        embeddings=embeddings, method = 'attention',
+                        trainable_emb=EMB_TRAINABLE)
+
 elif model_name == 'LSTM':
     # Simple LSTM 
     model = BaseLSTM(output_size=n_classes,  
