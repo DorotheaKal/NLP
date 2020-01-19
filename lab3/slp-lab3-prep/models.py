@@ -18,7 +18,7 @@ class BaselineDNN(nn.Module):
 
         Args:
             output_size(int): the number of classes
-            embeddings(bool):  the 2D matrix with the pretrained embeddings
+            embeddings(torch.Tensor):  the 2D matrix with the pretrained embeddings
             trainable_emb(bool): train (finetune) or freeze the weights
                 the embedding layer
             
@@ -118,12 +118,12 @@ class BaselineDNN(nn.Module):
         logits = self.lin2(rep)
         
         if self.output_size == 2:
-            logits = logits.view((-1)).float()
-        
+            logits = logits.float()
+    
         return logits
 
 class BaseLSTM(nn.Module):
-    def __init__(self,output_size, embeddings,hidden = 8, trainable_emb=False,method = 'mean',attention_size = 60,bidirectional = False):
+    def __init__(self,output_size, embeddings,hidden = 8, trainable_emb=False,method = 'mean',attention_size  = 60 ,bidirectional = False):
 
         super(BaseLSTM, self).__init__()
         
@@ -185,7 +185,7 @@ class BaseLSTM(nn.Module):
         
         out = self.linear(rep)
         if self.output_size == 2:
-            out = out.view((-1)).float()
+            out = out.float()
         
         return out
 

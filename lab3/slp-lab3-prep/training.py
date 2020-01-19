@@ -23,7 +23,7 @@ def progress(loss, epoch, batch, batch_size, dataset_size):
         print()
 
 
-def train_dataset(_epoch, dataloader, model, loss_function, optimizer):
+def train_dataset(_epoch, dataloader, model, loss_function, optimizer,n_classes):
     # IMPORTANT: switch to train mode
     # enable regularization layers, such as Dropout
     model.train()
@@ -52,9 +52,10 @@ def train_dataset(_epoch, dataloader, model, loss_function, optimizer):
         # Step 3 - compute loss: L = loss_function(y, y')
         
         # fix label type for different loss func
-        if len(list(output.size())) == 1:
+        if n_classes == 2:
             labels = torch.nn.functional.one_hot(labels, num_classes= 2)
             labels = labels.float()
+            
         else:
             labels = labels.long()
 
@@ -82,7 +83,7 @@ def train_dataset(_epoch, dataloader, model, loss_function, optimizer):
     return running_loss / index
 
 
-def eval_dataset(dataloader, model, loss_function):
+def eval_dataset(dataloader, model, loss_function,n_classes):
 
     # IMPORTANT: switch to eval mode
     # disable regularization layers, such as Dropout
@@ -120,33 +121,27 @@ def eval_dataset(dataloader, model, loss_function):
 
             # output :: BS (x 1)       , for bin classification
             #           BS x N_CLASSES , else  
-
-            
-            if len(list(output.size())) == 1:
+             
+            # collect gold labels 
+            y += labels.tolist()
+            if n_classes == 2:
 
                 # fix label type for different loss func
+                labels = torch.nn.functional.one_hot(labels, num_classes= 2)
                 labels = labels.float()
-                
-                # round to nearest integer
-
-                pred = output.tolist()
-                pred = [1 if p >= 0 else 0 for p in pred]
             
             else:
                 # fix label    
                 labels = labels.long()
 
-                # get max class index
-                pred = torch.argmax(output,axis = 1).tolist()
-
-
-
+            # get max class index
+            pred = torch.argmax(output,axis = 1).tolist()
             loss = loss_function(output,labels)
                 
 
-            # Step 5 - collect the predictions, gold labels and batch loss
+            # Step 5 - collect the predictions and batch loss
             y_pred += pred
-            y += labels.tolist()
+            
             running_loss += loss.data.item()
 
     return running_loss / index, (y, y_pred)

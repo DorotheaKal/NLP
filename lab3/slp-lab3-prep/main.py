@@ -1,9 +1,14 @@
 import os
 import warnings
+import sys
+
 
 from sklearn.exceptions import UndefinedMetricWarning
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import classification_report
+import pandas as pd
+
+import ipdb
 
 import torch
 from torch.utils.data import DataLoader
@@ -15,7 +20,7 @@ from training import train_dataset, eval_dataset
 from utils.load_datasets import load_MR, load_Semeval2017A
 from utils.load_embeddings import load_word_vectors
 from plots import plot_loss
-import ipdb
+
 
 warnings.filterwarnings("ignore", category=UndefinedMetricWarning)
 torch.multiprocessing.set_sharing_strategy('file_system')
@@ -32,16 +37,16 @@ EMBEDDINGS = os.path.join(EMB_PATH, "glove.6B.50d.txt")
 
 # 2 - set the correct dimensionality of the embeddings
 EMB_DIM = 50
-
+MAX_SEQ_LEN = 60 
 EMB_TRAINABLE = False
 BATCH_SIZE = 128
-EPOCHS = 50
-DATASET =  "Semeval2017A"  # options: "MR", "Semeval2017A"
+EPOCHS = 2
+DATASET =  "MR"  # options: "MR", "Semeval2017A"
 
 # if your computer has a CUDA compatible gpu use it, otherwise use the cpu
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-########################################################
+#######################################################
 # Define PyTorch datasets and dataloaders
 ########################################################
 
@@ -73,17 +78,18 @@ print(f'Original: {le.inverse_transform(y_train[:10])}\n')
 print(f'After LabelEncoder: {y_train[:10]}\n')
 
 # Define our PyTorc-based Dataset
-import sys
 try :
-    DEBUG = True if sys.argv[1] == 'debug' else False 
+    DEBUG = True if sys.argv[2] == 'debug' else False 
 except: 
     DEBUG = False
 if DEBUG:
-    train_set = SentenceDataset(X_train[:128], y_train[:128], word2idx)
-    test_set = SentenceDataset(X_test[:128], y_test[:128], word2idx)
+    # if debug only process one batch 
+    train_set = SentenceDataset(X_train[:BATCH_SIZE], y_train[:BATCH_SIZE], word2idx,MAX_SEQ_LEN)
+    test_set = SentenceDataset(X_test[:BATCH_SIZE], y_test[:BATCH_SIZE], word2idx,MAX_SEQ_LEN)
 else:
-    train_set = SentenceDataset(X_train, y_train, word2idx)
-    test_set = SentenceDataset(X_test, y_test, word2idx)    
+    train_set = SentenceDataset(X_train, y_train, word2idx,MAX_SEQ_LEN)
+    test_set = SentenceDataset(X_test, y_test, word2idx,MAX_SEQ_LEN)
+
 print('\n\033[1mQuestion 2:\033[0m\n')
 for i in range(10):
     print('Tokenized sample:')
@@ -113,17 +119,34 @@ test_loader = DataLoader(test_set, batch_size=BATCH_SIZE,
 # Model Definition (Model, Loss Function, Optimizer)
 #############################################################################
 
-'''
-model = BaselineDNN(output_size=n_classes,  # EX8
+try :
+    model_name = sys.argv[1]
+except :
+    print('Argument Required, model name')
+    exit(1)
+
+args = model_name.split('_')
+if args[0] == 'DNN' :
+
+    model = BaselineDNN(output_size=n_classes,  # EX8
                     embeddings=embeddings,
+                    method = args[1],
+                    attention_size=MAX_SEQ_LEN,
                     trainable_emb=EMB_TRAINABLE)
+  
+elif args[0] == 'LSTM':
+    
+    bidirectional = True if args == 3 and args[2] == 'B' else False
 
-
-'''
-model_name = 'LSTM_attention'
-model = BaseLSTM(output_size=n_classes,  
-                    embeddings=embeddings,method = 'attention',bidirectional= True,
+    model = BaseLSTM(output_size=n_classes,  
+                    embeddings=embeddings,
+                    method = args[1],
+                    attention_size=MAX_SEQ_LEN,
+                    bidirectional= bidirectional,
                     trainable_emb=EMB_TRAINABLE)
+else :
+    print('Invalid model name')
+    exit(1)
 
 # move the mode weight to cpu or gpu
 model.to(DEVICE)
@@ -142,20 +165,29 @@ test_losses = []
 #############################################################################
 for epoch in range(1, EPOCHS + 1):
     # train the model for one epoch
-    train_dataset(epoch, train_loader, model, criterion, optimizer)
+    train_dataset(epoch, train_loader, model, criterion, optimizer,n_classes)
 
     # evaluate the performance of the model, on both data sets
     train_loss, (y_train_gold, y_train_pred) = eval_dataset(train_loader,
                                                             model,
-                                                            criterion)
+                                                            criterion,n_classes)
 
     test_loss, (y_test_gold, y_test_pred) = eval_dataset(test_loader,
                                                          model,
-                                                         criterion)
+                                                         criterion,n_classes)
     train_losses.append(train_loss)
     test_losses.append(test_loss)
 
+#ipdb.set_trace()
 print('\n\033[1mQuestion 10, Classification Report:\033[0m\n')
 print(classification_report(y_test_gold,y_test_pred))
+report = classification_report(y_test_gold,y_test_pred,output_dict=True)
+df = pd.DataFrame(report).transpose()
+f = open(f'./reports/{model_name}.tex',"w+")
+f.write(df.to_latex())
+f.write(f'\nMin Test Loss: {min(test_losses):f}')
+f.close()
+
+
 print('\n\033[1mQuestion 10, Plot:\033[0m\n')
 plot_loss(train_losses,test_losses,EPOCHS,DATASET,model_name)

@@ -15,7 +15,7 @@ class SentenceDataset(Dataset):
             processed data-item from our dataset with a given index
     """
 
-    def __init__(self, X, y, word2idx):
+    def __init__(self, X, y, word2idx,MAX_SEQ_LEN):
         """
         In the initialization of the dataset we will have to assign the
         input values to the corresponding class attributes
@@ -46,7 +46,7 @@ class SentenceDataset(Dataset):
         self.word2idx = word2idx
 
         # We arbirtarily choose max sentence length
-        self.max_sent_length = 60
+        self.max_sent_length = MAX_SEQ_LEN
         
 
     def __len__(self):
