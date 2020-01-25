@@ -2,6 +2,8 @@ from torch.utils.data import Dataset
 import nltk
 from tqdm import tqdm
 import numpy as np
+from sklearn.feature_extraction.text import TfidfTransformer,CountVectorizer
+
 
 class SentenceDataset(Dataset):
     """
@@ -15,7 +17,7 @@ class SentenceDataset(Dataset):
             processed data-item from our dataset with a given index
     """
 
-    def __init__(self, X, y, word2idx,MAX_SEQ_LEN):
+    def __init__(self, X, y, word2idx,MAX_SEQ_LEN,tf_idf = False):
         """
         In the initialization of the dataset we will have to assign the
         input values to the corresponding class attributes
@@ -30,6 +32,8 @@ class SentenceDataset(Dataset):
             X (list): List of training samples
             y (list): List of training labels
             word2idx (dict): a dictionary which maps words to indexes
+            MAX_SEQ_LEN: maximum length of sequence
+            tf_idf : calculate tf-idf weights over data
         """
         
         # Download pre-trained tokenizer if necessary 
@@ -39,8 +43,22 @@ class SentenceDataset(Dataset):
             nltk.download('punkt/english.pickle')
         
         # tokenize samples
-        self.data = [ nltk.word_tokenize(x) for x in X]
+        # lower() needed for word2idx 
+        self.data = [ list(map(lambda x:x.lower(),nltk.word_tokenize(x))) for x in X]
+        self.tf_idf = tf_idf
 
+        if tf_idf:
+            vocab = word2idx.copy()
+            # hack for CountVectorizer
+            vocab['dummy-word'] = 0
+            data_counts = CountVectorizer(vocabulary = vocab,tokenizer = lambda x : x, preprocessor=None, lowercase=False).fit_transform(self.data)
+            self.tf_idf_data =  TfidfTransformer().fit_transform(data_counts)       
+        
+
+
+
+
+        
         self.labels = y
         
         self.word2idx = word2idx
@@ -95,12 +113,11 @@ class SentenceDataset(Dataset):
         example = []
         for token in sentence:
             # get indexes
-            if token.lower() in self.word2idx.keys():
-                example.append(self.word2idx[token.lower()])
+            if token in self.word2idx.keys():
+                example.append(self.word2idx[token])
             else :
                 example.append(self.word2idx['<unk>']) 
 
-        
         if length >= self.max_sent_length:
             # reduce size if necessary 
             example = example[:self.max_sent_length]
@@ -108,8 +125,27 @@ class SentenceDataset(Dataset):
         else :
             # else pad sequence
             example = example + [0]*(self.max_sent_length-length)
-        
+            
         example = np.array(example)
+        
+        if self.tf_idf: 
 
+            # Get tf_idf weights 
+            # Get non zero indices from sparce matrix
+
+
+            # get corresponding scores
+            tf_idf_weights = [self.tf_idf_data[index, x] for x in example[:length] ]
+            # pad accordingly
+            if length >= self.max_sent_length:
+                tf_idf_weights = tf_idf_weights[:self.max_sent_length] 
+            else :
+                tf_idf_weights = tf_idf_weights + [0]*(self.max_sent_length-length)
+
+            tf_idf_weights = np.array(tf_idf_weights)
+            example = np.concatenate((example,tf_idf_weights))
+            
+
+        
         return example, label, length
 

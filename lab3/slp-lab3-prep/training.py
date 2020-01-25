@@ -79,7 +79,7 @@ def train_dataset(_epoch, dataloader, model, loss_function, optimizer,n_classes)
                  batch_size=dataloader.batch_size,
                  dataset_size=len(dataloader.dataset))
                  
-    print(f' Epoch {_epoch}, Total loss: {running_loss/index:.4f}\n')
+    
     return running_loss / index
 
 
@@ -143,5 +143,5 @@ def eval_dataset(dataloader, model, loss_function,n_classes):
             y_pred += pred
             
             running_loss += loss.data.item()
-
+    
     return running_loss / index, (y, y_pred)

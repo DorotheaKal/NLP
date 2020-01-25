@@ -13,7 +13,7 @@ class BaselineDNN(nn.Module):
        to the number of classes.ngth)
     """
 
-    def __init__(self, output_size, embeddings,method = 'mean',attention_size = 60, trainable_emb=False):
+    def __init__(self, output_size, embeddings,method = 'mean',attention_size = 60, trainable_emb=False,tf_idf = False):
         """
 
         Args:
@@ -30,14 +30,18 @@ class BaselineDNN(nn.Module):
 
         super(BaselineDNN, self).__init__()
 
+        self.tf_idf = tf_idf
         # EX4
 
         # 1 - define the embedding layer
         # We define embeddings from pretrained embeddings
+        
         num_embeddings = len(embeddings) 
         dim = len(embeddings[0])
         self.embeddings = nn.Embedding(num_embeddings,dim)
         self.output_size = output_size
+
+        self.dropout = nn.Dropout(p = 0.3)
         
         # 2 - initialize the weights of our Embedding layer
         # from the pretrained word embeddings
@@ -82,19 +86,23 @@ class BaselineDNN(nn.Module):
         # EX6
         # 1 - embed the words, using the embedding layer
         # x ::  BS x SEQ_LEN
-        
-        embeddings = self.embeddings(x)
+        if self.tf_idf:
+            tf_idf_weights = x[:,int(x.shape[1]/2):]
+            x = x[:,:int(x.shape[1]/2)].long()
+            embeddings = self.embeddings(x)
+            embeddiings = embeddings * tf_idf_weights.unsqueeze(-1).expand_as(embeddings)   
+        else :
+            embeddings = self.embeddings(x)
         # BS x SEQ_LEN  --> BS x SEQ_LEN x EMB_DIM
      
         # 2 - construct a sentence representation out of the word embeddings
                
-       
         
         # Compute mean         
         if self.method != 'attention':
 
             # reps :: BS x EMB_DIM
-            # OOV words are mapped to 0 vector
+            # padded elements are mapped to 0.0 vector
             # we sum and devide with correct length for mean
             rep = torch.sum(embeddings,axis = 1)
             rep = rep / lengths.view((-1,1))
@@ -111,10 +119,11 @@ class BaselineDNN(nn.Module):
             rep = self.attention(embeddings)
         
         # 3 - transform the representations to new ones.
+        
         rep = self.relu(self.lin1(rep))
 
         # 4 - project the representations to classes using a linear layer
-        
+        rep = self.dropout(rep)
         logits = self.lin2(rep)
         
         if self.output_size == 2:
@@ -123,10 +132,12 @@ class BaselineDNN(nn.Module):
         return logits
 
 class BaseLSTM(nn.Module):
-    def __init__(self,output_size, embeddings,hidden = 8, trainable_emb=False,method = 'mean',attention_size  = 60 ,bidirectional = False):
+    def __init__(self,output_size, embeddings,hidden = 8, trainable_emb=False,method = 'mean',attention_size  = 60 ,bidirectional = False,tf_idf = False):
 
         super(BaseLSTM, self).__init__()
         
+        self.tf_idf = tf_idf
+
         embeddings = np.array(embeddings)
         num_embeddings, dim = embeddings.shape 
         
@@ -162,8 +173,15 @@ class BaseLSTM(nn.Module):
         self.linear = nn.Linear(IN_SIZE,output_size)
     
     def forward(self,x,lengths):
-        embeddings = self.embeddings(x)
-        # BS x SEQ_LEN -->  BS x SEQ_LEN x EMB_DIM 
+       
+        if self.tf_idf:
+            tf_idf_weights = x[:,int(x.shape[1]/2):]
+            x = x[:,:int(x.shape[1]/2)].long()
+            embeddings = self.embeddings(x)
+            embeddiings = embeddings * tf_idf_weights.unsqueeze(-1).expand_as(embeddings)   
+        else :
+            embeddings = self.embeddings(x)
+
         X = torch.nn.utils.rnn.pack_padded_sequence(embeddings, lengths, batch_first=True,enforce_sorted = False)
 
         ht,(hn,_) = self.lstm(X)
@@ -186,6 +204,32 @@ class BaseLSTM(nn.Module):
         out = self.linear(rep)
         if self.output_size == 2:
             out = out.float()
+        
+        return out
+
+class LSTMRegression(nn.Module):
+
+    def __init__(self,embeddings,attention_size = 60):
+        embeddings = np.array(embeddings)
+        num_embeddings, dim = embeddings.shape 
+        hidden = hidden * 2
+
+        self.embeddings = nn.Embedding(num_embeddings,dim)
+        self.lstm = nn.LSTM(dim,hidden_size = hidden,bidirectional = True)
+        self.attention = Attention(attention_size,hidden)
+        self.linear = nn.Linear(hidden,1)
+        self.sigmoid = nn.Sigmoid()
+        
+    def forward(self,x,lengths):
+        
+        embeddings = self.embeddings(x)
+        
+        X = torch.nn.utils.rnn.pack_padded_sequence(embeddings, lengths, batch_first=True,enforce_sorted = False)
+
+        ht,(hn,_) = self.lstm(X)
+        ht, _ = torch.nn.utils.rnn.pad_packed_sequence(ht, batch_first=True)
+        rep = self.attention(ht)
+        out = self.sigmoid(self.linear(rep))
         
         return out
 
