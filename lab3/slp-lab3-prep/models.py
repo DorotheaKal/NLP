@@ -209,16 +209,19 @@ class BaseLSTM(nn.Module):
 
 class LSTMRegression(nn.Module):
 
-    def __init__(self,embeddings,attention_size = 60):
+    def __init__(self,embeddings,hidden = 8,attention_size = 60):
+        super(LSTMRegression, self).__init__()
         embeddings = np.array(embeddings)
         num_embeddings, dim = embeddings.shape 
-        hidden = hidden * 2
+       
 
         self.embeddings = nn.Embedding(num_embeddings,dim)
         self.lstm = nn.LSTM(dim,hidden_size = hidden,bidirectional = True)
+        hidden = hidden * 2
         self.attention = Attention(attention_size,hidden)
         self.linear = nn.Linear(hidden,1)
-        self.sigmoid = nn.Sigmoid()
+        # self.sigmoid = nn.Sigmoid() 
+        # sigmoid contained in BCEwithLogits
         
     def forward(self,x,lengths):
         

@@ -2,6 +2,8 @@ import glob
 import html
 import os
 
+import numpy as np 
+
 from config import DATA_PATH
 
 SEPARATOR = "\t"
@@ -92,23 +94,51 @@ def load_MR():
 
     return X_train, y_train, X_test, y_test
 
+def load_EI_Reg():
+    '''
+    Read data and return in dictionary with dataset-emotion key
+    Code is self-explanatory  
+    '''
+    X = {}
+    y = {}
+    name = {'development' : 'dev',
+            'training' : 'train',
+            'test-gold' : 'test-gold'
+            }
 
-def load_MR():
-    pos = open(os.path.join(DATA_PATH, "MR/rt-polarity.pos")).readlines()
-    neg = open(os.path.join(DATA_PATH, "MR/rt-polarity.neg")).readlines()
+    for emotion in ['joy','anger','fear','sadness']:
 
-    pos = [x.strip() for x in pos]
-    neg = [x.strip() for x in neg]
+        for dataset in ['development','training','test-gold']:
 
-    pos_labels = ["positive"] * len(pos)
-    neg_labels = ["negative"] * len(neg)
+            path = os.path.join(DATA_PATH, f"SemEval2018-Task1-all-data/English/EI-reg/{dataset}/2018-EI-reg-En-{emotion}-{name[dataset]}.txt")
+            score,data = parse_file_regression(path)
 
-    split = 5000
+            X[f'{name[dataset]}-{emotion}'] = data 
+            y[f'{name[dataset]}-{emotion}'] = score
+    
+    return X,y 
 
-    X_train = pos[:split] + neg[:split]
-    y_train = pos_labels[:split] + neg_labels[:split]
+def parse_file_regression(file):
+    """
+    Read a file and return a dictionary of the data, in the format:
+    tweet_id:{sentiment, text}
+    """
 
-    X_test = pos[split:] + neg[split:]
-    y_test = pos_labels[split:] + neg_labels[split:]
+    data = []
+    scores = []
 
-    return X_train, y_train, X_test, y_test
+    lines = open(file, "r", encoding="utf-8").readlines()
+    for line_id, line in enumerate(lines[1:]):
+        columns = line.rstrip().split(SEPARATOR)
+        
+        text = columns[1]
+        score = columns[3]
+        
+        scores.append(score)
+        data.append(text)
+    scores = np.array(scores)
+    data = np.array(data)
+
+    return (score,data)
+    
+

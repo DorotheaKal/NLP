@@ -17,7 +17,7 @@ from config import EMB_PATH
 from dataloading import SentenceDataset
 from models import BaselineDNN,BaseLSTM
 from training import train_dataset, eval_dataset
-from utils.load_datasets import load_MR, load_Semeval2017A
+from utils.load_datasets import load_MR, load_Semeval2017A, load_EI_Reg
 from utils.load_embeddings import load_word_vectors
 from plots import plot_loss
 
@@ -61,7 +61,6 @@ elif DATASET == "MR":
     X_train, y_train, X_test, y_test = load_MR()
 else:
     raise ValueError("Invalid dataset")
-
 # convert data labels from strings to integers
 
 
@@ -143,8 +142,8 @@ if args[0] == 'DNN' :
                     trainable_emb=EMB_TRAINABLE,tf_idf = TF_IDF)
   
 elif args[0] == 'LSTM':
+    bidirectional = True if len(args) == 3 and args[2] == 'B' else False
     
-    bidirectional = True if args == 3 and args[2] == 'B' else False
 
     model = BaseLSTM(output_size=n_classes,  
                     embeddings=embeddings,
@@ -155,6 +154,11 @@ elif args[0] == 'LSTM':
 else :
     print('Invalid model name')
     exit(1)
+
+
+if TF_IDF : 
+    model_name = model_name + '_tf_idf'
+
 
 
 
@@ -213,13 +217,23 @@ checkpoint = torch.load(f'./checkpoints/{DATASET}/{model_name}')
 model.load_state_dict(checkpoint['model'])
 _, (y_test_gold, y_test_pred) = eval_dataset(test_loader,model,criterion,n_classes)
 
+f = open(f'./reports/{DATASET}/{model_name}_preds.txt',"w+")
+f.write('predictions --- gold')
+for pred,gold in zip(y_test_pred,y_test_gold):
+    f.write(f'{pred} --- {gold}')
+
+
 print('\n\033[1mQuestion 10, Classification Report:\033[0m\n')
+
 print(classification_report(y_test_gold,y_test_pred))
+
 report = classification_report(y_test_gold,y_test_pred,output_dict=True)
 df = pd.DataFrame(report).transpose()
 f = open(f'./reports/{DATASET}/{model_name}.tex',"w+")
 f.write(df.to_latex())
 f.write(f'\nMin Test Loss: {min(test_losses):f}')
+
+
 f.close()
 
 
