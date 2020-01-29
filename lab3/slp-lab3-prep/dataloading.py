@@ -1,5 +1,6 @@
 from torch.utils.data import Dataset
-import nltk
+from nltk.tokenize import TweetTokenizer
+
 from tqdm import tqdm
 import numpy as np
 from sklearn.feature_extraction.text import TfidfTransformer,CountVectorizer
@@ -35,7 +36,7 @@ class SentenceDataset(Dataset):
             MAX_SEQ_LEN: maximum length of sequence
             tf_idf : calculate tf-idf weights over data
         """
-        
+        '''
         # Download pre-trained tokenizer if necessary 
         try:
             nltk.data.find('tokenizers/punkt/english.pickle')
@@ -44,7 +45,11 @@ class SentenceDataset(Dataset):
         
         # tokenize samples
         # lower() needed for word2idx 
-        self.data = [ list(map(lambda x:x.lower(),nltk.word_tokenize(x))) for x in X]
+        '''
+        
+        tokenizer = TweetTokenizer()
+        self.data = [ list(map(lambda x:x.lower(),tokenizer.tokenize(x))) for x in X]
+    
         self.tf_idf = tf_idf
 
         if tf_idf:

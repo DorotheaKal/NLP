@@ -33,14 +33,14 @@ torch.multiprocessing.set_sharing_strategy('file_system')
 # for example http://nlp.stanford.edu/data/glove.6B.zip
 
 # 1 - point to the pretrained embeddings file (must be in /embeddings folder)
-EMBEDDINGS = os.path.join(EMB_PATH, "glove.6B.50d.txt")
+EMBEDDINGS = os.path.join(EMB_PATH, "glove.twitter.27B.50d.txt")
 
 # 2 - set the correct dimensionality of the embeddings
 EMB_DIM = 50
 MAX_SEQ_LEN = 60 
 EMB_TRAINABLE = False
 BATCH_SIZE = 128
-EPOCHS = 2
+EPOCHS = 50
 DATASET =  "Semeval2017A"  # options: "MR", "Semeval2017A"
 TF_IDF = False
 # if your computer has a CUDA compatible gpu use it, otherwise use the cpu
@@ -196,48 +196,44 @@ for epoch in range(1, EPOCHS + 1):
                                                          model,
                                                          criterion,n_classes)    
     
+    # plot and save, test and train loss
     print(f' Epoch {epoch}, Train loss: {train_loss:.4f}')
     print(f'           Test loss: {test_loss:.4f}')
     train_losses.append(train_loss)
     test_losses.append(test_loss)
 
+    # save best model
     if test_loss < max_test_loss : 
         max_test_loss = test_loss
         torch.save({
             'epoch' : epoch,
             'model' : model.state_dict(),
-            'optimizer' : optimizer.state_dict(), 
             'test_loss' : test_loss,
             'train_loss' : train_loss
             },f'./checkpoints/{DATASET}/{model_name}'
         )
 
+
+
 # load best model
 checkpoint = torch.load(f'./checkpoints/{DATASET}/{model_name}')
 model.load_state_dict(checkpoint['model'])
+
+# predict 
 _, (y_test_gold, y_test_pred) = eval_dataset(test_loader,model,criterion,n_classes)
 
-f = open(f'./reports/{DATASET}/{model_name}_preds.txt',"w+")
-f.write('predictions --- gold')
-for pred,gold in zip(y_test_pred,y_test_gold):
-    f.write(f'{pred} --- {gold}')
+# store predictions at txt:
 
 
-print('\n\033[1mQuestion 10, Classification Report:\033[0m\n')
-
-print(classification_report(y_test_gold,y_test_pred))
-
+# Save classification report and min loss 
 report = classification_report(y_test_gold,y_test_pred,output_dict=True)
 df = pd.DataFrame(report).transpose()
 f = open(f'./reports/{DATASET}/{model_name}.tex',"w+")
 f.write(df.to_latex())
 f.write(f'\nMin Test Loss: {min(test_losses):f}')
-
-
 f.close()
 
-
-print('\n\033[1mQuestion 10, Plot:\033[0m\n')
+# plot learning curve
 plot_loss(train_losses,test_losses,EPOCHS,DATASET,model_name)
 
 

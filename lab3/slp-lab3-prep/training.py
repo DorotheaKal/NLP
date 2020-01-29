@@ -33,9 +33,10 @@ def train_dataset(_epoch, dataloader, model, loss_function, optimizer,n_classes)
     device = next(model.parameters()).device
 
     for index, batch in enumerate(dataloader, 1):
+        
         # get the inputs (batch)
         inputs, labels, lengths = batch
-
+      
         # move the batch tensors to the right device        
         inputs = inputs.to(device)
 
@@ -46,16 +47,15 @@ def train_dataset(_epoch, dataloader, model, loss_function, optimizer,n_classes)
 
         # Step 2 - forward pass: y' = model(x)
         output = model(inputs,lengths)
-        
-        #import ipdb; ipdb.set_trace()
 
         # Step 3 - compute loss: L = loss_function(y, y')
-        
+       
         # fix label type for different loss func
         if n_classes == 2:
             labels = torch.nn.functional.one_hot(labels, num_classes= 2)
             labels = labels.float()
-            
+        elif n_classes == -1:
+            labels = labels.float()    
         else:
             labels = labels.long()
 
@@ -92,7 +92,7 @@ def eval_dataset(dataloader, model, loss_function,n_classes):
 
     y_pred = []  # the predicted labels
     y = []  # the gold labels
-
+    
     # obtain the model's device ID
     device = next(model.parameters()).device
 
@@ -129,13 +129,20 @@ def eval_dataset(dataloader, model, loss_function,n_classes):
                 # fix label type for different loss func
                 labels = torch.nn.functional.one_hot(labels, num_classes= 2)
                 labels = labels.float()
+                pred = torch.argmax(output,axis = 1).tolist()
+            elif n_classes == -1:
+                
+                labels = labels.float()
+                pred = output.tolist()
             
             else:
                 # fix label    
                 labels = labels.long()
-
+                pred = torch.argmax(output,axis = 1).tolist()
+          
             # get max class index
-            pred = torch.argmax(output,axis = 1).tolist()
+            
+
             loss = loss_function(output,labels)
                 
 

@@ -13,7 +13,8 @@ class BaselineDNN(nn.Module):
        to the number of classes.ngth)
     """
 
-    def __init__(self, output_size, embeddings,method = 'mean',attention_size = 60, trainable_emb=False,tf_idf = False):
+    def __init__(self, output_size, embeddings,method = 'mean',attention_size = 60, trainable_emb=False,tf_idf = False,
+    return_weights = False):
         """
 
         Args:
@@ -31,6 +32,7 @@ class BaselineDNN(nn.Module):
         super(BaselineDNN, self).__init__()
 
         self.tf_idf = tf_idf
+        self.return_weights = return_weights
         # EX4
 
         # 1 - define the embedding layer
@@ -63,7 +65,7 @@ class BaselineDNN(nn.Module):
         if method == 'pooling':
              IN_SIZE = 2*dim 
         elif method == 'attention':
-            self.attention = Attention(attention_size,dim)
+            self.attention = Attention(attention_size,dim,return_weights)
             IN_SIZE = dim
         else :
             IN_SIZE = dim
@@ -116,7 +118,10 @@ class BaselineDNN(nn.Module):
         
         # apply attention layer
         elif self.method == 'attention':
-            rep = self.attention(embeddings)
+            if self.return_weights:
+                rep,atten_weights = self.attention(embeddings)
+            else :
+                rep = self.attention(embeddings)
         
         # 3 - transform the representations to new ones.
         
@@ -129,10 +134,15 @@ class BaselineDNN(nn.Module):
         if self.output_size == 2:
             logits = logits.float()
     
-        return logits
+        if self.return_weights :
+            return logits,atten_weights  
+        else :
+            return logits
+
 
 class BaseLSTM(nn.Module):
-    def __init__(self,output_size, embeddings,hidden = 8, trainable_emb=False,method = 'mean',attention_size  = 60 ,bidirectional = False,tf_idf = False):
+    def __init__(self,output_size, embeddings,hidden = 8, trainable_emb=False,method = 'mean',attention_size  = 60 ,bidirectional = False,tf_idf = False,
+                return_weights = False):
 
         super(BaseLSTM, self).__init__()
         
@@ -147,7 +157,7 @@ class BaseLSTM(nn.Module):
         self.lstm = nn.LSTM(dim,hidden_size = hidden,bidirectional = bidirectional)
         self.method = method 
         self.bidirectional = bidirectional
-      
+        self.return_weights = return_weights
 
         if bidirectional == True:
             
@@ -159,7 +169,7 @@ class BaseLSTM(nn.Module):
              # 3*HS , h_t_last || mean(h_t) || max(h_t)
              IN_SIZE = 3*hidden 
         elif method == 'attention':
-            self.attention = Attention(attention_size,hidden)
+            self.attention = Attention(attention_size,hidden,return_weights)
             IN_SIZE = hidden
         else :
             IN_SIZE = hidden
@@ -197,15 +207,31 @@ class BaseLSTM(nn.Module):
             rep = torch.cat( (hn, rep),dim = 1) # BS x 3HS
             
         elif self.method == 'attention':
-            rep = self.attention(ht)
+            
+            if self.return_weights: 
+                
+                rep,atten_weights = self.attention(ht)
+            
+            else :
+                
+                rep = self.attention(ht)
+       
         else :
             rep = hn
         
-        out = self.linear(rep)
+       
+        out = self.linear(rep).squeeze()
         if self.output_size == 2:
             out = out.float()
         
-        return out
+            
+        if self.return_weights :
+            return out,atten_weights  
+        else :
+            return out
+
+            
+        
 
 class LSTMRegression(nn.Module):
 
@@ -220,9 +246,8 @@ class LSTMRegression(nn.Module):
         hidden = hidden * 2
         self.attention = Attention(attention_size,hidden)
         self.linear = nn.Linear(hidden,1)
-        # self.sigmoid = nn.Sigmoid() 
-        # sigmoid contained in BCEwithLogits
-        
+        self.sigmoid = nn.Sigmoid() 
+    
     def forward(self,x,lengths):
         
         embeddings = self.embeddings(x)
@@ -232,19 +257,20 @@ class LSTMRegression(nn.Module):
         ht,(hn,_) = self.lstm(X)
         ht, _ = torch.nn.utils.rnn.pad_packed_sequence(ht, batch_first=True)
         rep = self.attention(ht)
-        out = self.sigmoid(self.linear(rep))
+        out = self.sigmoid(self.linear(rep)).squeeze()
         
         return out
 
 class Attention(nn.Module):
-    def __init__(self,attention_size,embedding_dim):
+    def __init__(self,attention_size,embedding_dim,return_weights = False):
         super(Attention, self).__init__()
         self.tanh = nn.Tanh()
         self.softmax = nn.Softmax(dim=-1)
         self.lin_attention = nn.Linear(embedding_dim,1)
+        self.return_weights = return_weights
         # Define attention weights to be trainable
         self.att_weights = nn.Parameter(torch.FloatTensor(attention_size))
-    
+
     def forward(self,embeddings):
         # Reshape to apply linear 
         
@@ -265,5 +291,8 @@ class Attention(nn.Module):
         u = torch.mul(embeddings,atten_weights.unsqueeze(-1).expand_as(embeddings))
         # BS x DIM
         u = torch.sum(u,dim = 1)
+
+        if self.return_weights : 
+            return u,atten_weights
         return u
         

@@ -111,10 +111,10 @@ def load_EI_Reg():
         for dataset in ['development','training','test-gold']:
 
             path = os.path.join(DATA_PATH, f"SemEval2018-Task1-all-data/English/EI-reg/{dataset}/2018-EI-reg-En-{emotion}-{name[dataset]}.txt")
-            score,data = parse_file_regression(path)
+            scores,data = parse_file_regression(path)
 
             X[f'{name[dataset]}-{emotion}'] = data 
-            y[f'{name[dataset]}-{emotion}'] = score
+            y[f'{name[dataset]}-{emotion}'] = scores
     
     return X,y 
 
@@ -128,17 +128,19 @@ def parse_file_regression(file):
     scores = []
 
     lines = open(file, "r", encoding="utf-8").readlines()
+    
     for line_id, line in enumerate(lines[1:]):
         columns = line.rstrip().split(SEPARATOR)
         
         text = columns[1]
-        score = columns[3]
+        score = float(columns[3])
         
         scores.append(score)
         data.append(text)
+
     scores = np.array(scores)
     data = np.array(data)
 
-    return (score,data)
+    return (scores,data)
     
 
