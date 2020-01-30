@@ -51,13 +51,13 @@ model = BaseLSTM(output_size=3,
                     embeddings=embeddings,
                     method = 'attention',
                     attention_size=MAX_SEQ_LEN,
-                    bidirectional= True, # Don't Forget to also try without Bidirectional...
+                    bidirectional= False, # Don't Forget to also try without Bidirectional...
                     trainable_emb=False, 
                     return_weights=True)
 
-checkpoint = torch.load(f'./checkpoints/Semeval2017A/LSTM_attention_B')
+checkpoint = torch.load(f'./checkpoints/Semeval2017A/LSTM_attention')
 
-path = './reports/Semeval2017A/NEATVIS_LSTM_attention_B.json'
+path = './reports/Semeval2017A/NEATVIS_LSTM_attention.json'
 # Don't forget to change path for Bidirectional..
 
 

@@ -42,7 +42,7 @@ EMB_TRAINABLE = False
 BATCH_SIZE = 128
 EPOCHS = 50
 DATASET =  "Semeval2017A"  # options: "MR", "Semeval2017A"
-TF_IDF = False
+TF_IDF = True 
 # if your computer has a CUDA compatible gpu use it, otherwise use the cpu
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
