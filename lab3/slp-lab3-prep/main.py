@@ -222,8 +222,13 @@ model.load_state_dict(checkpoint['model'])
 # predict 
 _, (y_test_gold, y_test_pred) = eval_dataset(test_loader,model,criterion,n_classes)
 
-# store predictions at txt:
-
+# store predictions at txt (for best model):
+'''
+f = open('./reports/Semeval2017A/best_model.txt',"w+")
+f.write('Gold labels\tPredictions\n')
+for y_gold,y_pred in zip(y_test_gold,y_test_pred):
+    f.write(f'{y_gold}\t{y_pred}\n')
+'''
 
 # Save classification report and min loss 
 report = classification_report(y_test_gold,y_test_pred,output_dict=True)
