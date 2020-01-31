@@ -5,7 +5,11 @@ import math
 
 from sklearn.exceptions import UndefinedMetricWarning
 from sklearn.metrics import classification_report
+from sklearn.metrics import mean_squared_error
+from scipy.stats.stats import pearsonr
 
+
+import numpy as np
 import pandas as pd
 
 import torch
@@ -30,12 +34,12 @@ EMB_DIM = 50
 MAX_SEQ_LEN = 60 
 EMB_TRAINABLE = False
 BATCH_SIZE = 128
-EPOCHS = 2
+EPOCHS = 50
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 X,y = load_EI_Reg()
 word2idx, idx2word, embeddings = load_word_vectors(EMBEDDINGS, EMB_DIM)
-DATASET = ''
+DATASET = 'EI_Reg'
 for emotion in ['joy','anger','sadness','fear']:
     
 
@@ -48,15 +52,18 @@ for emotion in ['joy','anger','sadness','fear']:
     X_dev = X[f'dev-{emotion}']
     y_dev = y[f'dev-{emotion}']
 
+    # We do not use a validation set for fine-tuning, so we increase training set
+    X_train = np.concatenate((X_train,X_dev))
+    y_train = np.concatenate((y_train,y_test))
+    
+    
     train_set = SentenceDataset(X_train, y_train, word2idx,MAX_SEQ_LEN)
     test_set = SentenceDataset(X_test, y_test, word2idx,MAX_SEQ_LEN)
-    dev_set = SentenceDataset(X_dev, y_dev, word2idx,MAX_SEQ_LEN)
+
 
     train_loader = DataLoader(train_set, batch_size=BATCH_SIZE,
                             shuffle=True, num_workers=4)
     test_loader = DataLoader(test_set, batch_size=BATCH_SIZE,
-                            shuffle=True, num_workers=4)
-    dev_loader = DataLoader(dev_set, batch_size=BATCH_SIZE,
                             shuffle=True, num_workers=4)
 
     model = LSTMRegression(embeddings,attention_size = MAX_SEQ_LEN)
@@ -91,7 +98,7 @@ for emotion in ['joy','anger','sadness','fear']:
                                                                 model,
                                                                 criterion,n_classes)
 
-        test_loss, (y_test_gold, y_test_pred) = eval_dataset(dev_loader,
+        test_loss, (y_test_gold, y_test_pred) = eval_dataset(test_loader,
                                                                 model,
                                                                 criterion,n_classes)    
           # save best model
@@ -119,13 +126,16 @@ for emotion in ['joy','anger','sadness','fear']:
     # predict 
     _, (y_test_gold, y_test_pred) = eval_dataset(test_loader,model,criterion,n_classes)
 
-    # store predictions at txt:
 
 
-    # Save min loss 
-
+    # Save min loss
+    # We also calculate pearson corellation coefficient
+    # as it's the official classification metric for the
+    # Semeval2018 - Task1 - EI_reg  
     f = open(f'./reports/{DATASET}/{model_name}.tex',"w+")
-    f.write(f'\nMin Test Loss: {min(test_losses):f}')
+    f.write(f'\nMin Test Loss: {min(test_losses):f}\n')
+    r,_ = pearsonr(y_test_gold,y_test_pred)
+    f.write(f'Pearson corellation coefficient r: {r:f}')
     f.close()
 
     # plot learning curve

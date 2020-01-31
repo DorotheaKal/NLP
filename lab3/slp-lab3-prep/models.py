@@ -67,8 +67,12 @@ class BaselineDNN(nn.Module):
         elif method == 'attention':
             self.attention = Attention(attention_size,dim,return_weights)
             IN_SIZE = dim
-        else :
+        elif method == 'mean':
             IN_SIZE = dim
+        else :
+            printf('Undefined method for representation calculation')
+            exit(1)
+
         
         self.lin1 = nn.Linear(IN_SIZE,LATENT_SIZE)
         self.relu = nn.ReLU()
@@ -171,8 +175,11 @@ class BaseLSTM(nn.Module):
         elif method == 'attention':
             self.attention = Attention(attention_size,hidden,return_weights)
             IN_SIZE = hidden
-        else :
+        elif method == 'mean' :
             IN_SIZE = hidden
+        else :
+            printf('Undefined method for representation calculation')
+            exit(1)
 
 
      
@@ -195,7 +202,14 @@ class BaseLSTM(nn.Module):
         X = torch.nn.utils.rnn.pack_padded_sequence(embeddings, lengths, batch_first=True,enforce_sorted = False)
 
         ht,(hn,_) = self.lstm(X)
+        hn = hn.squeeze()
+        if self.bidirectional:
+            # BS * DIR x ... --> BS  x ...  
+            # concatenate the right way for bidirectional 
+            hn = torch.cat((hn[0],hn[1]),dim = 1)
+
         ht, _ = torch.nn.utils.rnn.pad_packed_sequence(ht, batch_first=True)
+        
         # ht :: BS x MAX_SEQ_LEN x HS
         # MAX_SEQ_LEN = max(lengths)
         
@@ -220,7 +234,7 @@ class BaseLSTM(nn.Module):
             rep = hn
         
        
-        out = self.linear(rep).squeeze()
+        out = self.linear(rep)
         if self.output_size == 2:
             out = out.float()
         
@@ -254,12 +268,13 @@ class LSTMRegression(nn.Module):
         
         X = torch.nn.utils.rnn.pack_padded_sequence(embeddings, lengths, batch_first=True,enforce_sorted = False)
 
-        ht,(hn,_) = self.lstm(X)
+        ht,(_,_) = self.lstm(X)
+
         ht, _ = torch.nn.utils.rnn.pad_packed_sequence(ht, batch_first=True)
         rep = self.attention(ht)
-        out = self.sigmoid(self.linear(rep)).squeeze()
-        
-        return out
+        out = self.sigmoid(self.linear(rep))
+
+        return out.squeeze()
 
 class Attention(nn.Module):
     def __init__(self,attention_size,embedding_dim,return_weights = False):
@@ -277,7 +292,7 @@ class Attention(nn.Module):
         (BS, SEQ_LEN , DIM) = embeddings.shape
         # BS x SEQ_LEN x DIM --> BS*SEQ_LEN  
         # applay a linear to each word 
-        #import ipdb; ipdb.set_trace()
+
         u  = self.lin_attention(embeddings.reshape((-1,DIM)))
         # reshape to  BS x SEQ_LEN
         u = u.reshape((BS,SEQ_LEN))
@@ -291,7 +306,6 @@ class Attention(nn.Module):
         u = torch.mul(embeddings,atten_weights.unsqueeze(-1).expand_as(embeddings))
         # BS x DIM
         u = torch.sum(u,dim = 1)
-
         if self.return_weights : 
             return u,atten_weights
         return u

@@ -17,4 +17,3 @@ def plot_loss(l_train,l_test,n_epochs,dataset,model_name):
 
     plt.yticks(fontsize = 15)
     plt.savefig(f'./img/{dataset}/{model_name}_loss.png',dpi = 300)
-    plt.show()

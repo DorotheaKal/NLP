@@ -55,6 +55,7 @@ def train_dataset(_epoch, dataloader, model, loss_function, optimizer,n_classes)
             labels = torch.nn.functional.one_hot(labels, num_classes= 2)
             labels = labels.float()
         elif n_classes == -1:
+        # corresponds to regression
             labels = labels.float()    
         else:
             labels = labels.long()
