@@ -20,9 +20,9 @@ We visualize the proposed corrected words for  *cit*  as input
 
 ## Lab 2 : Speech Recognition with the Kaldi Toolkit
 
-A word/phoneme recognition system is implemented with [Kaldi](https://kaldi-asr.org/), a framework used for state of the art speech aplications. 
+A word/phoneme recognition system is implemented with [Kaldi](https://kaldi-asr.org/), a framework used for state of the art speech applications. 
 
-The features used were the Mel-Frequency Cepstral Coefficients (MFCCs) from 4 speakers (2 male, 2 female), on the USC-TIMIT dataset. The MFCCs are computed as a tansformation of the STFT after he Mel Filterbank, desinged to model the logarithmic nature of human sound perception,  is applied. A DCT transfrom ensures feature independence. More on the mfccs on [this](https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html) blog.
+The features used were the Mel-Frequency Cepstral Coefficients (MFCCs) from 4 speakers (2 male, 2 female), on the USC-TIMIT dataset. The MFCCs are computed as a tansformation of the STFT after τhe Mel Filterbank, desinged to model the logarithmic nature of human sound perception,  is applied. A final DCT transfrom ensures feature independence. More on the MFCCs on [this](https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html) blog.
 
 
 For the a priori probabilities we used language models, trained on transcription information. The accoustic model is a triphone-based HMM, to include speech context information. The final estimation is Bayesian formulated. The prior probability for a word W, is given by the language model. The likelihood P(X|W) is calculated from the accoustic model (HMM).
@@ -68,7 +68,8 @@ We visualize the attention layer results of our LSTM model on insightful samples
 
 
 
-Finally we applied Transfer Learning from the SemEval-2017 Task4-A with target dataset the SemEval-2018 Task1, affect in tweets. We focused on the Emotion Intensity task (EI Regression) for 4 different emotions (joy,anger,sadness,fear). Our implementaion is based on [Baziotis et al., 2018]. The approach gave good results and we showcase the Learning curve for **joy** for 50 epochs.
+Finally we applied Transfer Learning from the SemEval-2017 Task4-A with target dataset the SemEval-2018 Task1, affect in tweets. We focused on the Emotion Intensity task (EI Regression) for 4 different emotions (joy,anger,sadness,fear). Our implementaion is based on [Baziotis et al., 2018]. The approach gave good results and we showcase the Learning curve for **joy** after training for 50 epochs. 
+
 
 
 
