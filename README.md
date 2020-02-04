@@ -7,10 +7,10 @@ Authored by [nikitas-theo](https://github.com/nikitas-theo) and [dorotheaKal](ht
 
 ## Lab 1 : Introduction to Language Representations
 
- We experiment with a weighted minimun distance orthographer built on Finite State Tansducers [FSTs](http://www.openfst.org/twiki/bin/view/FST/WebHome) with the OpenFST library. For the language model we constuct a corpus of publicly available books. We decide that the best approach is one based on word-level representations, as Unigram or Bigram models reduce accuracy. On the small dataset we experimented on we achieved an accuracy of 0.618.
+ We experiment with a weighted minimun distance orthographer built on Finite State Tansducers (FSTs) with the [OpenFST](http://www.openfst.org/twiki/bin/view/FST/WebHome) library. The language model was trained on a corpus of publicly available books. We decided that the best approach is one based on word-level representations, as Unigram or Bigram models reduce accuracy. On the small dataset we experimented on we achieved an accuracy of 0.618.
 
- For the second part we worked on the  classical IMDB review dataset for classification. Different semantic representations (word embeddings) were used:
-* Locally trained word2vec 
+ For the second part we worked on the  classical IMDB review dataset for classification. Different semantic representations were used:
+* Locally trained word2vec embeddings
 * GoogleNews embeddings
 * tf-idf weighted embeddings
 
@@ -22,11 +22,10 @@ We visualize the proposed corrected words for  *cit*  as input
 
 A word/phoneme recognition system is implemented with [Kaldi](https://kaldi-asr.org/), a framework used for state of the art speech aplications. 
 
-For features we used the Mel-Frequency Cepstral Coefficients (MFCCs) from 4 speakers (2 male, 2 female), on the USC-TIMIT dataset. 
+The features used were the Mel-Frequency Cepstral Coefficients (MFCCs) from 4 speakers (2 male, 2 female), on the USC-TIMIT dataset. The MFCCs are computed as a tansformation of the STFT after he Mel Filterbank, desinged to model the logarithmic nature of human sound perception,  is applied. A DCT transfrom ensures feature independence. More on the mfccs on [this](https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html) blog.
 
-The MFCCs are computed as a tansformation of the STFT after he Mel Filterbank, desinged to model the logarithmic nature of human sound perception,  is applied. A DCT transfrom ensures feature independence. 
 
-For the a priori probabilities we used language models, trained on transcription information. The accoustic model is a triphone-based HMM, to include speech context information. The final estimation is Bayesian formulated. The prior probability for a word W, is given from the languge model. The likelihood P(X|W) is calculated from the accoustic model (HMM).
+For the a priori probabilities we used language models, trained on transcription information. The accoustic model is a triphone-based HMM, to include speech context information. The final estimation is Bayesian formulated. The prior probability for a word W, is given by the language model. The likelihood P(X|W) is calculated from the accoustic model (HMM).
 
 
 <img src="./lab2/img/bayesian.png" width="600" height="auto">
@@ -46,13 +45,12 @@ We used 2 datasets:
 and 5331 negative movie reviews from Rotten Tomatoes, for binary-classification
 (positive, negative).
 
-* Semeval 2017 Task4-A [Rosenthal et al.,2017]. This dataset contains tweets representing
-3 classes (positive, negative,neutral) with 49570
+* Semeval 2017 Task4-A [Rosenthal et al.,2017]. This dataset contains tweets representing 3 classes (positive, negative,neutral) with 49570
 training samples and 12284 test (validation) samples.
 
 We experimented with a variety of model  with 2 baseline architectures, a DNN and an LSTM approach. We used different intermediate representations based on word embeddings, such as max and mean pooling and tf-idf. We also implemented an Attention layer on both models.
 
-We visualize the attention layer results of our LSTM model on insightful samples from the test set:
+We visualize the attention layer results of our LSTM model on insightful samples from the test set using [NeAt (Neural Attention) Vision](https://github.com/cbaziotis/neat-vision). 
 
 
 * Our model correctly predicts **positive** label
@@ -70,7 +68,7 @@ We visualize the attention layer results of our LSTM model on insightful samples
 
 
 
-Finally we applied Transfer Learning from the SemEval-2017 Task4-A with target dataset the SemEval-2018 Task1, affect in tweets. We focused on the Emotion Intensity task (EI Regression) for 4 different emotions (joy,anger,sadness,fear). Our implementaion is based on [Baziotis et al., 2018]. The approach gave good results and we showcase the Learning curve for **joy**:
+Finally we applied Transfer Learning from the SemEval-2017 Task4-A with target dataset the SemEval-2018 Task1, affect in tweets. We focused on the Emotion Intensity task (EI Regression) for 4 different emotions (joy,anger,sadness,fear). Our implementaion is based on [Baziotis et al., 2018]. The approach gave good results and we showcase the Learning curve for **joy** for 50 epochs.
 
 
 
